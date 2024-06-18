@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<extension xmlns='http://ns.adobe.com/air/extension/13.0'>
+  <id>com.fyber.mediation.adcolony</id>
+  <versionNumber>8.15.1</versionNumber>
+  <platforms>
+    <platform name='Android-ARM'>
+      <applicationDeployment>
+        <nativeLibrary>extension.jar</nativeLibrary>
+        <initializer>com.fyber.mediation.adcolony.AdcolonyExtension</initializer>
+      </applicationDeployment>
+    </platform>
+    <platform name='default'>
+      <applicationDeployment />
+    </platform>
+  </platforms>
+</extension>

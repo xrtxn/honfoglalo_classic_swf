@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding ="utf-8"?>
+<swc xmlns="http://www.adobe.com/flash/swccatalog/9">
+  <versions>
+    <swc version="1.2" />
+    <flex version="4.9.1" build="1447119" minimumSupportedVersion="3.0.0" />
+  </versions>
+  <features>
+    <feature-script-deps />
+    <feature-files />
+  </features>
+  <libraries>
+    <library path="library.swf">
+      <script name="_59953d53201bf8a9c1e673d1486eb5f3c3508c594473f673a4ae26d53d4d5dad_flash_display_Sprite" mod="1497273207740" signatureChecksum="4129913327" >
+        <def id="_59953d53201bf8a9c1e673d1486eb5f3c3508c594473f673a4ae26d53d4d5dad_flash_display_Sprite" /> 
+        <dep id="flash.system:Security" type="e" /> 
+        <dep id="flash.display:Sprite" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/mediation/chartboost/FyberMediationChartboost" mod="1495545304000" signatureChecksum="3312138703" >
+        <def id="com.fyber.mediation.chartboost:FyberMediationChartboost" /> 
+        <dep id="flash.external:ExtensionContext" type="s" /> 
+        <dep id="flash.external:ExtensionContext" type="e" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <digests>
+        <digest type="SHA-256" signed="false" value="72d042424c0dd0f2f3ca074ece889f82db76c4aff05559405ec02345d0845837"   />
+      </digests>
+    </library>
+  </libraries>
+  <files>
+  </files>
+</swc>

@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding ="utf-8"?>
+<swc xmlns="http://www.adobe.com/flash/swccatalog/9">
+  <versions>
+    <swc version="1.2" />
+    <flex version="4.15.0" build="20160104" minimumSupportedVersion="3.0.0" />
+  </versions>
+  <features>
+    <feature-script-deps />
+    <feature-files />
+  </features>
+  <libraries>
+    <library path="library.swf">
+      <script name="com/fyber/api/FyberBaseSettings" mod="1491315308000" signatureChecksum="1666416675" >
+        <def id="com.fyber.api:FyberBaseSettings" /> 
+        <dep id="flash.utils:Dictionary" type="s" /> 
+        <dep id="flash.utils:Dictionary" type="e" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/api/IFyberOfferWallSettings" mod="1491315473000" signatureChecksum="2569810445" >
+        <def id="com.fyber.api:IFyberOfferWallSettings" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/api/FyberOfferWallSettings" mod="1491315308000" signatureChecksum="3292825616" >
+        <def id="com.fyber.api:FyberOfferWallSettings" /> 
+        <dep id="com.fyber.api:FyberBaseSettings" type="i" /> 
+        <dep id="com.fyber.api:IFyberOfferWallSettings" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/enums/IFyberType" mod="1491315308000" signatureChecksum="2382044616" >
+        <def id="com.fyber.enums:IFyberType" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/enums/FyberBannerResultType" mod="1495026472000" signatureChecksum="254139978" >
+        <def id="com.fyber.enums:FyberBannerResultType" /> 
+        <dep id="com.fyber.enums:IFyberType" type="i" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/api/IFyberInterstitialSettings" mod="1491315473000" signatureChecksum="2685606537" >
+        <def id="com.fyber.api:IFyberInterstitialSettings" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/api/FyberInterstitialSettings" mod="1491315473000" signatureChecksum="4256837252" >
+        <def id="com.fyber.api:FyberInterstitialSettings" /> 
+        <dep id="com.fyber.api:FyberBaseSettings" type="i" /> 
+        <dep id="com.fyber.api:IFyberInterstitialSettings" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/api/IFyberBannerSettings" mod="1494226714000" signatureChecksum="87824355" >
+        <def id="com.fyber.api:IFyberBannerSettings" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/api/FyberBannerSettings" mod="1494226714000" signatureChecksum="3629394232" >
+        <def id="com.fyber.api:FyberBannerSettings" /> 
+        <dep id="com.fyber.api:FyberBaseSettings" type="i" /> 
+        <dep id="com.fyber.api:IFyberBannerSettings" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/api/IFyberRewardedVideoSettings" mod="1494226714000" signatureChecksum="1908690255" >
+        <def id="com.fyber.api:IFyberRewardedVideoSettings" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/enums/FyberCachingResultType" mod="1495026472000" signatureChecksum="2573158971" >
+        <def id="com.fyber.enums:FyberCachingResultType" /> 
+        <dep id="com.fyber.enums:IFyberType" type="i" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/api/IFyberBannerProvider" mod="1494836955000" signatureChecksum="1040842844" >
+        <def id="com.fyber.api:IFyberBannerProvider" /> 
+        <dep id="flash.utils:Dictionary" type="s" /> 
+        <dep id="__AS3__.vec:Vector" type="s" /> 
+        <dep id="com.fyber.api:FyberBannerSettings" type="s" /> 
+        <dep id="com.fyber.enums:FyberBannerResultType" type="s" /> 
+        <dep id="com.fyber.enums:FyberBannerPosition" type="s" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/api/IFyberInterstitialProvider" mod="1492692440000" signatureChecksum="112444301" >
+        <def id="com.fyber.api:IFyberInterstitialProvider" /> 
+        <dep id="com.fyber.api:FyberInterstitialSettings" type="s" /> 
+        <dep id="com.fyber.enums:FyberInterstitialResultType" type="s" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/api/IFyberOfferWallProvider" mod="1494226714000" signatureChecksum="1654303498" >
+        <def id="com.fyber.api:IFyberOfferWallProvider" /> 
+        <dep id="com.fyber.enums:FyberOfferWallStatusType" type="s" /> 
+        <dep id="com.fyber.api:FyberOfferWallSettings" type="s" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/api/IFyberVirtualCurrencyProvider" mod="1491315308000" signatureChecksum="3885680875" >
+        <def id="com.fyber.api:IFyberVirtualCurrencyProvider" /> 
+        <dep id="com.fyber.api:FyberVirtualCurrencySettings" type="s" /> 
+        <dep id="com.fyber.enums:FyberVirtualCurrencyResultType" type="s" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/api/IFyberRewardedVideoProvider" mod="1494226714000" signatureChecksum="3133335116" >
+        <def id="com.fyber.api:IFyberRewardedVideoProvider" /> 
+        <dep id="com.fyber.enums:FyberRewardedVideoResultType" type="s" /> 
+        <dep id="com.fyber.api:FyberRewardedVideoSettings" type="s" /> 
+        <dep id="com.fyber.api:IFyberVirtualCurrencyProvider" type="i" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/api/IFyberAdvertiserProvider" mod="1494226714000" signatureChecksum="241609120" >
+        <def id="com.fyber.api:IFyberAdvertiserProvider" /> 
+        <dep id="com.fyber.enums:FyberAdvertiserResultType" type="s" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/api/FyberProvider" mod="1501164977000" signatureChecksum="2121376305" >
+        <def id="com.fyber.api:FyberProvider" /> 
+        <dep id="com.fyber.api:FyberSingletonEnforcer" type="s" /> 
+        <dep id="com.fyber.api:FyberVirtualCurrencySettings" type="s" /> 
+        <dep id="flash.utils:Dictionary" type="s" /> 
+        <dep id="com.fyber.enums:FyberAdvertiserResultType" type="s" /> 
+        <dep id="com.fyber.api:FyberInterstitialSettings" type="s" /> 
+        <dep id="com.fyber.enums:FyberInterstitialResultType" type="s" /> 
+        <dep id="com.fyber.vos:FyberNativeLogVO" type="s" /> 
+        <dep id="com.fyber.api:FyberOfferWallSettings" type="s" /> 
+        <dep id="com.fyber.enums:FyberBannerPosition" type="s" /> 
+        <dep id="com.fyber.vos:FyberRewardedVideoSettingsVO" type="s" /> 
+        <dep id="flash.events:Event" type="s" /> 
+        <dep id="com.fyber.vos:FyberVirtualCurrencyResponseVO" type="s" /> 
+        <dep id="com.fyber.enums:FyberRewardedVideoResultType" type="s" /> 
+        <dep id="com.fyber.api:FyberRewardedVideoSettings" type="s" /> 
+        <dep id="flash.events:EventDispatcher" type="s" /> 
+        <dep id="__AS3__.vec:Vector" type="s" /> 
+        <dep id="flash.events:StatusEvent" type="s" /> 
+        <dep id="com.fyber.api:FyberFormatEnum" type="s" /> 
+        <dep id="com.fyber.enums:FyberOfferWallStatusType" type="s" /> 
+        <dep id="com.fyber.enums:FyberBannerResultType" type="s" /> 
+        <dep id="com.fyber.api:FyberBannerSettings" type="s" /> 
+        <dep id="com.fyber.enums:FyberVirtualCurrencyResultType" type="s" /> 
+        <dep id="com.fyber.api:FyberVirtualCurrencySettings" type="e" /> 
+        <dep id="com.fyber.events:FyberEventType" type="e" /> 
+        <dep id="flash.utils:Dictionary" type="e" /> 
+        <dep id="com.fyber.enums:FyberAdvertiserResultType" type="e" /> 
+        <dep id="com.fyber.util:DataConversion" type="e" /> 
+        <dep id="com.fyber.enums:FyberInterstitialResultType" type="e" /> 
+        <dep id="com.fyber.api:FyberOfferWallSettings" type="e" /> 
+        <dep id="com.fyber.enums:FyberErrorType" type="e" /> 
+        <dep id="com.fyber.vos:FyberVirtualCurrencyResponseVO" type="e" /> 
+        <dep id="trace" type="e" /> 
+        <dep id="com.fyber.enums:FyberOfferWallStatusType" type="e" /> 
+        <dep id="com.fyber.enums:FyberBannerResultType" type="e" /> 
+        <dep id="com.fyber.api:FyberCacheManager" type="e" /> 
+        <dep id="com.fyber.api:FyberSingletonEnforcer" type="e" /> 
+        <dep id="com.fyber.api:FyberBaseSettings" type="e" /> 
+        <dep id="com.fyber.enums:FyberCachingResultType" type="e" /> 
+        <dep id="com.fyber.vos:FyberNativeLogVO" type="e" /> 
+        <dep id="Error" type="e" /> 
+        <dep id="com.fyber.enums:FyberBannerPosition" type="e" /> 
+        <dep id="com.fyber.vos:FyberRewardedVideoSettingsVO" type="e" /> 
+        <dep id="com.fyber.enums:FyberRewardedVideoResultType" type="e" /> 
+        <dep id="flash.events:EventDispatcher" type="e" /> 
+        <dep id="com.fyber.api:FyberFormatEnum" type="e" /> 
+        <dep id="com.fyber.enums:FyberVirtualCurrencyResultType" type="e" /> 
+        <dep id="com.fyber.api:FyberAir" type="e" /> 
+        <dep id="com.fyber.api:IFyberBannerProvider" type="i" /> 
+        <dep id="com.fyber.api:IFyberInterstitialProvider" type="i" /> 
+        <dep id="com.fyber.api:IFyberOfferWallProvider" type="i" /> 
+        <dep id="com.fyber.api:IFyberVirtualCurrencyProvider" type="i" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="com.fyber.api:IFyberRewardedVideoProvider" type="i" /> 
+        <dep id="com.fyber.api:IFyberAdvertiserProvider" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/util/DataConversion" mod="1494226714000" signatureChecksum="1190233030" >
+        <def id="com.fyber.util:DataConversion" /> 
+        <dep id="flash.utils:Dictionary" type="s" /> 
+        <dep id="__AS3__.vec:Vector" type="s" /> 
+        <dep id="flash.utils:Dictionary" type="e" /> 
+        <dep id="XML" type="e" /> 
+        <dep id="XMLList" type="e" /> 
+        <dep id="Date" type="e" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/api/FyberRewardedVideoSettings" mod="1494226714000" signatureChecksum="928558350" >
+        <def id="com.fyber.api:FyberRewardedVideoSettings" /> 
+        <dep id="com.fyber.api:FyberBaseSettings" type="i" /> 
+        <dep id="com.fyber.api:IFyberRewardedVideoSettings" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/enums/FyberRewardedVideoResultType" mod="1495026472000" signatureChecksum="3756117323" >
+        <def id="com.fyber.enums:FyberRewardedVideoResultType" /> 
+        <dep id="com.fyber.enums:IFyberType" type="i" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/api/IFyberVirtualCurrencySettings" mod="1491929266000" signatureChecksum="3030338738" >
+        <def id="com.fyber.api:IFyberVirtualCurrencySettings" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/api/FyberVirtualCurrencySettings" mod="1491315473000" signatureChecksum="3867259950" >
+        <def id="com.fyber.api:FyberVirtualCurrencySettings" /> 
+        <dep id="com.fyber.api:FyberBaseSettings" type="i" /> 
+        <dep id="com.fyber.api:IFyberVirtualCurrencySettings" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/vos/FyberLocationVO" mod="1491812205000" signatureChecksum="3612106253" >
+        <def id="com.fyber.vos:FyberLocationVO" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/vos/FyberNativeLogVO" mod="1491315308000" signatureChecksum="1144474774" >
+        <def id="com.fyber.vos:FyberNativeLogVO" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/enums/FyberBannerPosition" mod="1494836955000" signatureChecksum="3787936657" >
+        <def id="com.fyber.enums:FyberBannerPosition" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/api/FyberFormatEnum" mod="1491315308000" signatureChecksum="1718388933" >
+        <def id="com.fyber.api:FyberFormatEnum" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/events/FyberEventType" mod="1491315308000" signatureChecksum="159801689" >
+        <def id="com.fyber.events:FyberEventType" /> 
+        <dep id="com.fyber.enums:IFyberType" type="s" /> 
+        <dep id="flash.events:Event" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/enums/FyberInterstitialResultType" mod="1495026472000" signatureChecksum="2418606892" >
+        <def id="com.fyber.enums:FyberInterstitialResultType" /> 
+        <dep id="com.fyber.enums:IFyberType" type="i" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/vos/FyberUserVO" mod="1493797623000" signatureChecksum="1225506670" >
+        <def id="com.fyber.vos:FyberUserVO" /> 
+        <dep id="flash.utils:Dictionary" type="s" /> 
+        <dep id="com.fyber.vos:FyberLocationVO" type="s" /> 
+        <dep id="flash.external:ExtensionContext" type="s" /> 
+        <dep id="Date" type="s" /> 
+        <dep id="flash.utils:Dictionary" type="e" /> 
+        <dep id="com.fyber.util:DataConversion" type="e" /> 
+        <dep id="com.fyber.vos:FyberLocationVO" type="e" /> 
+        <dep id="Date" type="e" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/api/FyberCacheManager" mod="1501164977000" signatureChecksum="2242803784" >
+        <def id="com.fyber.api:FyberCacheManager" /> 
+        <dep id="com.fyber.api:FyberSingletonEnforcer" type="s" /> 
+        <dep id="flash.utils:Dictionary" type="s" /> 
+        <dep id="flash.events:EventDispatcher" type="s" /> 
+        <dep id="com.fyber.enums:FyberCachingResultType" type="s" /> 
+        <dep id="flash.events:Event" type="s" /> 
+        <dep id="com.fyber.api:FyberSingletonEnforcer" type="e" /> 
+        <dep id="trace" type="e" /> 
+        <dep id="flash.utils:Dictionary" type="e" /> 
+        <dep id="flash.events:EventDispatcher" type="e" /> 
+        <dep id="Error" type="e" /> 
+        <dep id="com.fyber.api:FyberAir" type="e" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/api/FyberSingletonEnforcer" mod="1495026472000" signatureChecksum="1857231282" >
+        <def id="com.fyber.api:FyberSingletonEnforcer" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/enums/FyberAdvertiserResultType" mod="1495026472000" signatureChecksum="888109105" >
+        <def id="com.fyber.enums:FyberAdvertiserResultType" /> 
+        <dep id="com.fyber.enums:IFyberType" type="i" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/vos/FyberVirtualCurrencyResponseVO" mod="1491315308000" signatureChecksum="2178636986" >
+        <def id="com.fyber.vos:FyberVirtualCurrencyResponseVO" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/api/IFyberAir" mod="1501164977000" signatureChecksum="3511332122" >
+        <def id="com.fyber.api:IFyberAir" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/vos/FyberRewardedVideoSettingsVO" mod="1494226714000" signatureChecksum="3043845983" >
+        <def id="com.fyber.vos:FyberRewardedVideoSettingsVO" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/enums/FyberVirtualCurrencyResultType" mod="1491315308000" signatureChecksum="3945135560" >
+        <def id="com.fyber.enums:FyberVirtualCurrencyResultType" /> 
+        <dep id="com.fyber.enums:IFyberType" type="i" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/enums/FyberOfferWallStatusType" mod="1491315308000" signatureChecksum="605254244" >
+        <def id="com.fyber.enums:FyberOfferWallStatusType" /> 
+        <dep id="com.fyber.enums:IFyberType" type="i" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="_1cd3a7fd75e0aa55179ed137ce72633bfdf72b886e4f4aefac4d3c4a721e5558_flash_display_Sprite" mod="1501254844462" signatureChecksum="2993650721" >
+        <def id="_1cd3a7fd75e0aa55179ed137ce72633bfdf72b886e4f4aefac4d3c4a721e5558_flash_display_Sprite" /> 
+        <dep id="flash.system:Security" type="e" /> 
+        <dep id="flash.display:Sprite" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/api/FyberAir" mod="1501164977000" signatureChecksum="3697034247" >
+        <def id="com.fyber.api:FyberAir" /> 
+        <dep id="com.fyber.api:FyberSingletonEnforcer" type="s" /> 
+        <dep id="flash.utils:Dictionary" type="s" /> 
+        <dep id="flash.events:EventDispatcher" type="s" /> 
+        <dep id="com.fyber.vos:FyberUserVO" type="s" /> 
+        <dep id="flash.external:ExtensionContext" type="s" /> 
+        <dep id="flash.events:Event" type="s" /> 
+        <dep id="com.fyber.api:FyberSingletonEnforcer" type="e" /> 
+        <dep id="flash.system:Capabilities" type="e" /> 
+        <dep id="trace" type="e" /> 
+        <dep id="com.fyber.events:FyberEventType" type="e" /> 
+        <dep id="flash.utils:Dictionary" type="e" /> 
+        <dep id="flash.events:EventDispatcher" type="e" /> 
+        <dep id="flash.events:StatusEvent" type="e" /> 
+        <dep id="com.fyber.api:FyberProvider" type="e" /> 
+        <dep id="Error" type="e" /> 
+        <dep id="com.fyber.vos:FyberUserVO" type="e" /> 
+        <dep id="flash.external:ExtensionContext" type="e" /> 
+        <dep id="com.fyber.enums:FyberErrorType" type="e" /> 
+        <dep id="com.fyber.api:IFyberAir" type="i" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/enums/FyberErrorType" mod="1491315308000" signatureChecksum="2584199635" >
+        <def id="com.fyber.enums:FyberErrorType" /> 
+        <dep id="com.fyber.enums:IFyberType" type="i" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <digests>
+        <digest type="SHA-256" signed="false" value="1f2ac83d237c6ba4164d8b86b608221e3a61c940be5456fd94147acd9e38c7a2"   />
+      </digests>
+    </library>
+  </libraries>
+  <files>
+  </files>
+</swc>

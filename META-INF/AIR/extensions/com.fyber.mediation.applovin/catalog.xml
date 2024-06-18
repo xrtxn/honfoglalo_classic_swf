@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding ="utf-8"?>
+<swc xmlns="http://www.adobe.com/flash/swccatalog/9">
+  <versions>
+    <swc version="1.2" />
+    <flex version="4.16.0" build="20170305" minimumSupportedVersion="3.0.0" />
+  </versions>
+  <features>
+    <feature-script-deps />
+    <feature-files />
+  </features>
+  <libraries>
+    <library path="library.swf">
+      <script name="_cf0b970070bb07098dea0caadfc25e047d263cdb89e8ab814253368c29ce8e9b_flash_display_Sprite" mod="1504011290857" signatureChecksum="1486322603" >
+        <def id="_cf0b970070bb07098dea0caadfc25e047d263cdb89e8ab814253368c29ce8e9b_flash_display_Sprite" /> 
+        <dep id="flash.system:Security" type="e" /> 
+        <dep id="flash.display:Sprite" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/mediation/applovin/FyberMediationApplovin" mod="1498569644000" signatureChecksum="1807693663" >
+        <def id="com.fyber.mediation.applovin:FyberMediationApplovin" /> 
+        <dep id="flash.external:ExtensionContext" type="s" /> 
+        <dep id="flash.external:ExtensionContext" type="e" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <digests>
+        <digest type="SHA-256" signed="false" value="fdbee4de6889aefca7f8442e427aa2353d259a9def031feae373f2f7db8d406d"   />
+      </digests>
+    </library>
+  </libraries>
+  <files>
+  </files>
+</swc>

@@ -1,0 +1,452 @@
+{
+  "SELHALF": {
+    "title": "",
+    "npc": "BLACKSMITH",
+    "bg": "PAPER",
+    "status": {
+      "START": {
+        "story": [
+          {
+            "text": "tmission_selhalf_start_1",
+            "direction": "left",
+            "state": "pause",
+            "speaker": "NPC"
+          }
+        ]
+      },
+      "FIRSTRUN": {
+        "story": [
+          {
+            "text": "tmission_selhalf_start_1",
+            "direction": "left",
+            "state": "pause",
+            "speaker": "NPC"
+          }
+        ]
+      },
+      "RUNNING": {
+        "story": [
+          {
+            "text": "tmission_selhalf_start_1",
+            "direction": "left",
+            "state": "pause",
+            "speaker": "NPC"
+          }
+        ]
+      },
+      "END": {
+        "story": [
+          {
+            "text": "tmission_generic_end_1",
+            "direction": "left",
+            "state": "pause",
+            "speaker": "NPC"
+          }
+        ]
+      }
+    },
+    "tasks": [
+      {
+        "text": "tmission_selhalf_task_1"
+      }
+    ]
+  },
+	"TIPRANG": {
+    "title": "",
+    "npc": "PROFESSOR",
+    "bg": "PAPER",
+    "status": {
+      "START": {
+        "story": [
+          {
+            "text": "tmission_tiprang_start_1",
+            "direction": "left",
+            "state": "pause",
+            "speaker": "NPC"
+          }
+        ]
+      },
+      "FIRSTRUN": {
+        "story": [
+          {
+            "text": "tmission_tiprang_start_1",
+            "direction": "left",
+            "state": "pause",
+            "speaker": "NPC"
+          }
+        ]
+      },
+      "RUNNING": {
+        "story": [
+          {
+            "text": "tmission_tiprang_start_1",
+            "direction": "left",
+            "state": "pause",
+            "speaker": "NPC"
+          }
+        ]
+      },
+      "END": {
+        "story": [
+          {
+            "text": "tmission_generic_end_1",
+            "direction": "left",
+            "state": "pause",
+            "speaker": "NPC"
+          }
+        ]
+      }
+    },
+    "tasks": [
+      {
+        "text": "tmission_tiprang_task_1"
+      }
+    ]
+  },
+	"SELANSW": {
+    "title": "",
+    "npc": "INNKEEPER",
+    "bg": "PAPER",
+    "status": {
+      "START": {
+        "story": [
+          {
+            "text": "tmission_selansw_start_1",
+            "direction": "left",
+            "state": "pause",
+            "speaker": "NPC"
+          }
+        ]
+      },
+      "FIRSTRUN": {
+        "story": [
+          {
+            "text": "tmission_selansw_start_1",
+            "direction": "left",
+            "state": "pause",
+            "speaker": "NPC"
+          }
+        ]
+      },
+      "RUNNING": {
+        "story": [
+          {
+            "text": "tmission_selansw_start_1",
+            "direction": "left",
+            "state": "pause",
+            "speaker": "NPC"
+          }
+        ]
+      },
+      "END": {
+        "story": [
+          {
+            "text": "tmission_generic_end_1",
+            "direction": "left",
+            "state": "pause",
+            "speaker": "NPC"
+          }
+        ]
+      }
+    },
+    "tasks": [
+      {
+        "text": "tmission_selansw_task_1"
+      }
+    ]
+  },
+	"TIPAVER": {
+    "title": "",
+    "npc": "PET_MERCHANT",
+    "bg": "PAPER",
+    "status": {
+      "START": {
+        "story": [
+          {
+            "text": "tmission_tipaver_start_1",
+            "direction": "left",
+            "state": "pause",
+            "speaker": "NPC"
+          }
+        ]
+      },
+      "FIRSTRUN": {
+        "story": [
+          {
+            "text": "tmission_tipaver_start_1",
+            "direction": "left",
+            "state": "pause",
+            "speaker": "NPC"
+          }
+        ]
+      },
+      "RUNNING": {
+        "story": [
+          {
+            "text": "tmission_tipaver_start_1",
+            "direction": "left",
+            "state": "pause",
+            "speaker": "NPC"
+          }
+        ]
+      },
+      "END": {
+        "story": [
+          {
+            "text": "tmission_generic_end_1",
+            "direction": "left",
+            "state": "pause",
+            "speaker": "NPC"
+          }
+        ]
+      }
+    },
+    "tasks": [
+      {
+        "text": "tmission_tipaver_task_1"
+      }
+    ]
+  },
+	"AIRBORNE": {
+    "title": "",
+    "npc": "WIZARD",
+    "bg": "PAPER",
+    "status": {
+      "START": {
+        "story": [
+          {
+            "text": "tmission_airborne_start_1",
+            "direction": "left",
+            "state": "pause",
+            "speaker": "NPC"
+          }
+        ]
+      },
+      "FIRSTRUN": {
+        "story": [
+          {
+            "text": "tmission_airborne_start_1",
+            "direction": "left",
+            "state": "pause",
+            "speaker": "NPC"
+          }
+        ]
+      },
+      "RUNNING": {
+        "story": [
+          {
+            "text": "tmission_airborne_start_1",
+            "direction": "left",
+            "state": "pause",
+            "speaker": "NPC"
+          }
+        ]
+      },
+      "END": {
+        "story": [
+          {
+            "text": "tmission_generic_end_1",
+            "direction": "left",
+            "state": "pause",
+            "speaker": "NPC"
+          }
+        ]
+      }
+    },
+    "tasks": [
+      {
+        "text": "tmission_airborne_task_1"
+      }
+    ]
+  },
+	"SUBJECT": {
+    "title": "",
+    "npc": "GENERAL",
+    "bg": "PAPER",
+    "status": {
+      "START": {
+        "story": [
+          {
+            "text": "tmission_subject_start_1",
+            "direction": "left",
+            "state": "pause",
+            "speaker": "NPC"
+          }
+        ]
+      },
+      "FIRSTRUN": {
+        "story": [
+          {
+            "text": "tmission_subject_start_1",
+            "direction": "left",
+            "state": "pause",
+            "speaker": "NPC"
+          }
+        ]
+      },
+      "RUNNING": {
+        "story": [
+          {
+            "text": "tmission_subject_start_1",
+            "direction": "left",
+            "state": "pause",
+            "speaker": "NPC"
+          }
+        ]
+      },
+      "END": {
+        "story": [
+          {
+            "text": "tmission_generic_end_1",
+            "direction": "left",
+            "state": "pause",
+            "speaker": "NPC"
+          }
+        ]
+      }
+    },
+    "tasks": [
+      {
+        "text": "tmission_subject_task_1"
+      }
+    ]
+  },
+	"FORTRESS": {
+    "title": "",
+    "npc": "ARCHITECT",
+    "bg": "PAPER",
+    "status": {
+      "START": {
+        "story": [
+          {
+            "text": "tmission_fortress_start_1",
+            "direction": "left",
+            "state": "pause",
+            "speaker": "NPC"
+          }
+        ]
+      },
+      "FIRSTRUN": {
+        "story": [
+          {
+            "text": "tmission_fortress_start_1",
+            "direction": "left",
+            "state": "pause",
+            "speaker": "NPC"
+          }
+        ]
+      },
+      "RUNNING": {
+        "story": [
+          {
+            "text": "tmission_fortress_start_1",
+            "direction": "left",
+            "state": "pause",
+            "speaker": "NPC"
+          }
+        ]
+      },
+      "END": {
+        "story": [
+          {
+            "text": "tmission_generic_end_1",
+            "direction": "left",
+            "state": "pause",
+            "speaker": "NPC"
+          }
+        ]
+      }
+    },
+    "tasks": [
+      {
+        "text": "tmission_fortress_task_1"
+      }
+    ]
+  },
+	"TEST": {
+    "title": "",
+    "npc": "GENERAL",
+    "bg": "DEFAULT",
+    "status": {
+      "START": {
+        "story": [
+          {
+            "text": "tmission_selhalf_start_1",
+            "direction": "left",
+            "state": "play",
+            "speaker": "NPC"
+          },
+          {
+            "text": "tmission_selhalf_start_2",
+            "direction": "right",
+            "state": "pause",
+            "speaker": "AVATAR"
+          }
+        ]
+      },
+      "FIRSTRUN": {
+        "bg": "NOBG",
+        "npc": "MESSENGER",
+        "story": [
+          {
+            "text": "tmission_selhalf_firstrun_1",
+            "direction": "left",
+            "state": "play",
+            "speaker": "NPC"
+          },
+          {
+            "text": "tmission_selhalf_firstrun_2",
+            "direction": "right",
+            "state": "pause",
+            "speaker": "AVATAR"
+          }
+        ]
+      },
+      "RUNNING": {
+        "bg": "NOBG",
+        "npc": "MESSENGER",
+        "story": [
+          {
+            "text": "tmission_selhalf_running_1",
+            "direction": "left",
+            "state": "play",
+            "speaker": "NPC"
+          },
+          {
+            "text": "tmission_selhalf_running_2",
+            "direction": "right",
+            "state": "pause",
+            "speaker": "AVATAR"
+          }
+        ]
+      },
+      "END": {
+        "story": [
+          {
+            "text": "tmission_selhalf_end_1",
+            "direction": "left",
+            "state": "play",
+            "speaker": "NPC"
+          },
+          {
+            "text": "tmission_selhalf_end_2",
+            "direction": "right",
+            "state": "pause",
+            "speaker": "AVATAR"
+          }
+        ]
+      }
+    },
+    "tasks": [
+      {
+        "text": "tmission_selhalf_task_1"
+      },
+      {
+        "text": "tmission_selhalf_task_2"
+      },
+      {
+        "text": "tmission_selhalf_task_3"
+      }
+    ]
+  }
+}

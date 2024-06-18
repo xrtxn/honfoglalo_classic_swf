@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<platform xmlns='http://ns.adobe.com/air/extension/13.0'>
+  <packagedDependencies>
+    <packagedDependency>dagger-2.7.jar</packagedDependency>
+    <packagedDependency>eventbus-2.2.1.jar</packagedDependency>
+    <packagedDependency>javax.inject-1.jar</packagedDependency>
+    <packagedDependency>rxjava-1.2.0.jar</packagedDependency>
+    <packagedDependency>vungle-5.1.0-r1-classes.jar</packagedDependency>
+    <packagedDependency>vungle-5.1.0-r1-publisher-sdk-android-5.1.0.jar</packagedDependency>
+  </packagedDependencies>
+  <packagedResources />
+</platform>
