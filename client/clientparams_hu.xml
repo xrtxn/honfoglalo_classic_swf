@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CONFIG>
-  <SERVER SERVERADDRESS="honfogalo.hu" XSOCKETPORT="0"/>
-  <LANG ID="hu" JSON="app:/client/clientparams_hu.lang" />
-  <EXTDATA URIBASE="https://honfoglalo.hu/" />
-  <SETTINGS DEFAULTMAP="HU" RELEASEVERSION="1" COMMLOG="0" SHOWFPS="0" FPS="30" NOANIMS="XXX" BANK_BOARD_GAME="1" NOFITRECOLLECTLIMIT="60" SEASON="0"  />
+  <SERVER SERVERADDRESS="localhost" XSOCKETPORT="0"/>
+  <LANG ID="hu" JSON="client/clientparams_hu.lang" />
+  <EXTDATA URIBASE="http://localhost:8080/" />
+  <SETTINGS DEFAULTMAP="HU" RELEASEVERSION="0" COMMLOG="1" SHOWFPS="0" FPS="60" NOANIMS="XXX" BANK_BOARD_GAME="1" NOFITRECOLLECTLIMIT="60" SEASON="0"  />
+  <SEMU ENABLED="1" TESTMODE="VILLAGE"/>
 </CONFIG>
