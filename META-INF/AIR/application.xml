@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<application xmlns="http://ns.adobe.com/air/application/32.0">
+  <id>com.triviador.trhu</id>
+  <versionNumber>1.204.166</versionNumber>
+  <versionLabel>20190416</versionLabel>
+  <filename>Honfoglaló</filename>
+  <description/>
+  <name>Honfoglaló</name>
+  <copyright/>
+  <initialWindow>
+    <content>trclient11_android_hun.swf</content>
+    <systemChrome>standard</systemChrome>
+    <transparent>false</transparent>
+    <visible>true</visible>
+    <fullScreen>true</fullScreen>
+    <aspectRatio>landscape</aspectRatio>
+    <renderMode>direct</renderMode>
+    <autoOrients>true</autoOrients></initialWindow>
+  <icon>
+    <image48x48>AppIconsForPublish/48x48_hu.png</image48x48>
+    <image96x96>AppIconsForPublish/96x96_hu.png</image96x96></icon>
+  <customUpdateUI>false</customUpdateUI>
+  <allowBrowserInvocation>false</allowBrowserInvocation>
+  <android>
+    <manifestAdditions><![CDATA[<manifest android:installLocation="auto">
+      <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="26" />
+      <uses-permission android:name="android.permission.INTERNET" />
+      <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+      <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+      <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+      <uses-permission android:name="android.permission.WAKE_LOCK" />
+      <uses-permission android:name="com.android.vending.BILLING" />
+      <uses-permission android:name="android.permission.VIBRATE" />
+      <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+	  <!-- this permissions is required by CoreMobile, if you use notifications and want them to survive a reboot -->
+	  <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+
+	  <!-- The WakeLock permission is required to use local notifications. -->
+	  <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+     <!-- Google Play Services - Advertiser -->
+      <uses-permission android:name="android.permission.READ_GSERVICES"/>
+
+      <uses-feature android:required="true" android:name="android.hardware.touchscreen.multitouch"/>
+      <application android:allowBackup="true" android:hardwareAccelerated="true" android:debuggable="false">
+          <meta-data
+           android:name="com.google.android.gms.version"
+           android:value="@integer/google_play_services_version"/>
+
+          <!-- Our activity -->
+          <activity android:exported="true" android:excludeFromRecents="false">
+
+              <intent-filter>
+                  <action android:name="android.intent.action.MAIN"/>
+                  <category android:name="android.intent.category.LAUNCHER"/>
+              </intent-filter>
+              <intent-filter>
+                  <action android:name="android.intent.action.VIEW"/>
+                  <category android:name="android.intent.category.BROWSABLE"/>
+                  <category android:name="android.intent.category.DEFAULT"/>
+              </intent-filter>
+          </activity>
+		  <!-- This receiver is required by CoreMobile -->
+			<receiver android:name="com.milkmangames.extensions.android.CMLocalNotificationReceiver"/>
+
+			<!-- This receiver is required by CoreMobile, if you use notifications and want them to survive a reboot -->
+			<receiver android:name="com.milkmangames.extensions.android.CMBootReceiver">
+				<intent-filter>
+					<action android:name="android.intent.action.BOOT_COMPLETED"/>
+				</intent-filter>
+			</receiver>
+
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="fb162299777139216"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationName" android:value="Honfoglaló" />
+        <activity android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:label="Honfoglaló" />
+        <provider android:authorities="com.facebook.app.FacebookContentProvider162299777139216" android:name="com.facebook.FacebookContentProvider" android:exported="true" />
+
+         <!-- Fyber Activities and Services -->
+        <activity android:name="com.fyber.ane.wrapper.FYBAirOfferWallActivity" android:configChanges="screenSize|orientation" />
+        <activity android:name="com.fyber.ane.wrapper.FYBAirOfferWallProxy" android:configChanges="screenSize|orientation" />
+        <activity android:name="com.fyber.ads.ofw.OfferWallActivity" android:configChanges="screenSize|orientation" />
+        <activity android:name="com.fyber.ads.interstitials.InterstitialActivity" android:configChanges="screenSize|orientation"
+          android:theme="@android:style/Theme.Translucent" />
+        <activity
+          android:name="com.fyber.ane.wrapper.FYBAirRewardedVideoActivity"
+          android:configChanges="screenSize|orientation"
+          android:hardwareAccelerated="true"
+          android:theme="@android:style/Theme.Translucent" />
+
+        <service android:name="com.fyber.cache.CacheVideoDownloadService" android:exported="false" />
+
+        <!-- Applovin Activity -->
+        <meta-data android:name="applovin.sdk.key" android:value="H4fQA9qatQA83aCB7ZQ7CE6FZT1fXhIpmyDx51VzRg5VFIhMs6U3LaIw3JZa0tOnpbhvdCs4tyZ6FFT5Mz8iTR" />
+        <meta-data android:name="applovin.sdk.verbose_logging" android:value="false" /><!-- turn this on for logging -->
+        <activity android:name="com.applovin.adview.AppLovinInterstitialActivity" />
+        <activity android:name="com.applovin.adview.AppLovinConfirmationActivity" />
+
+        <!-- Adcolony Activity -->
+        <activity android:name="com.adcolony.sdk.AdColonyInterstitialActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" />
+        <activity android:name="com.adcolony.sdk.AdColonyAdViewActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" />
+
+        <!-- Chartboost activity -->
+        <activity android:name="com.chartboost.sdk.CBImpressionActivity" android:excludeFromRecents="true" android:hardwareAccelerated="true"
+          android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" android:configChanges="keyboardHidden|orientation|screenSize" />
+
+
+        <!-- Vungle actvity -->
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+
+        <!-- Required Activities for playback of Vungle video ads -->
+        <activity android:name="com.vungle.publisher.VideoFullScreenAdActivity"
+          android:configChanges="keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        <activity android:name="com.vungle.publisher.MraidFullScreenAdActivity"
+          android:configChanges="keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+
+      </application>
+    </manifest>]]></manifestAdditions> 
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!-- Indicates if the app contains video or not. Necessary for ordering of video planes with graphics plane, especially in Jellybean - if you app does video this must be set to true - valid values are true or false -->
+     <containsVideo>true</containsVideo>
+  </android>
+  <supportedLanguages>en</supportedLanguages>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <extensions>
+    <extensionID>com.milkmangames.extensions.AndroidIAB</extensionID>
+    <extensionID>com.milkmangames.extensions.GoViral</extensionID>
+    <extensionID>com.fyber.ane</extensionID>
+    <extensionID>com.fyber.mediation.adcolony</extensionID>
+    <extensionID>com.fyber.mediation.vungle</extensionID>
+    <extensionID>com.fyber.playservices</extensionID>
+    <extensionID>com.fyber.mediation.applovin</extensionID>
+    <extensionID>com.fyber.mediation.chartboost</extensionID>
+    <extensionID>com.milkmangames.extensions.CoreMobile</extensionID>
+  </extensions>
+</application>

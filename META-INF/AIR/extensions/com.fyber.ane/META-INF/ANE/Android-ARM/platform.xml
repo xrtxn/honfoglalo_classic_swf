@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<platform xmlns='http://ns.adobe.com/air/extension/13.0'>
+  <packagedDependencies>
+    <packagedDependency>fyber-annotations-1.3.0.jar</packagedDependency>
+    <packagedDependency>fyber-sdk-8.14.0-classes.jar</packagedDependency>
+  </packagedDependencies>
+  <packagedResources />
+</platform>

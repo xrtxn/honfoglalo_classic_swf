@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<extension xmlns='http://ns.adobe.com/air/extension/13.0'>
+  <id>com.fyber.mediation.chartboost</id>
+  <versionNumber>8.12.2</versionNumber>
+  <platforms>
+    <platform name='Android-ARM'>
+      <applicationDeployment>
+        <nativeLibrary>extension.jar</nativeLibrary>
+        <initializer>com.fyber.mediation.chartboost.ChartboostExtension</initializer>
+      </applicationDeployment>
+    </platform>
+    <platform name='default'>
+      <applicationDeployment />
+    </platform>
+  </platforms>
+</extension>

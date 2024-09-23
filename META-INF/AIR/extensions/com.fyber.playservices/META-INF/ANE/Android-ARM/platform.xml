@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<platform xmlns='http://ns.adobe.com/air/extension/13.0'>
+  <packagedDependencies>
+    <packagedDependency>play-services-ads-lite-10.2.6-classes.jar</packagedDependency>
+    <packagedDependency>play-services-basement-10.2.6-classes.jar</packagedDependency>
+    <packagedDependency>support-annotations-25.2.0.jar</packagedDependency>
+    <packagedDependency>support-compat-25.2.0-classes.jar</packagedDependency>
+    <packagedDependency>support-core-ui-25.2.0-classes.jar</packagedDependency>
+    <packagedDependency>support-core-utils-25.2.0-classes.jar</packagedDependency>
+    <packagedDependency>support-fragment-25.2.0-classes.jar</packagedDependency>
+    <packagedDependency>support-media-compat-25.2.0-classes.jar</packagedDependency>
+    <packagedDependency>support-v4-25.2.0-classes.jar</packagedDependency>
+  </packagedDependencies>
+  <packagedResources>
+    <packagedResource>
+      <packageName>com.google.android.gms</packageName>
+      <folderName>com.google.android.gms-res</folderName>
+    </packagedResource>
+    <packagedResource>
+      <packageName>com.google.android.gms.ads</packageName>
+      <folderName>com.google.android.gms.ads-res</folderName>
+    </packagedResource>
+  </packagedResources>
+</platform>

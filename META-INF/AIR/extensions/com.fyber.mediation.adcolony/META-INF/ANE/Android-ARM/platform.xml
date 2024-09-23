@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<platform xmlns='http://ns.adobe.com/air/extension/13.0'>
+  <packagedDependencies>
+    <packagedDependency>adcolony-3.2.1-r1-adcolony.jar</packagedDependency>
+    <packagedDependency>adcolony-3.2.1-r1-classes.jar</packagedDependency>
+  </packagedDependencies>
+  <packagedResources />
+</platform>

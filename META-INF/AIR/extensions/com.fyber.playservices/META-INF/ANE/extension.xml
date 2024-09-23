@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<extension xmlns='http://ns.adobe.com/air/extension/13.0'>
+  <id>com.fyber.playservices</id>
+  <versionNumber>10.2.6</versionNumber>
+  <platforms>
+    <platform name='Android-ARM'>
+      <applicationDeployment>
+        <nativeLibrary>extension.jar</nativeLibrary>
+        <initializer>com.fyber.playservices.PlayservicesExtension</initializer>
+      </applicationDeployment>
+    </platform>
+  </platforms>
+</extension>

@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<extension xmlns='http://ns.adobe.com/air/extension/13.0'>
+  <id>com.fyber.ane</id>
+  <versionNumber>8.14.0</versionNumber>
+  <platforms>
+    <platform name='iPhone-ARM'>
+      <applicationDeployment>
+        <nativeLibrary>sdk.a</nativeLibrary>
+        <initializer>sdkInitializer</initializer>
+        <finalizer>sdkFinalizer</finalizer>
+      </applicationDeployment>
+    </platform>
+    <platform name='Android-ARM'>
+      <applicationDeployment>
+        <nativeLibrary>extension.jar</nativeLibrary>
+        <initializer>com.fyber.ane.FyberExtension</initializer>
+      </applicationDeployment>
+    </platform>
+    <platform name='default'>
+      <applicationDeployment />
+    </platform>
+  </platforms>
+</extension>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding ="utf-8"?>
+<swc xmlns="http://www.adobe.com/flash/swccatalog/9">
+  <versions>
+    <swc version="1.2" />
+    <flex version="4.16.0" build="20170305" minimumSupportedVersion="3.0.0" />
+  </versions>
+  <features>
+    <feature-script-deps />
+    <feature-files />
+  </features>
+  <libraries>
+    <library path="library.swf">
+      <script name="_f3fe12652504c4fbef7eb1cdd9cd04261602c89222c09af682b840c6d3f1b141_flash_display_Sprite" mod="1506330089007" signatureChecksum="2407692907" >
+        <def id="_f3fe12652504c4fbef7eb1cdd9cd04261602c89222c09af682b840c6d3f1b141_flash_display_Sprite" /> 
+        <dep id="flash.system:Security" type="e" /> 
+        <dep id="flash.display:Sprite" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/fyber/mediation/adcolony/FyberMediationAdcolony" mod="1498569643000" signatureChecksum="1624389423" >
+        <def id="com.fyber.mediation.adcolony:FyberMediationAdcolony" /> 
+        <dep id="flash.external:ExtensionContext" type="s" /> 
+        <dep id="flash.external:ExtensionContext" type="e" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <digests>
+        <digest type="SHA-256" signed="false" value="1ea634a68c6fe715a8da8583888f0b89969a7117f879cafb420690222fac6b9f"   />
+      </digests>
+    </library>
+  </libraries>
+  <files>
+  </files>
+</swc>

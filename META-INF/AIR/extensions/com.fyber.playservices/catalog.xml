@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding ="utf-8"?>
+<swc xmlns="http://www.adobe.com/flash/swccatalog/9">
+  <versions>
+    <swc version="1.2" />
+    <flex version="4.9.1" build="1447119" minimumSupportedVersion="3.0.0" />
+  </versions>
+  <features>
+    <feature-script-deps />
+    <feature-files />
+  </features>
+  <libraries>
+    <library path="library.swf">
+      <script name="com/fyber/playservices/FyberPlayServices" mod="1477393309000" signatureChecksum="783233302" >
+        <def id="com.fyber.playservices:FyberPlayServices" /> 
+        <dep id="flash.external:ExtensionContext" type="s" /> 
+        <dep id="flash.external:ExtensionContext" type="e" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="_8eb8cf1ee1a300d6fa04bc053196a14990ccb844f0d9d2b85769c642d1bb7232_flash_display_Sprite" mod="1495273116322" signatureChecksum="2694609527" >
+        <def id="_8eb8cf1ee1a300d6fa04bc053196a14990ccb844f0d9d2b85769c642d1bb7232_flash_display_Sprite" /> 
+        <dep id="flash.system:Security" type="e" /> 
+        <dep id="flash.display:Sprite" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <digests>
+        <digest type="SHA-256" signed="false" value="d8c580bd74a05e232b666ce15ac9d698c2240b45684bf7112958b51264d7e8a2"   />
+      </digests>
+    </library>
+  </libraries>
+  <files>
+  </files>
+</swc>
