@@ -1,0 +1,21 @@
+{
+	"config": "air",
+	"compilerOptions": {
+		"source-path": [
+			"src"
+		],
+		"library-path": [
+			"libs"
+		],
+		"output": "bin/ranklist.swf",
+		"default-background-color": "#383838",
+		"default-frame-rate": 60,
+		"default-size": {
+			"width": 960,
+			"height": 960
+		},
+		"swf-version": 24
+	},
+	"application": "src/ranklist-app.xml",
+	"mainClass": "null"
+}

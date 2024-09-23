@@ -1,0 +1,21 @@
+{
+	"config": "air",
+	"compilerOptions": {
+		"source-path": [
+			"src"
+		],
+		"library-path": [
+			"libs"
+		],
+		"output": "bin/houses.swf",
+		"default-background-color": "#ffffff",
+		"default-frame-rate": 60,
+		"default-size": {
+			"width": 300,
+			"height": 300
+		},
+		"swf-version": 24
+	},
+	"application": "src/houses-app.xml",
+	"mainClass": "null"
+}

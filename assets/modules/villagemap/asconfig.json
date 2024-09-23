@@ -1,0 +1,21 @@
+{
+	"config": "air",
+	"compilerOptions": {
+		"source-path": [
+			"src"
+		],
+		"library-path": [
+			"libs"
+		],
+		"output": "bin/villagemap.swf",
+		"default-background-color": "#ab6a2b",
+		"default-frame-rate": 60,
+		"default-size": {
+			"width": 800,
+			"height": 800
+		},
+		"swf-version": 18
+	},
+	"application": "src/villagemap-app.xml",
+	"mainClass": "villagemap"
+}

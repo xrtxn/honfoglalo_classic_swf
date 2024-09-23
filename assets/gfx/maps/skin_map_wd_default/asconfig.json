@@ -1,0 +1,21 @@
+{
+	"config": "air",
+	"compilerOptions": {
+		"source-path": [
+			"src"
+		],
+		"library-path": [
+			"libs"
+		],
+		"output": "bin/skinmapwddefault.swf",
+		"default-background-color": "#ffffff",
+		"default-frame-rate": 24,
+		"default-size": {
+			"width": 550,
+			"height": 550
+		},
+		"swf-version": 28
+	},
+	"application": "src/skinmapwddefault-app.xml",
+	"mainClass": "null"
+}

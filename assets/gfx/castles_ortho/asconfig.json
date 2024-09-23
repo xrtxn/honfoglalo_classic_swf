@@ -1,0 +1,21 @@
+{
+	"config": "air",
+	"compilerOptions": {
+		"source-path": [
+			"src"
+		],
+		"library-path": [
+			"libs"
+		],
+		"output": "bin/castlesortho.swf",
+		"default-background-color": "#ffffff",
+		"default-frame-rate": 60,
+		"default-size": {
+			"width": 400,
+			"height": 400
+		},
+		"swf-version": 24
+	},
+	"application": "src/castlesortho-app.xml",
+	"mainClass": "null"
+}

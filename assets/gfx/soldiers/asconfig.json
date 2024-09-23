@@ -1,0 +1,21 @@
+{
+	"config": "air",
+	"compilerOptions": {
+		"source-path": [
+			"src"
+		],
+		"library-path": [
+			"libs"
+		],
+		"output": "bin/soldiers.swf",
+		"default-background-color": "#ffffff",
+		"default-frame-rate": 60,
+		"default-size": {
+			"width": 200,
+			"height": 200
+		},
+		"swf-version": 24
+	},
+	"application": "src/soldiers-app.xml",
+	"mainClass": "null"
+}

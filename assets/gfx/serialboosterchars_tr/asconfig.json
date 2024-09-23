@@ -1,0 +1,21 @@
+{
+	"config": "air",
+	"compilerOptions": {
+		"source-path": [
+			"src"
+		],
+		"library-path": [
+			"libs"
+		],
+		"output": "bin/serialboostercharstr.swf",
+		"default-background-color": "#ffffff",
+		"default-frame-rate": 24,
+		"default-size": {
+			"width": 550,
+			"height": 550
+		},
+		"swf-version": 14
+	},
+	"application": "src/serialboostercharstr-app.xml",
+	"mainClass": "null"
+}
