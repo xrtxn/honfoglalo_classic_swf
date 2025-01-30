@@ -11,10 +11,10 @@ package
             super();
         }
 
-        public function Start(arootmc:MovieClip, aloadermc:MovieClip, abootparams:Object):*
+        public function Start(arootmc:MovieClip, abootparams:Object):*
         {
             abootparams.syscodemc = this;
-            SysInit.StartLoading(arootmc, aloadermc, abootparams);
+            SysInit.StartLoading(arootmc, abootparams);
         }
     }
 }

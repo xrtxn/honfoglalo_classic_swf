@@ -12,21 +12,17 @@ package syscode
     {
         private static var rootmc:MovieClip;
 
-        private static var loadermc:Object = null;
-
-        public static function StartLoading(arootmc:MovieClip, aloadermc:Object, abootparams:Object):*
+        public static function StartLoading(arootmc:MovieClip, abootparams:Object):*
         {
             Sys.Init();
             Config.Init(arootmc.loaderInfo, abootparams);
             Aligner.Init(arootmc.stage.stageWidth, arootmc.stage.stageHeight);
             rootmc = arootmc;
-            loadermc = aloadermc;
             Platform.Init(SysInit.rootmc);
             DBG.Trace("SysInit.StartLoading: mobile: " + Config.bootparams.mobile);
             if (Config.bootparams.clientparams !== undefined && Config.bootparams.clientparams != "")
             {
                 DBG.Trace("Loading clientparams...");
-                loadermc.PrepareModule("clientparams");
                 Config.LoadClientParams(Config.bootparams.clientparams, OnClientParamsLoaded);
             }
             else
@@ -39,51 +35,40 @@ package syscode
         {
             DBG.Trace("clientparams loaded.");
             Util.SendProstatData("clientparams");
-            if (updateprogress)
-            {
-                loadermc.FinishCurrentModule();
-            }
             trace("Setting framereate to " + Config.framerate + " FPS");
             rootmc.stage.frameRate = Config.framerate;
             Modules.Init();
             Sys.LoadPolicyFiles();
-            DBG.AddErrorLogger(SysInit.rootmc.loaderInfo);
-            DBG.AddErrorLogger(SysInit.loadermc.loaderInfo);
-            DBG.AddErrorLogger(Config.bootparams.syscodemc.loaderInfo);
-            loadermc.PrepareModule("lang");
+            // DBG.AddErrorLogger(SysInit.rootmc.loaderInfo);
+            // DBG.AddErrorLogger(Config.bootparams.syscodemc.loaderInfo);
             Lang.LoadLangData(Config.langjson, LangLoaded);
             Extdata.LoadCountries(null);
             Help.LoadData(Config.extdatauribase + "dat/help.json?ut=" + new Date().getTime());
             var prot:String = Config.android ? "app:/" : "";
             if (Config.siteid.substr(0, 1) == "x" || Config.siteid.length != 2)
             {
-                ImageCache.AddImagePack(prot + "client/assets/flags/xx/all.zip", "client/assets/flags/xx/");
+                ImageCache.AddImagePack(prot + "../assets/flags/xx/all.zip", "../assets/flags/xx/");
             }
             else
             {
-                ImageCache.AddImagePack(prot + "client/assets/flags/" + Config.siteid + "/all.zip", "client/assets/flags/" + Config.siteid + "/");
+                ImageCache.AddImagePack(prot + "../assets/flags/" + Config.siteid + "/all.zip", "../assets/flags/" + Config.siteid + "/");
             }
+            //todo 
+            OnLoadingFinished();
         }
 
         public static function LangLoaded(asuccess:Boolean):*
         {
-            if (!asuccess)
-            {
-                loadermc.FatalError("Error loading translations. Please check network connection.");
-                TweenMax.delayedCall(5, Platform.ExitApplication);
-                return;
-            }
             Util.SendProstatData("lang");
-            loadermc.FinishCurrentModule();
             var fontsurl:* = (Config.mobile || Boolean(Config.bootparams.air) ? Config.bootparams.appbaseurl + "assets/modules/" : "") + "fonts.swf";
-            loadermc.LoadSWF("fonts", fontsurl, OnFontsLoaded);
+            // loadermc.LoadSWF("fonts", fontsurl, OnFontsLoaded);
         }
 
         public static function OnFontsLoaded(aswf:Object):*
         {
             Modules.SetModuleSwf("fonts", aswf);
             DBG.Trace("Fonts loaded.");
-            loadermc.LoadSWF("uibase", Modules.GetModuleUrl("uibase"), OnUIBaseLoaded);
+            // loadermc.LoadSWF("uibase", Modules.GetModuleUrl("uibase"), OnUIBaseLoaded);
         }
 
         public static function OnUIBaseLoaded(aswf:Object):*
@@ -92,40 +77,31 @@ package syscode
             trace("Start loading general sounds...");
             Sounds.Init();
             Sounds.LoadSounds("general", OnSoundsLoaded);
-            loadermc.PrepareModule("basegfx");
+            // loadermc.PrepareModule("basegfx");
             Modules.ScheduleRequiredModules("general");
-            Modules.LoadScheduledModules(OnBaseGfxLoaded, OnLoadProgress);
-        }
-
-        public static function OnLoadProgress(e:*):*
-        {
-            loadermc.SetProgress(e.target.progress);
         }
 
         public static function OnBaseGfxLoaded():*
         {
             trace("Basegfx loaded.");
             Util.SendProstatData("basegfx");
-            loadermc.FinishCurrentModule();
-            loadermc.PrepareModule("villagemap");
+            // loadermc.FinishCurrentModule();
+            // loadermc.PrepareModule("villagemap");
             Modules.ScheduleLoadModule("villagemap");
             Modules.ScheduleRequiredModules("villagemap");
-            Modules.LoadScheduledModules(OnVillageMapLoaded, OnLoadProgress);
         }
 
         public static function OnVillageMapLoaded():*
         {
             Util.SendProstatData("villagemap");
-            loadermc.FinishCurrentModule();
-            loadermc.PrepareModule("triviador");
+            // loadermc.FinishCurrentModule();
+            // loadermc.PrepareModule("triviador");
             Modules.ScheduleLoadModule("triviador");
             Modules.ScheduleRequiredModules("triviador");
-            Modules.LoadScheduledModules(OnLoadingFinished, OnLoadProgress);
         }
 
         public static function OnLoadingFinished():*
         {
-            loadermc.FinishCurrentModule();
             AvatarFactory.Init();
             InitImitation();
         }
@@ -138,7 +114,6 @@ package syscode
         public static function InitImitation():*
         {
             DBG.Trace("Loading finished, Imitation/GPU init...");
-            loadermc.GPUINIT.alpha = 1;
             if (Util.NumberVal(Config.flashvars.pepperflash) > 0)
             {
                 Imitation.usegpu = false;
@@ -153,21 +128,24 @@ package syscode
             Util.AddEventListener(Imitation.stage, "resize", Sys.OnStageResize);
             WinMgr.Init();
             Sys.OnStageResize(null);
-            loadermc.parent.removeChild(MovieClip(loadermc));
-            Imitation.rootmc.addChild(MovieClip(loadermc));
+            // loadermc.parent.removeChild(MovieClip(loadermc));
+
+            //FIXME this should not work like this
+            // Imitation.rootmc.addChild(MovieClip(loadermc));
             Imitation.UpdateFrame();
-            var icon:MovieClip = Imitation.usegpu ? loadermc.GPUINIT.ICON.SUCCESS : loadermc.GPUINIT.ICON.FAILURE;
-            var toscale:Number = icon.scaleX;
-            icon.visible = true;
-            Imitation.UpdateAll(icon);
-            icon.scaleX = 0;
-            icon.scaleY = 0;
-            TweenMax.to(icon, 0.5, {
-                        "scaleX": toscale,
-                        "scaleY": toscale,
-                        "ease": Bounce.easeOut,
-                        "onComplete": ImitationInitialized
-                    });
+            // var icon:MovieClip = Imitation.usegpu ? loadermc.GPUINIT.ICON.SUCCESS : loadermc.GPUINIT.ICON.FAILURE;
+            // var toscale:Number = icon.scaleX;
+            // icon.visible = true;
+            // Imitation.UpdateAll(icon);
+            // icon.scaleX = 0;
+            // icon.scaleY = 0;
+            // TweenMax.to(icon, 0.5, {
+            //             "scaleX": toscale,
+            //             "scaleY": toscale,
+            //             "ease": Bounce.easeOut,
+            //             "onComplete": ImitationInitialized
+            //         });
+            ImitationInitialized();
         }
 
         public static function ImitationInitialized():*
@@ -225,8 +203,6 @@ package syscode
         {
             var sysconf:Object = null;
             Util.SendProstatData("loader_finished");
-            loadermc.RemoveLoader();
-            Util.StopAllChildrenMov(MovieClip(loadermc));
             if (Config.indesigner && Config.loginuserid.length > 0 && Config.loginusername.length > 0)
             {
                 Comm.Connect();
