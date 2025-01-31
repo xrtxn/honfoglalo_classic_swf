@@ -25,7 +25,7 @@ package syscode
             SetModuleData("villagemap", "assets/modules/villagemap.swf", "");
             SetModuleData("triviador", "assets/modules/triviador.swf", "");
             SetModuleData("lobby", "assets/modules/lobby.swf", "");
-            SetModuleData("uibase", "assets/modules/02_uibase.swf", "general");
+            SetModuleData("uibase", "assets/modules/uibase_assets.swf", "general");
             SetModuleData("knightgame", "assets/modules/knightgame.swf", "");
             SetModuleData("adventcalendar", "assets/modules/adventcalendar.swf", "");
             SetModuleData("reward", "assets/modules/reward.swf", "");

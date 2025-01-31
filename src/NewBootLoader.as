@@ -6,7 +6,6 @@ package
 	import flash.net.*;
 	import flash.system.*;
 	import flash.utils.*;
-	import syscode.AvatarFactory;
 
 	public class NewBootLoader extends MovieClip
 	{
@@ -44,17 +43,36 @@ package
 			mc.stage.quality = StageQuality.BEST;
 			Log("BootLoader started. Mobile=" + bootparams.mobile);
 			loaderinfo = param1.root.loaderInfo;
-			StartLoader("loader11");
+			StartLoader("../src/loader11.swf");
+
 		}
 
 		private static function StartLoader(param1:String):void
 		{
 			Log("Loading: " + param1);
-			// var loader:loader11 = new loader11();
-			// loader.Start(mc, bootparams);
-			var syscode1: syscode = new syscode();
-			trace("syscode1: " + syscode1);
-			syscode1.Start(mc, bootparams);
+			sourceurl = StringVal(loaderinfo.url);
+			protocol = StringVal(sourceurl.split(":")[0]);
+			loader = new Loader();
+			loader.contentLoaderInfo.addEventListener(Event.COMPLETE, OnCompleteHandler);
+			loader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR, OnIOErrorHandler);
+			loader.contentLoaderInfo.addEventListener(SecurityErrorEvent.SECURITY_ERROR, OnSecurityErrorHandler);
+			loader.addEventListener(SecurityErrorEvent.SECURITY_ERROR, OnSecurityErrorHandler);
+			var _loc2_:SecurityDomain = null;
+			var _loc3_:Boolean = false;
+			if (protocol.indexOf("http") >= 0)
+			{
+				_loc2_ = SecurityDomain.currentDomain;
+				_loc3_ = true;
+			}
+			context = new LoaderContext(_loc3_, ApplicationDomain.currentDomain, _loc2_);
+			context.allowCodeImport = true;
+			context.parameters = loaderinfo.parameters;
+			if (Boolean(loaderinfo) && Boolean(loaderinfo.parameters))
+			{
+				param1 = StringVal(loaderinfo.parameters.clienturl, param1);
+			}
+			request = new URLRequest(param1);
+			loader.load(request, context);
 		}
 
 		private static function OnCompleteHandler(param1:Event):void
@@ -62,6 +80,9 @@ package
 			Log("BootLoader: OnCompleteHandler");
 			loadermc = param1.currentTarget.content;
 			loadermc.Start(mc, bootparams);
+			//this possibly creates a race condition
+			var syscode1:syscode = new syscode();
+			syscode1.Start(mc, loadermc as MovieClip, bootparams);
 		}
 
 		private static function OnIOErrorHandler(param1:IOErrorEvent):void

@@ -14,7 +14,7 @@ package
 						"ruffle": true,
 						"siteid": "hu",
 						"clientparams": "../config/clientparams_hu.xml",
-						"appbaseurl": "../config/"
+						"appbaseurl": "../"
 					});
 		}
 	}
