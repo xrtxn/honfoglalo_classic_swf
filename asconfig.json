@@ -1,7 +1,8 @@
 {
 	"compilerOptions": {
 		"source-path": [
-			"src"
+			"src",
+			"assets"
 		],
 		"library-path": [
 			"libs"
