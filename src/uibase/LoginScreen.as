@@ -5,6 +5,14 @@ package uibase
 	import flash.net.URLRequest;
 	import flash.net.navigateToURL;
 	import syscode.*;
+	import uibase.gfx.LegoCharacters;
+	import uibase.gfx.lego_button_1x1_normal;
+	import uibase.gfx.lego_button_2x1_normal;
+	import uibase.gfx.lego_button_3x1_normal;
+	import uibase.gfx.lego_button_3x1_ok;
+	import uibase.gfx.lego_button_3x2_ok;
+	import uibase.gfx.lego_button_1x1_ok;
+	import flash.utils.getQualifiedClassName;
 
 	[Embed(source="/modules/uibase_assets.swf", symbol="symbol745")]
 	public class LoginScreen extends MovieClip
@@ -44,6 +52,15 @@ package uibase
 		public function LoginScreen()
 		{
 			super();
+			CastButtons();
+		}
+
+		private function CastButtons():void
+		{
+			var w:MovieClip = this.PANEL_INPUT;
+			w.NPC = uibase.gfx.LegoCharacters(w.NPC);
+			w.BTN_GUEST = lego_button_3x2_ok(w.BTN_GUEST);
+			w.BTN_CODE = lego_button_1x1_ok(w.BTN_CODE);
 		}
 
 		private static function OnGuidResult(_jsq:Object):void

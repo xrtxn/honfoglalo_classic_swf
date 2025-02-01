@@ -8,7 +8,7 @@
             "name": "Flash",
             "type": "fdb",
             "request": "launch",
-            "program": "${workspaceFolder}/bin/your.swf"
+            "program": "${workspaceFolder}/bin/Main.swf"
         }
     ]
 }

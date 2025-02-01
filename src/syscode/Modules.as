@@ -7,6 +7,8 @@ package syscode
     import flash.display.*;
     import flash.events.*;
     import flash.system.*;
+    import flash.utils.getDefinitionByName;
+    import uibase.Notifications;
 
     public class Modules
     {
@@ -17,13 +19,16 @@ package syscode
         private static var modulelist:Object = {};
         private static var joblist:Array = [];
 
+        private var _dummy:Notifications;
         public static function Init():*
         {
             processorclasses["villagemap"] = "villagemap.VillageMap";
             processorclasses["triviador"] = "triviador.Main";
             processorclasses["lobby"] = "lobby.Lobby";
-            SetModuleData("villagemap", "assets/modules/villagemap.swf", "");
-            SetModuleData("triviador", "assets/modules/triviador.swf", "");
+            // todo no code yet
+            SetModuleData("villagemap", "assets/modules/villagemap_assets.swf", "");
+            // todo no code yet
+            SetModuleData("triviador", "assets/modules/triviador_assets.swf", "");
             SetModuleData("lobby", "assets/modules/lobby.swf", "");
             SetModuleData("uibase", "assets/modules/uibase_assets.swf", "general");
             SetModuleData("knightgame", "assets/modules/knightgame.swf", "");
@@ -33,7 +38,8 @@ package syscode
             SetModuleData("energy", "assets/modules/energy.swf", "");
             SetModuleData("forge", "assets/modules/forge.swf", "");
             SetModuleData("settings", "assets/modules/settings.swf", "");
-            SetModuleData("tutorial", "assets/modules/tutorial.swf", "villagemap");
+            // todo no code yet
+            SetModuleData("tutorial", "assets/modules/tutorial_assets.swf", "villagemap");
             SetModuleData("invite", "assets/modules/invite.swf", "");
             SetModuleData("ranklist", "assets/modules/ranklist.swf", "");
             SetModuleData("castle", "assets/modules/castle.swf", "");
@@ -42,10 +48,14 @@ package syscode
             SetModuleData("profile", "assets/modules/profile.swf", "");
             SetModuleData("profile2", "assets/modules/profile2.swf", "");
             SetModuleData("postoffice", "assets/modules/postoffice.swf", "");
-            SetModuleData("friendlygame", "assets/modules/friendlygame.swf", "villagemap");
-            SetModuleData("minitournament", "assets/modules/minitournament.swf", "triviador");
-            SetModuleData("tournament", "assets/modules/tournament.swf", "triviador");
-            SetModuleData("wrongquestion", "assets/modules/wrongquestion.swf", "triviador");
+            // todo no code yet
+            SetModuleData("friendlygame", "assets/modules/friendlygame_assets.swf", "villagemap");
+            // todo no code yet
+            SetModuleData("minitournament", "assets/modules/minitournament_assets.swf", "triviador");
+            // todo no code yet
+            SetModuleData("tournament", "assets/modules/tournament_assets.swf", "triviador");
+            // todo no code yet
+            SetModuleData("wrongquestion", "assets/modules/wrongquestion_assets.swf", "triviador");
             SetModuleData("clan", "assets/modules/clan.swf", "");
             SetModuleData("library", "assets/modules/library.swf", "");
             SetModuleData("miniquiz", "assets/modules/miniquiz.swf", "");
@@ -173,12 +183,24 @@ package syscode
 
         public static function GetClass(modulename:String, classname:String):Class
         {
+            trace("GetClass: " + modulename + " " + classname);
             var m:* = modulelist[modulename];
             if (!m)
             {
                 return null;
             }
+            if (IsClassAvailable(classname))
+            {
+                trace("Loading class from current domain");
+                return getDefinitionByName(classname) as Class;
+            }
+            trace("Loading class from module");
             return m.mc.loaderInfo.applicationDomain.getDefinition(classname) as Class;
+        }
+
+        private static function IsClassAvailable(className:String):Boolean
+        {
+            return ApplicationDomain.currentDomain.hasDefinition(className);
         }
 
         public static function GetProcessorClass(modulename:String):Class
@@ -257,7 +279,8 @@ package syscode
                 Util.RemoveEventListener(WinMgr.overlaymc, Event.ENTER_FRAME, OnWaitMcFrame);
                 waitmc.parent.removeChild(waitmc);
                 waitmc = null;
-                notifs = Modules.GetClass("uibase", "uibase.Notifications");
+                // notifs = Modules.GetClass("uibase", "uibase.Notifications");
+notifs = getDefinitionByName("uibase.Notifications");
                 if (Boolean(notifs) && Boolean(notifs.mc))
                 {
                     notifs.OnWindowChange({});

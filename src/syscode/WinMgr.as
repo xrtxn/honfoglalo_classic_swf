@@ -7,6 +7,7 @@ package syscode
     import flash.display.*;
     import flash.events.Event;
     import flash.system.*;
+    import uibase.LoadWait;
 
     public class WinMgr
     {
@@ -47,7 +48,8 @@ package syscode
             overshadermc = CreateTheShaderShape();
             overlaymc.addChild(overshadermc);
             trace("Loading LoadWait 1");
-            loadwait = new (Modules.GetClass("uibase", "uibase.LoadWait"))();
+            // loadwait = new (Modules.GetClass("uibase", "uibase.LoadWait"))();
+            loadwait = new uibase.LoadWait();
             trace("Loadwait loaded 1");
             overlaymc.addChild(loadwait);
             loadwait.BOOK.stop();
