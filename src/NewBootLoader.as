@@ -44,7 +44,6 @@ package
 			Log("BootLoader started. Mobile=" + bootparams.mobile);
 			loaderinfo = param1.root.loaderInfo;
 			StartLoader("../src/loader11.swf");
-
 		}
 
 		private static function StartLoader(param1:String):void
