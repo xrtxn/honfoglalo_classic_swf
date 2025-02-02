@@ -247,14 +247,12 @@ package syscode
             }
             for each (node in taglist)
             {
-                trace("node: ", node);
                 cyccount++;
                 if (cyccount > 500)
                 {
                     throw new Error("main loop cycle counter reached threshold: " + cyccount + ", tagcount was:" + tagcount);
                 }
                 nname = String(node.name());
-                trace("nname: " + nname);
                 tag = Util.XMLTagToObject(node);
                 if ("STATE" == nname)
                 {
