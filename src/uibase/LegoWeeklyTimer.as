@@ -6,10 +6,11 @@ package uibase
 	import flash.utils.Timer;
 	import flash.utils.getTimer;
 	import syscode.*;
+	import uibase.gfx.LegoIconset;
 
 	public class LegoWeeklyTimer extends MovieClip
 	{
-		public var CROWN:LegoIconset;
+		public var CROWN:uibase.gfx.LegoIconset;
 
 		public var ENERGYBG:MovieClip;
 

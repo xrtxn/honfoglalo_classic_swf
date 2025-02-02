@@ -8,8 +8,7 @@ package tournament.gfx
 	{
 		public var FIELDMC:MovieClip;
 
-		// todo check if good import
-		public var ICONSET:LegoIconset;
+		public var ICONSET:uibase.gfx.LegoIconset;
 
 		public var NOTIFY:MovieClip;
 

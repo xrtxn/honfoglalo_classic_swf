@@ -5,6 +5,10 @@ package uibase
 	import flash.text.*;
 	import flash.utils.Timer;
 	import syscode.*;
+	import uibase.gfx.lego_button_2x1_ok;
+	import uibase.gfx.lego_button_2x1_cancel;
+	import uibase.gfx.lego_button_3x1_normal;
+	import uibase.gfx.LegoIconset;
 
 	[Embed(source="/modules/uibase_assets.swf", symbol="symbol394")]
 	public class MessageWin extends MovieClip
@@ -15,7 +19,7 @@ package uibase
 
 		public var BTNCLOSE:lego_button_3x1_normal;
 
-		public var ICON:LegoIconset;
+		public var ICON:uibase.gfx.LegoIconset;
 
 		public var MESSAGE:MovieClip;
 
@@ -132,7 +136,7 @@ package uibase
 							{
 								BTNCLOSE.SetCaption("- " + String(countdown) + " -");
 							}
-							-- countdown;
+							--countdown;
 						});
 					Util.AddEventListener(cd, TimerEvent.TIMER_COMPLETE, SetCloseBtn);
 					cd.start();

@@ -52,8 +52,10 @@ package uibase
 			slidebar.name = "SLIDEBAR";
 			CalculateAppScale();
 			slidebar.scaleX = slidebar.scaleY = appScale;
-			var opener:Class = Modules.GetClass("uibase", "uibase.NotificationsOpener");
-			var openermc:* = new opener();
+			trace("start new");
+			// var opener:Class = Modules.GetClass("uibase", "uibase.NotificationsOpener");
+			var openermc:uibase.NotificationsOpener = new uibase.NotificationsOpener();
+			trace("openermc = " + openermc);
 			openermc.name = "OPENER";
 			slidebar.addChild(openermc);
 			openermc.ICONSET.Set("X2");
@@ -303,7 +305,7 @@ package uibase
 				{
 					TweenMax.delayedCall(0.8, e.target.parent.callback);
 				}
-				Remove( {"mc": e.target.parent});
+				Remove({"mc": e.target.parent});
 			}
 		}
 
