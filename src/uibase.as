@@ -8,10 +8,8 @@ package
 		public function uibase()
 		{
 			super();
-			trace("uibase constructor");
 			var a:* = Anim;
 			var i:int = 1;
-			trace("uibase.constructor: " + i);
 		}
 
 		public function Init():*

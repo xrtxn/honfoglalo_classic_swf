@@ -3,6 +3,7 @@ package com.xrt
     import uibase.*;
     import tournament.TournamentWin;
     import villagemap.VillageMap;
+    import friendlygame.FriendlyGame;
 
     public class Includer
     {
@@ -16,6 +17,7 @@ package com.xrt
         private var _dummy7:Class = NotificationsOpener;
         private var _dummy8:Class = NotificationsBg;
         private var _dummy9:Class = MessageWin;
+        private var _dummy10:Class = FriendlyGame;
 
         public static function Include():void
         {

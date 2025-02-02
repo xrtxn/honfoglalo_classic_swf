@@ -76,7 +76,9 @@ package uibase
 				if (!s)
 				{
 					c = this.mc.getChildAt(0);
-					s = new c.constructor();
+					// this threw an error
+					// s = new c.constructor();
+					s = new c();
 					s.x = this.mc[prefix + ((i - 1) % columns + 1)].x;
 					this.mc[prefix + i] = s;
 					this.mc.addChild(s);
