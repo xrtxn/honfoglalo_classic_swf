@@ -6,13 +6,11 @@ package uibase
 	import flash.net.navigateToURL;
 	import syscode.*;
 	import uibase.gfx.LegoCharacters;
-	import uibase.gfx.lego_button_1x1_normal;
-	import uibase.gfx.lego_button_2x1_normal;
-	import uibase.gfx.lego_button_3x1_normal;
-	import uibase.gfx.lego_button_3x1_ok;
 	import uibase.gfx.lego_button_3x2_ok;
 	import uibase.gfx.lego_button_1x1_ok;
-	import flash.utils.getQualifiedClassName;
+	import uibase.gfx.lego_button_2x1_ok;
+	import uibase.gfx.lego_button_1x1_cancel;
+	import uibase.gfx.conn_error_graphics;
 
 	[Embed(source="/modules/uibase_assets.swf", symbol="symbol745")]
 	public class LoginScreen extends MovieClip
@@ -61,6 +59,10 @@ package uibase
 			w.NPC = uibase.gfx.LegoCharacters(w.NPC);
 			w.BTN_GUEST = lego_button_3x2_ok(w.BTN_GUEST);
 			w.BTN_CODE = lego_button_1x1_ok(w.BTN_CODE);
+			// var pan_err:MovieClip = this.PANEL_CONN_ERROR;
+			// pan_err.BTN_RETRY = lego_button_1x1_ok(pan_err.BTN_RETRY);
+			// pan_err.BTN_EXIT = lego_button_1x1_ok(pan_err.BTN_EXIT);
+			trace("succeeded casting buttons");
 		}
 
 		private static function OnGuidResult(_jsq:Object):void
@@ -457,17 +459,20 @@ package uibase
 			var w:MovieClip = this.PANEL_CONN_ERROR;
 			Util.SetText(w.TXT_CONN_SHORT.FIELD, Lang.Get("conn_desc_short"));
 			Util.SetText(w.TXT_CONN_LONG.FIELD, Lang.Get("conn_desc_long"));
-			w.BTN_RETRY.SetLang("retry");
-			w.BTN_RETRY.AddEventClick(function(e:Object):*
+			var r_btn:lego_button_2x1_ok = lego_button_2x1_ok(w.BTN_RETRY);
+			r_btn.SetLang("retry");
+			r_btn.AddEventClick(function(e:Object):*
 				{
 					SetInputsEnable(false);
 					LoginScreen.OnCheckConnection();
 				});
-			w.BTN_EXIT.SetIcon("X");
-			w.BTN_EXIT.AddEventClick(function(e:Object):*
+			var e_btn:lego_button_1x1_cancel = lego_button_1x1_cancel(w.BTN_EXIT);
+			e_btn.SetIcon("X");
+			e_btn.AddEventClick(function(e:Object):*
 				{
 					Draw("PANEL_INPUT");
 				});
+			conn_error_graphics(w.NPC);
 			this.SetInputsEnable(true);
 			w.visible = true;
 		}

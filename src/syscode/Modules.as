@@ -279,8 +279,7 @@ package syscode
                 Util.RemoveEventListener(WinMgr.overlaymc, Event.ENTER_FRAME, OnWaitMcFrame);
                 waitmc.parent.removeChild(waitmc);
                 waitmc = null;
-                // notifs = Modules.GetClass("uibase", "uibase.Notifications");
-notifs = getDefinitionByName("uibase.Notifications");
+                notifs = Modules.GetClass("uibase", "uibase.Notifications");
                 if (Boolean(notifs) && Boolean(notifs.mc))
                 {
                     notifs.OnWindowChange({});

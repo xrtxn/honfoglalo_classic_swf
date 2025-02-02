@@ -48,8 +48,7 @@ package syscode
             overshadermc = CreateTheShaderShape();
             overlaymc.addChild(overshadermc);
             trace("Loading LoadWait 1");
-            // loadwait = new (Modules.GetClass("uibase", "uibase.LoadWait"))();
-            loadwait = new uibase.LoadWait();
+            loadwait = new (Modules.GetClass("uibase", "uibase.LoadWait"))();
             trace("Loadwait loaded 1");
             overlaymc.addChild(loadwait);
             loadwait.BOOK.stop();
@@ -80,6 +79,7 @@ package syscode
                 return;
             }
             wo = new WinObj(aclass, aprops);
+            trace("wo.classname: " + wo.classname);
             if (!wo.loaded)
             {
                 throw new Error("WinMgr.SetBaseHandler: base handler not loaded: \"" + wo.classname + "\"");

@@ -1,4 +1,4 @@
-package uibase._02_uibase_fla
+package uibase.gfx
 {
 	import adobe.utils.*;
 	import uibase.components.CharacterComponent;
@@ -27,11 +27,11 @@ package uibase._02_uibase_fla
 	import flash.xml.*;
 
 	[Embed(source="/modules/uibase_assets.swf", symbol="symbol740")]
-	public dynamic class loginnewconnerrorgraphics_343 extends MovieClip
+	public dynamic class conn_error_graphics extends MovieClip
 	{
 		public var PROF:CharacterComponent;
 
-		public function loginnewconnerrorgraphics_343()
+		public function conn_error_graphics()
 		{
 			super();
 			this.__setProp_PROF_loginnewconnerrorgraphics_Layer1_0();
