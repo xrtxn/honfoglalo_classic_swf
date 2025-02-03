@@ -48,7 +48,6 @@ package syscode
             SetModuleData("profile", "assets/modules/profile.swf", "");
             SetModuleData("profile2", "assets/modules/profile2.swf", "");
             SetModuleData("postoffice", "assets/modules/postoffice.swf", "");
-            // todo no code yet
             SetModuleData("friendlygame", "assets/modules/friendlygame_assets.swf", "villagemap");
             // todo no code yet
             SetModuleData("minitournament", "assets/modules/minitournament_assets.swf", "triviador");
@@ -78,6 +77,7 @@ package syscode
             SetModuleData("castles", "assets/gfx/castles.swf", "triviador,gameover");
             SetModuleData("castles_ortho", "assets/gfx/castles_ortho.swf", "villagemap,castle");
             SetModuleData("houses", "assets/gfx/houses.swf", "forge");
+            // FIXME: broken texture
             if (Config.season == 1)
             {
                 SetModuleData("buildings", "assets/gfx/skin_buildings_winter.swf", "villagemap,forge");
@@ -189,6 +189,7 @@ package syscode
             {
                 return null;
             }
+            //this is necessary to load non modules loaded classes like WaveAnim
             if (IsClassAvailable(classname))
             {
                 trace("Loading class from current domain");

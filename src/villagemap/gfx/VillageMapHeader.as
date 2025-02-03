@@ -3,20 +3,21 @@ package villagemap.gfx
 	import flash.display.*;
 	import flash.text.*;
 
-	import uibase.components.ButtonComponent;
+	import components.ButtonComponent;
 
 	[Embed(source="/modules/villagemap_assets.swf", symbol="symbol158")]
-	public dynamic class header_5 extends MovieClip
+	public dynamic class VillageMapHeader extends MovieClip
 	{
 		public var BG:MovieClip;
 
 		public var BOX:MovieClip;
 
-		public var BTNPLUSENERGY:ButtonComponent;
+		// these are supposed to be ButtonComponent-s
+		public var BTNPLUSENERGY:MovieClip;
 
-		public var BTNPLUSGOLD:ButtonComponent;
+		public var BTNPLUSGOLD:MovieClip;
 
-		public var BTNSETTINGS:ButtonComponent;
+		public var BTNSETTINGS:MovieClip;
 
 		public var ENERGY:MovieClip;
 
@@ -30,7 +31,7 @@ package villagemap.gfx
 
 		public var USERTRANSPARENT:MovieClip;
 
-		public function header_5()
+		public function VillageMapHeader()
 		{
 			super();
 			this.__setProp_BTNPLUSGOLD_header_buttons_0();
@@ -47,6 +48,7 @@ package villagemap.gfx
 			catch (e:Error)
 			{
 			}
+			// var btn:ButtonComponent = ButtonComponent(this.BTNPLUSGOLD);
 			this.BTNPLUSGOLD.enabled = true;
 			this.BTNPLUSGOLD.fontsize = "BIG";
 			this.BTNPLUSGOLD.icon = "PLUS";

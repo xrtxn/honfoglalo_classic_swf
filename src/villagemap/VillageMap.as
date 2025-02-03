@@ -34,6 +34,14 @@ package villagemap
 	import syscode.Config;
 	import syscode.Platform;
 	import syscode.Lang;
+	import villagemap.gfx.VillageMapHeader;
+	import syscode.AvatarMov;
+	import syscode.AvatarBodyMov;
+	import syscode.AvatarAnimMov;
+	import uibase.LegoIconset;
+	import uibase.gfx.LegoIconset;
+	import flash.utils.getQualifiedClassName;
+	import syscode.AvatarFactory;
 
 	[Embed(source="/modules/villagemap_assets.swf", symbol="symbol160")]
 	public class VillageMap extends MovieClip
@@ -50,7 +58,7 @@ package villagemap
 
 		public var GRIDEDITBTNMC:MovieClip;
 
-		public var HEADER:MovieClip;
+		public var HEADER:VillageMapHeader;
 
 		public var MAP:MovieClip;
 
@@ -510,7 +518,10 @@ package villagemap
 				Imitation.RemoveEvents(mov);
 				mc.MAP.removeChild(mov);
 			}
-			mc.HEADER.USERPROFILE.AVATAR.Clear();
+
+			// FIXME
+			trace("FIXME");
+			// mc.HEADER.USERPROFILE.AVATAR.Clear();
 			Imitation.RemoveEvents(mc.HEADER.BTNPLUSGOLD);
 			Imitation.RemoveEvents(mc.HEADER.BTNPLUSENERGY);
 			Imitation.RemoveEvents(mc.HEADER.BTNSETTINGS);
@@ -735,14 +746,21 @@ package villagemap
 
 		private function HeaderInit():void
 		{
-			this.HEADER.BTNPLUSGOLD.AddEventClick(this.HeaderButtonClick);
-			this.HEADER.BTNPLUSENERGY.AddEventClick(this.HeaderButtonClick);
-			this.HEADER.BTNSETTINGS.AddEventClick(this.HeaderButtonClick);
+			trace("HeaderInit");
+
+			// this.HEADER.BTNPLUSGOLD.AddEventClick(this.HeaderButtonClick);
+			// this.HEADER.BTNPLUSENERGY.AddEventClick(this.HeaderButtonClick);
+			// this.HEADER.BTNSETTINGS.AddEventClick(this.HeaderButtonClick);
+			Imitation.AddEventClick(this.HEADER.BTNPLUSGOLD, this.HeaderButtonClick);
+			Imitation.AddEventClick(this.HEADER.BTNPLUSENERGY, this.HeaderButtonClick);
+			Imitation.AddEventClick(this.HEADER.BTNSETTINGS, this.HeaderButtonClick);
+			trace("ok1");
 			Imitation.AddEventClick(this.HEADER.GOLDTRANSPARENT, this.HeaderButtonClick);
 			Imitation.AddEventClick(this.HEADER.ENERGYTRANSPARENT, this.HeaderButtonClick);
 			Imitation.AddEventClick(this.HEADER.BG, null);
 			Imitation.AddEventClick(this.HEADER.USERPROFILE.FLAG, this.HeaderButtonClick);
 			Imitation.AddEventClick(this.HEADER.USERTRANSPARENT, this.HeaderButtonClick);
+			trace("ok2");
 			this.HEADER.ENERGY.TIME.text = "";
 			if (this.lifeupdatetimer == null)
 			{
@@ -750,11 +768,14 @@ package villagemap
 				Util.AddEventListener(this.lifeupdatetimer, TimerEvent.TIMER, this.HeaderUpdateNextLifeTime);
 				this.lifeupdatetimer.start();
 			}
-			this.GRIDEDITBTNMC.GRIDEDITBUTTON.AddEventClick(this.SwitchGridMode, {});
+			trace("ok3");
+			// this.GRIDEDITBTNMC.GRIDEDITBUTTON.AddEventClick(this.SwitchGridMode, {});
+			Imitation.AddEventClick(this.GRIDEDITBTNMC.GRIDEDITBUTTON, this.SwitchGridMode);
 		}
 
 		public function HeaderDraw():void
 		{
+			trace("HeaderDraw");
 			var scale:Number = NaN;
 			var sp:Number = NaN;
 			this.HEADER.scaleX = this.appScale;
@@ -765,8 +786,11 @@ package villagemap
 			this.HEADER.USERPROFILE.LVLFIELD.text = Sys.mydata.xplevel;
 			this.HEADER.USERPROFILE.NEXTLVLFIELD.text = Sys.mydata.xplevel + 1;
 			this.HEADER.USERPROFILE.XPPOINTS.text = Util.FormatNumber(Util.NumberVal(Sys.mydata.xppoints) - Util.NumberVal(Sys.mydata.xpactmin)) + " / " + Util.FormatNumber(Util.NumberVal(Sys.mydata.xptonextlevel) - Util.NumberVal(Sys.mydata.xpactmin)) + " " + Lang.Get("xp");
-			this.HEADER.USERPROFILE.AVATAR.Clear();
-			this.HEADER.USERPROFILE.AVATAR.ShowUID(Sys.mydata.id);
+			// FIXME
+			trace("FIXME");
+			// var avatar:AvatarAnimMov = AvatarAnimMov(this.HEADER.USERPROFILE.AVATAR);
+			// avatar.Clear();
+			// avatar.ShowUID(Sys.mydata.id);
 			if (Sys.mydata.xppoints !== undefined)
 			{
 				scale = (Sys.mydata.xppoints - Sys.mydata.xpactmin) / (Sys.mydata.xptonextlevel - Sys.mydata.xpactmin);
@@ -919,6 +943,7 @@ package villagemap
 			labels = new MovieClip();
 			labels.name = "LABELS";
 			this.itemsParent.addChild(labels);
+			trace("this.buildingsData.length: " + this.buildingsData.length);
 			i = 0;
 			while (i < this.buildingsData.length)
 			{
@@ -948,7 +973,7 @@ package villagemap
 				{
 					buildinglabel.y += 10;
 				}
-				hclass = getDefinitionByName("Grid" + buildinginstance.data.size + "mc_hit") as Class;
+				hclass = getDefinitionByName("villagemap.gfx." + "Grid" + buildinginstance.data.size + "mc_hit") as Class;
 				if (this.buildingsData[i].type == "win" || this.buildingsData[i].type == "forge")
 				{
 					Imitation.AddEventClick(buildinginstance, function():*

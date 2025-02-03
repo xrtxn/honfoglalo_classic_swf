@@ -1076,6 +1076,7 @@ package syscode
 
         public static function OnMissClick(e:Object):void
         {
+            // TODO: keep original code?
             var WaveAnim:Object = Modules.GetClass("uibase", "uibase.WaveAnim");
             var a:MovieClip = new WaveAnim();
             e.target.addChildAt(a, 1);

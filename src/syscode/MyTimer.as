@@ -4,6 +4,7 @@ package syscode
 	import flash.utils.Timer;
 	import syscode.Util;
 
+	// this class was originally in Lobby but I thouht this would be the better place for it
 	public class MyTimer
 	{
 		public var timer:Timer;

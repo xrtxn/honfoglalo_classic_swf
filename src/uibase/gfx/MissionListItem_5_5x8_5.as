@@ -20,7 +20,8 @@ package uibase.gfx
 
 		public var LABEL:MovieClip;
 
-		public var TIMER_SMALL:TimerSmall;
+		// todo may be different type
+		public var TIMER_SMALL:uibase.gfx.TimerSmall;
 
 		public function MissionListItem_5_5x8_5()
 		{

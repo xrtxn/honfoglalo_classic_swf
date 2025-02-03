@@ -1,9 +1,9 @@
 package uibase
 {
-	import components.CharacterComponent;
 	import flash.display.*;
 	import flash.text.TextField;
 	import syscode.*;
+	import uibase.components.CharacterComponent;
 
 	[Embed(source="/modules/uibase_assets.swf", symbol="symbol87")]
 	public class ShutdownWait extends MovieClip
