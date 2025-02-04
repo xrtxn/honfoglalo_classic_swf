@@ -1,17 +1,20 @@
 package syscode
 {
     import flash.display.*;
+    import villagemap.compat.VillageAvatarMov;
+    import flash.utils.getQualifiedClassName;
 
     public class AvatarAnimMov extends MovieClip
     {
-        public function AvatarAnimMov()
+        public function AvatarAnimMov(avatar_class:Object)
         {
             super();
             this.FRAMEPLACEHOLDER.visible = false;
             this.MASK.visible = false;
+            avatar_class(this.AVATAR);
         }
         public var frame:MovieClip = null;
-        public var AVATAR:MovieClip;
+        public var AVATAR:Object;
         public var FRAMEPLACEHOLDER:MovieClip;
         public var MASK:MovieClip;
 
@@ -58,6 +61,8 @@ package syscode
 
         public function Clear():*
         {
+            // var avatar:VillageAvatarMov = VillageAvatarMov(this.AVATAR);
+            trace(getQualifiedClassName(this.AVATAR));
             this.AVATAR.Clear();
         }
     }

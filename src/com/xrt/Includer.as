@@ -6,6 +6,7 @@ package com.xrt
     import friendlygame.FriendlyGame;
     import triviador.StartWindowMov;
     import villagemap.gfx.*;
+    import tutorial.Tutorial;
 
     public class Includer
     {
@@ -38,6 +39,7 @@ package com.xrt
         private var _dummy26:Grid7x7mc_hit;
         private var _dummy27:ShineEffect;
         private var _dummy28:WaveAnim;
+        private var _dummy29:Tutorial;
 
         public static function Include():void
         {

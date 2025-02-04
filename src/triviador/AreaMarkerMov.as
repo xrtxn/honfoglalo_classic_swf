@@ -7,6 +7,7 @@ package triviador {
 		import flash.geom.Point;
 		import flash.text.*;
 		import syscode.*;
+		import triviador.gfx.CastleMov;
 		
 		[Embed(source="/modules/triviador_assets.swf", symbol="symbol625")]
 		public class AreaMarkerMov extends MovieClip {

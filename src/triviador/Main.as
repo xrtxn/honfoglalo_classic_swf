@@ -2,7 +2,7 @@ package triviador {
 		import com.greensock.TweenMax;
 		import flash.display.MovieClip;
 		import syscode.*;
-		import uibase.components.ButtonComponent;
+		import uibase.components.UibaseButtonComponent;
 		
 		[Embed(source="/modules/triviador_assets.swf", symbol="symbol1182")]
 		public class Main extends MovieClip {
@@ -18,7 +18,7 @@ package triviador {
 				
 				public var BTNFULLSCREEN:MovieClip;
 				
-				public var BTNLEAVEGAME:ButtonComponent;
+				public var BTNLEAVEGAME:UibaseButtonComponent;
 				
 				public var FASOLDIER1:AreaMarkerMov;
 				

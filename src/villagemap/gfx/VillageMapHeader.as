@@ -2,8 +2,7 @@ package villagemap.gfx
 {
 	import flash.display.*;
 	import flash.text.*;
-
-	import components.ButtonComponent;
+	import villagemap.compat.VillageMapButtonComponent;
 
 	[Embed(source="/modules/villagemap_assets.swf", symbol="symbol158")]
 	public dynamic class VillageMapHeader extends MovieClip
@@ -12,12 +11,11 @@ package villagemap.gfx
 
 		public var BOX:MovieClip;
 
-		// these are supposed to be ButtonComponent-s
-		public var BTNPLUSENERGY:MovieClip;
+		public var BTNPLUSENERGY:VillageMapButtonComponent;
 
-		public var BTNPLUSGOLD:MovieClip;
+		public var BTNPLUSGOLD:VillageMapButtonComponent;
 
-		public var BTNSETTINGS:MovieClip;
+		public var BTNSETTINGS:VillageMapButtonComponent;
 
 		public var ENERGY:MovieClip;
 
@@ -27,6 +25,7 @@ package villagemap.gfx
 
 		public var GOLDTRANSPARENT:MovieClip;
 
+		// todo create custom type to avoid always casting
 		public var USERPROFILE:MovieClip;
 
 		public var USERTRANSPARENT:MovieClip;
@@ -48,7 +47,6 @@ package villagemap.gfx
 			catch (e:Error)
 			{
 			}
-			// var btn:ButtonComponent = ButtonComponent(this.BTNPLUSGOLD);
 			this.BTNPLUSGOLD.enabled = true;
 			this.BTNPLUSGOLD.fontsize = "BIG";
 			this.BTNPLUSGOLD.icon = "PLUS";

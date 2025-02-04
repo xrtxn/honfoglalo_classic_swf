@@ -14,6 +14,7 @@ package triviador
 	import flash.text.*;
 	import flash.utils.*;
 	import syscode.*;
+	import triviador.gfx.libmc_AreaEffects;
 
 	public class Map
 	{

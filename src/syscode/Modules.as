@@ -25,9 +25,7 @@ package syscode
             processorclasses["villagemap"] = "villagemap.VillageMap";
             processorclasses["triviador"] = "triviador.Main";
             processorclasses["lobby"] = "lobby.Lobby";
-            // todo no code yet
             SetModuleData("villagemap", "assets/modules/villagemap_assets.swf", "");
-            // todo no code yet
             SetModuleData("triviador", "assets/modules/triviador_assets.swf", "");
             SetModuleData("lobby", "assets/modules/lobby.swf", "");
             SetModuleData("uibase", "assets/modules/uibase_assets.swf", "general");
@@ -38,7 +36,6 @@ package syscode
             SetModuleData("energy", "assets/modules/energy.swf", "");
             SetModuleData("forge", "assets/modules/forge.swf", "");
             SetModuleData("settings", "assets/modules/settings.swf", "");
-            // todo no code yet
             SetModuleData("tutorial", "assets/modules/tutorial_assets.swf", "villagemap");
             SetModuleData("invite", "assets/modules/invite.swf", "");
             SetModuleData("ranklist", "assets/modules/ranklist.swf", "");
@@ -77,7 +74,8 @@ package syscode
             SetModuleData("castles", "assets/gfx/castles.swf", "triviador,gameover");
             SetModuleData("castles_ortho", "assets/gfx/castles_ortho.swf", "villagemap,castle");
             SetModuleData("houses", "assets/gfx/houses.swf", "forge");
-            // FIXME: broken texture
+            // FIXME: broken winter textures
+            // how it should look https://www.youtube.com/watch?v=nMHDckoyMio
             if (Config.season == 1)
             {
                 SetModuleData("buildings", "assets/gfx/skin_buildings_winter.swf", "villagemap,forge");
@@ -189,7 +187,7 @@ package syscode
             {
                 return null;
             }
-            //this is necessary to load non modules loaded classes like WaveAnim
+            // this is necessary to load non modules loaded classes like WaveAnim
             if (IsClassAvailable(classname))
             {
                 trace("Loading class from current domain");

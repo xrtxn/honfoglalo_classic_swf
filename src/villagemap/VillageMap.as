@@ -42,6 +42,7 @@ package villagemap
 	import uibase.gfx.LegoIconset;
 	import flash.utils.getQualifiedClassName;
 	import syscode.AvatarFactory;
+	import villagemap.compat.VillageAvatarAnimMov;
 
 	[Embed(source="/modules/villagemap_assets.swf", symbol="symbol160")]
 	public class VillageMap extends MovieClip
@@ -519,9 +520,8 @@ package villagemap
 				mc.MAP.removeChild(mov);
 			}
 
-			// FIXME
-			trace("FIXME");
-			// mc.HEADER.USERPROFILE.AVATAR.Clear();
+			var avataranim:VillageAvatarAnimMov = VillageAvatarAnimMov(mc.HEADER.USERPROFILE.AVATAR);
+			avataranim.Clear();
 			Imitation.RemoveEvents(mc.HEADER.BTNPLUSGOLD);
 			Imitation.RemoveEvents(mc.HEADER.BTNPLUSENERGY);
 			Imitation.RemoveEvents(mc.HEADER.BTNSETTINGS);
@@ -786,11 +786,9 @@ package villagemap
 			this.HEADER.USERPROFILE.LVLFIELD.text = Sys.mydata.xplevel;
 			this.HEADER.USERPROFILE.NEXTLVLFIELD.text = Sys.mydata.xplevel + 1;
 			this.HEADER.USERPROFILE.XPPOINTS.text = Util.FormatNumber(Util.NumberVal(Sys.mydata.xppoints) - Util.NumberVal(Sys.mydata.xpactmin)) + " / " + Util.FormatNumber(Util.NumberVal(Sys.mydata.xptonextlevel) - Util.NumberVal(Sys.mydata.xpactmin)) + " " + Lang.Get("xp");
-			// FIXME
-			trace("FIXME");
-			// var avatar:AvatarAnimMov = AvatarAnimMov(this.HEADER.USERPROFILE.AVATAR);
-			// avatar.Clear();
-			// avatar.ShowUID(Sys.mydata.id);
+			var avataranim:VillageAvatarAnimMov = VillageAvatarAnimMov(mc.HEADER.USERPROFILE.AVATAR);
+			avataranim.Clear();
+			avataranim.ShowUID(Sys.mydata.id);
 			if (Sys.mydata.xppoints !== undefined)
 			{
 				scale = (Sys.mydata.xppoints - Sys.mydata.xpactmin) / (Sys.mydata.xptonextlevel - Sys.mydata.xpactmin);

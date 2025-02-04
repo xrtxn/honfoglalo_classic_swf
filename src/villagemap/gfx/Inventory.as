@@ -2,7 +2,7 @@ package villagemap.gfx
 {
 	import flash.display.*;
 
-	import uibase.components.ButtonComponent;
+	import uibase.components.UibaseButtonComponent;
 
 	[Embed(source="/modules/villagemap_assets.swf", symbol="symbol98")]
 	public dynamic class Inventory extends MovieClip
@@ -11,9 +11,9 @@ package villagemap.gfx
 
 		public var MASKHOLDER:MovieClip;
 
-		public var PAGELEFT:ButtonComponent;
+		public var PAGELEFT:UibaseButtonComponent;
 
-		public var PAGERIGHT:ButtonComponent;
+		public var PAGERIGHT:UibaseButtonComponent;
 
 		public function Inventory()
 		{

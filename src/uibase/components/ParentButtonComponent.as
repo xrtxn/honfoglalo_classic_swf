@@ -1,4 +1,4 @@
-package components
+package uibase.components
 {
 	import com.greensock.TweenMax;
 	import com.greensock.easing.*;
@@ -13,8 +13,9 @@ package components
 	import flash.utils.getDefinitionByName;
 	import syscode.*;
 
-	[Embed(source="/modules/uibase_assets.swf", symbol="symbol77")]
-	public class ButtonComponent extends UIComponent
+	// DON'T use this class directly!
+	// This class was added because of villagemap's ButtonComponent refusing to work with the other embed
+	public class ParentButtonComponent extends UIComponent
 	{
 		public static var livepreview:Boolean = false;
 
@@ -50,7 +51,7 @@ package components
 
 		private var needfirstdraw:Boolean = true;
 
-		public function ButtonComponent()
+		public function ParentButtonComponent()
 		{
 			this.eventhandlers = {};
 			super();
