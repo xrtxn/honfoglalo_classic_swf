@@ -11,6 +11,7 @@ package triviador
 	import triviador.compat.lego_button_1x1_normal_header;
 	import triviador.compat.lego_button_1x1_cancel_header;
 	import triviador.compat.TriviadorShutdownWait;
+	import triviador.gfx.TriviadorLegoIconset;
 
 	[Embed(source="/modules/triviador_assets.swf", symbol="symbol1300")]
 	public class StartWindowMov extends MovieClip

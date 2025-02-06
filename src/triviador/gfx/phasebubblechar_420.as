@@ -1,13 +1,13 @@
 package triviador.gfx
 {
 	import flash.display.*;
+	import uibase.components.CommonCharacterComponent;
 
-	import uibase.components.BaseCharacterComponent;
 
 	[Embed(source="/modules/triviador_assets.swf", symbol="symbol453")]
 	public dynamic class phasebubblechar_420 extends MovieClip
 	{
-		public var CHAR:BaseCharacterComponent;
+		public var CHAR:CommonCharacterComponent;
 
 		public function phasebubblechar_420()
 		{

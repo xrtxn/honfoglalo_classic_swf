@@ -9,6 +9,8 @@ package com.xrt
     import tutorial.Tutorial;
     import minitournament.MinitournamentWin;
     import wrongquestion.WrongQuestion;
+    import gameover.GameOver;
+    import triviador.gfx.TriviadorLegoIconset;
 
     public class Includer
     {
@@ -44,6 +46,8 @@ package com.xrt
         private var _dummy30:MinitournamentWin;
         private var _dummy31:WrongQuestion;
         private var _dummy32:DebugInfo;
+        private var _dummy33:GameOver;
+        private var _dummy34:TriviadorLegoIconset;
 
         public static function Include():void
         {

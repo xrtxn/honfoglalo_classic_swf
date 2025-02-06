@@ -3,7 +3,7 @@ package uibase
 	import flash.display.*;
 	import flash.text.TextField;
 	import syscode.*;
-	import uibase.components.BaseCharacterComponent;
+	import uibase.components.CommonCharacterComponent;
 
 	[Embed(source="/modules/uibase_assets.swf", symbol="symbol87")]
 	public class ShutdownWait extends MovieClip
@@ -12,7 +12,7 @@ package uibase
 
 		public var HEADER:TextField;
 
-		public var PROF:BaseCharacterComponent;
+		public var PROF:CommonCharacterComponent;
 
 		public var REMAINING:TextField;
 
