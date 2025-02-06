@@ -7,7 +7,8 @@
 		"library-path": [
 			"libs"
 		],
-		"output": "bin/Main.swf"
+		"output": "bin/Main.swf",
+		"debug": true
 	},
 	"mainClass": "trclient11_android_hu"
 }

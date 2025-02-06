@@ -8,9 +8,9 @@ package triviador
 	import flash.text.*;
 	import flash.utils.*;
 	import syscode.*;
-	import uibase.ShutdownWait;
-	import uibase.gfx.lego_button_1x1_cancel_header;
-	import uibase.gfx.lego_button_1x1_normal_header;
+	import triviador.compat.lego_button_1x1_normal_header;
+	import triviador.compat.lego_button_1x1_cancel_header;
+	import triviador.compat.TriviadorShutdownWait;
 
 	[Embed(source="/modules/triviador_assets.swf", symbol="symbol1300")]
 	public class StartWindowMov extends MovieClip
@@ -41,7 +41,7 @@ package triviador
 
 		public var NPCS:MovieClip;
 
-		public var SHUTDOWN:ShutdownWait;
+		public var SHUTDOWN:TriviadorShutdownWait;
 
 		public var STARTMENU:MovieClip;
 

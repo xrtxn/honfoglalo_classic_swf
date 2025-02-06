@@ -1,13 +1,15 @@
 package uibase
 {
 	import com.greensock.TweenMax;
-	import components.ButtonComponent;
+	import uibase.components.UIBaseButtonComponent;
 	import flash.display.*;
 	import flash.events.*;
 	import flash.system.System;
 	import flash.text.TextField;
 	import flash.utils.*;
 	import syscode.*;
+	import uibase.stub.Pool;
+	import uibase.stub.BitmapDataPool;
 
 	[Embed(source="/modules/uibase_assets.swf", symbol="symbol1237")]
 	public class DebugInfo extends MovieClip
@@ -42,7 +44,7 @@ package uibase
 
 		public var FPS:TextField;
 
-		public var IBTN:ButtonComponent;
+		public var IBTN:UIBaseButtonComponent;
 
 		public var IMIT:TextField;
 
@@ -89,6 +91,11 @@ package uibase
 		public var VISBTN:SimpleButton;
 
 		public var VISIBLE:TextField;
+
+		// stub
+		// private var pool:Pool;
+
+		// private var bitmapDataPool:BitmapDataPool;
 
 		public function DebugInfo()
 		{
@@ -181,7 +188,7 @@ package uibase
 
 		public static function OnEnterFrame(e:*):*
 		{
-			++ fps_counter;
+			++fps_counter;
 		}
 
 		public static function HandleTimer(e:*):*
@@ -297,10 +304,10 @@ package uibase
 				child = doc.getChildAt(cidx);
 				if (child)
 				{
-					++ display_object_count;
+					++display_object_count;
 					if (TweenMax.isTweening(child))
 					{
-						++ tweened_object_count;
+						++tweened_object_count;
 						if (show == 3)
 						{
 							trace(Util.MovPathName(child));
@@ -308,7 +315,7 @@ package uibase
 					}
 					if (vis && child.visible)
 					{
-						++ visible_object_count;
+						++visible_object_count;
 						if (show == 1)
 						{
 							trace(Util.MovPathName(child));

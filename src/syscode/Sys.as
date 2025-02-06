@@ -568,6 +568,7 @@ package syscode
 
         public static function CallProcessorFunction(afuncname:String, aparams:Array):*
         {
+            trace("CallProcessorFunction: " + afuncname, "params: ", aparams);
             var pc:Object = Modules.GetProcessorClass(activemodule);
             if (pc)
             {

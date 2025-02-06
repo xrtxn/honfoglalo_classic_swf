@@ -7,7 +7,7 @@ package tutorial
 	import syscode.AvatarMov;
 	import uibase.gfx.LegoIconset;
 	import uibase.gfx.LegoCharacters;
-		import syscode.WinMgr;
+	import syscode.WinMgr;
 	import syscode.Lang;
 	import syscode.Sys;
 	import syscode.Modules;

@@ -7,22 +7,23 @@ package com.xrt
     import triviador.StartWindowMov;
     import villagemap.gfx.*;
     import tutorial.Tutorial;
+    import minitournament.MinitournamentWin;
+    import wrongquestion.WrongQuestion;
 
     public class Includer
     {
-
-        private var _dummy1:Class = ConnectWait;
-        private var _dummy2:Class = LoginScreen;
-        private var _dummy3:Class = LoadWait;
-        private var _dummy4:Class = Notifications;
-        private var _dummy5:Class = TournamentWin;
-        private var _dummy6:Class = VillageMap;
-        private var _dummy7:Class = NotificationsOpener;
-        private var _dummy8:Class = NotificationsBg;
-        private var _dummy9:Class = MessageWin;
-        private var _dummy10:Class = FriendlyGame;
-        private var _dummy11:Class = StartWindowMov;
-        private var _dummy12:Class = WaitAnim;
+        private var _dummy1:ConnectWait;
+        private var _dummy2:LoginScreen;
+        private var _dummy3:LoadWait;
+        private var _dummy4:Notifications;
+        private var _dummy5:TournamentWin;
+        private var _dummy6:VillageMap;
+        private var _dummy7:NotificationsOpener;
+        private var _dummy8:NotificationsBg;
+        private var _dummy9:MessageWin;
+        private var _dummy10:FriendlyGame;
+        private var _dummy11:StartWindowMov;
+        private var _dummy12:WaitAnim;
         private var _dummy13:Grid1x1mc;
         private var _dummy14:Grid1x1mc_hit;
         private var _dummy15:Grid2x2mc;
@@ -40,6 +41,9 @@ package com.xrt
         private var _dummy27:ShineEffect;
         private var _dummy28:WaveAnim;
         private var _dummy29:Tutorial;
+        private var _dummy30:MinitournamentWin;
+        private var _dummy31:WrongQuestion;
+        private var _dummy32:DebugInfo;
 
         public static function Include():void
         {

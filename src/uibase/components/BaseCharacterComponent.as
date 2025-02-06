@@ -6,8 +6,7 @@ package uibase.components
 	import flash.filters.DropShadowFilter;
 	import syscode.*;
 
-	[Embed(source="/modules/uibase_assets.swf", symbol="symbol86")]
-	public class CharacterComponent extends UIComponent
+	public class BaseCharacterComponent extends UIComponent
 	{
 		public var mc:MovieClip;
 
@@ -37,7 +36,7 @@ package uibase.components
 
 		private var needfirstdraw:Boolean = true;
 
-		public function CharacterComponent()
+		public function BaseCharacterComponent()
 		{
 			super();
 		}

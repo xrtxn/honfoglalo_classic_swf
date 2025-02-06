@@ -4,7 +4,7 @@ package tutorial
 
 	import uibase.Building;
 	import uibase.gfx.lego_button_1x1_ok;
-		import syscode.WinMgr;
+	import syscode.WinMgr;
 	import syscode.Lang;
 	import syscode.Sys;
 	import syscode.Modules;

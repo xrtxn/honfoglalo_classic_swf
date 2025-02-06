@@ -7,7 +7,7 @@ package uibase
 	import flash.text.TextField;
 	import syscode.*;
 
-	[Embed(source="/modules/uibase_assets.swf", symbol="symbol65")]
+	[Embed(source="/modules/triviador_assets.swf", symbol="symbol1050")]
 	public class UniqueButton extends MovieClip
 	{
 		public static const DISLIKE_FRAME:uint = 1;

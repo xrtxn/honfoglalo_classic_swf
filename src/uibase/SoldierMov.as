@@ -3,7 +3,6 @@ package uibase
 	import flash.display.*;
 	import syscode.*;
 
-	[Embed(source="/modules/uibase_assets.swf", symbol="symbol1446")]
 	public class SoldierMov extends MovieClip
 	{
 		public var PLACEHOLDER:MovieClip;

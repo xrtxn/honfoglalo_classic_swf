@@ -38,6 +38,28 @@ package syscode
             MyTrace.myTrace(rest);
         }
 
+        public static function getCurrentLine():int
+        {
+            try
+            {
+                throw new Error();
+            }
+            catch (e:Error)
+            {
+                var stack:String = e.getStackTrace();
+                if (stack)
+                {
+                    // Parse the stack trace
+                    var matches:Array = stack.match(/\[.*:(\d+)\]/m);
+                    if (matches && matches.length > 1)
+                    {
+                        return parseInt(matches[1]); // Line number
+                    }
+                }
+            }
+            return -1; // Fallback
+        }
+
         public static function Trace(info:String, obj:* = null):void
         {
             var log:String = Util.FormatTrace(obj);

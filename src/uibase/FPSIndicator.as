@@ -59,7 +59,7 @@ package uibase
 			{
 				return;
 			}
-			++ fps;
+			++fps;
 			var elapsed:int = getTimer() - fpstime;
 			if (elapsed >= 1000)
 			{

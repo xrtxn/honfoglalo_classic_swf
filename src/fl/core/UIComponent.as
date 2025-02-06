@@ -1,37 +1,39 @@
 // Copyright 2007. Adobe Systems Incorporated. All Rights Reserved.
-package fl.core {
+package fl.core
+{
 
-	import flash.display.DisplayObject;
-	import flash.display.DisplayObjectContainer;
-	import flash.display.InteractiveObject;
-	import flash.display.Sprite;
-	import flash.display.Stage;
-	import flash.events.Event;
-	import flash.events.EventPhase;
-	import flash.events.FocusEvent;
-	import flash.events.KeyboardEvent;
-	import flash.events.MouseEvent;
-	import flash.geom.Rectangle;
-	import flash.text.TextField;
-	import flash.text.TextFormat;
-	import flash.text.TextFormatAlign;
-	import flash.utils.Dictionary;
-	import flash.utils.getDefinitionByName;
-	import flash.utils.getQualifiedClassName;
-	import flash.system.Capabilities;
-	import flash.system.IME;
-	import flash.system.IMEConversionMode;
-	import flash.utils.getQualifiedClassName;
-	import fl.core.InvalidationType;
-	import fl.events.ComponentEvent;
-	import fl.managers.FocusManager;
-	import fl.managers.IFocusManager;
-	import fl.managers.IFocusManagerComponent;
-	import fl.managers.StyleManager;
-	
-    //--------------------------------------
-    //  Events
-    //--------------------------------------
+    import flash.display.DisplayObject;
+    import flash.display.DisplayObjectContainer;
+    import flash.display.InteractiveObject;
+    import flash.display.Sprite;
+    import flash.display.Stage;
+    import flash.events.Event;
+    import flash.events.EventPhase;
+    import flash.events.FocusEvent;
+    import flash.events.KeyboardEvent;
+    import flash.events.MouseEvent;
+    import flash.geom.Rectangle;
+    import flash.text.TextField;
+    import flash.text.TextFormat;
+    import flash.text.TextFormatAlign;
+    import flash.utils.Dictionary;
+    import flash.utils.getDefinitionByName;
+    import flash.utils.getQualifiedClassName;
+    import flash.system.Capabilities;
+    import flash.system.IME;
+    import flash.system.IMEConversionMode;
+    import flash.utils.getQualifiedClassName;
+    import fl.core.InvalidationType;
+    import fl.events.ComponentEvent;
+    import fl.managers.FocusManager;
+    import fl.managers.IFocusManager;
+    import fl.managers.IFocusManagerComponent;
+    import fl.managers.StyleManager;
+
+    // --------------------------------------
+    // Events
+    // --------------------------------------
+
     /**
      * Dispatched after the component is moved.
      *
@@ -41,11 +43,11 @@ package fl.core {
      *
      * @langversion 3.0
      * @playerversion Flash 9.0.28.0
-     *  
+     *
      *  @playerversion AIR 1.0
      *  @productversion Flash CS3
      */
-	[Event(name="move", type="fl.events.ComponentEvent")]
+    [Event(name="move", type="fl.events.ComponentEvent")]
 
     /**
      * Dispatched after the component is resized.
@@ -56,11 +58,11 @@ package fl.core {
      *
      * @langversion 3.0
      * @playerversion Flash 9.0.28.0
-     *  
+     *
      *  @playerversion AIR 1.0
      *  @productversion Flash CS3
      */
-	[Event(name="resize", type="fl.events.ComponentEvent")]
+    [Event(name="resize", type="fl.events.ComponentEvent")]
 
     /**
      * Dispatched after the component visibility changes from invisible to visible.
@@ -73,12 +75,11 @@ package fl.core {
      *
      * @langversion 3.0
      * @playerversion Flash 9.0.28.0
-     *  
+     *
      *  @playerversion AIR 1.0
      *  @productversion Flash CS3
      */
-	[Event(name="show", type="fl.events.ComponentEvent")]
-
+    [Event(name="show", type="fl.events.ComponentEvent")]
 
     /**
      * Dispatched after the component visibility changes from visible to invisible.
@@ -91,16 +92,16 @@ package fl.core {
      *
      * @langversion 3.0
      * @playerversion Flash 9.0.28.0
-     *  
+     *
      *  @playerversion AIR 1.0
      *  @productversion Flash CS3
      */
     [Event(name="hide", type="fl.events.ComponentEvent")]
 
+    // --------------------------------------
+    // Styles
+    // --------------------------------------
 
-    //--------------------------------------
-    //  Styles
-    //--------------------------------------
     /**
      * The skin to be used to display focus indicators.
      *
@@ -108,7 +109,7 @@ package fl.core {
      *
      * @langversion 3.0
      * @playerversion Flash 9.0.28.0
-     *  
+     *
      *  @playerversion AIR 1.0
      *  @productversion Flash CS3
      */
@@ -122,7 +123,7 @@ package fl.core {
      *
      * @langversion 3.0
      * @playerversion Flash 9.0.28.0
-     *  
+     *
      *  @playerversion AIR 1.0
      *  @productversion Flash CS3
      */
@@ -136,11 +137,11 @@ package fl.core {
      *
      * @langversion 3.0
      * @playerversion Flash 9.0.28.0
-     *  
+     *
      *  @playerversion AIR 1.0
      *  @productversion Flash CS3
      */
-	[Style(name="textFormat", type="flash.text.TextFormat")]
+    [Style(name="textFormat", type="flash.text.TextFormat")]
 
     /**
      *  The TextFormat object to use to render the component label when the button is disabled.
@@ -150,16 +151,16 @@ package fl.core {
      *
      * @langversion 3.0
      * @playerversion Flash 9.0.28.0
-     *  
+     *
      *  @playerversion AIR 1.0
      *  @productversion Flash CS3
      */
-	[Style(name="disabledTextFormat", type="flash.text.TextFormat")]
+    [Style(name="disabledTextFormat", type="flash.text.TextFormat")]
 
+    // --------------------------------------
+    // Class description
+    // --------------------------------------
 
-    //--------------------------------------
-    //  Class description
-    //--------------------------------------	
     /**
      *  The UIComponent class is the base class for all visual components,
      *  both interactive and noninteractive. Interactive components are defined
@@ -175,11 +176,12 @@ package fl.core {
      *
      * @langversion 3.0
      * @playerversion Flash 9.0.28.0
-     *  
+     *
      *  @playerversion AIR 1.0
      *  @productversion Flash CS3
      */
-	public class UIComponent extends Sprite {
+    public class UIComponent extends Sprite
+    {
 
         /**
          * The version number of the components.
@@ -188,11 +190,11 @@ package fl.core {
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-         *  
+         *
          *  @playerversion AIR 1.0
          *  @productversion Flash CS3
          */
-		public const version:String = "3.0.3.1";
+        public const version:String = "3.0.3.1";
 
         /**
          * @private (internal)
@@ -203,19 +205,19 @@ package fl.core {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		public static var inCallLaterPhase:Boolean=false;
+        public static var inCallLaterPhase:Boolean = false;
 
         /**
          * @private
-		 * Used when components are nested, and we want the parent component to
-		 * handle draw focus, not the child.
+         * Used when components are nested, and we want the parent component to
+         * handle draw focus, not the child.
          *
          * @default null
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		public var focusTarget:IFocusManagerComponent;
+        public var focusTarget:IFocusManagerComponent;
 
         /**
          * @private (protected)
@@ -223,7 +225,7 @@ package fl.core {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		protected var isLivePreview:Boolean = false;
+        protected var isLivePreview:Boolean = false;
 
         /**
          * @private (testing)
@@ -231,7 +233,7 @@ package fl.core {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		private var tempText:TextField;
+        private var tempText:TextField;
 
         /**
          * @private (protected)
@@ -239,56 +241,63 @@ package fl.core {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		protected var instanceStyles:Object;
+        protected var instanceStyles:Object;
+
         /**
          * @private (protected)
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		protected var sharedStyles:Object; // Holds a reference to the class-level styles.
+        protected var sharedStyles:Object; // Holds a reference to the class-level styles.
+
         /**
          * @private (protected)
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		protected var callLaterMethods:Dictionary;
+        protected var callLaterMethods:Dictionary;
+
         /**
          * @private (protected)
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		protected var invalidateFlag:Boolean = false;
+        protected var invalidateFlag:Boolean = false;
+
         /**
          * @private (protected)
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		protected var _enabled:Boolean=true;
+        protected var _enabled:Boolean = true;
+
         /**
          * @private (protected)
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		protected var invalidHash:Object;
+        protected var invalidHash:Object;
+
         /**
          * @private (protected)
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		protected var uiFocusRect:DisplayObject;
+        protected var uiFocusRect:DisplayObject;
+
         /**
          * @private (protected)
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		protected var isFocused:Boolean =  false
+        protected var isFocused:Boolean = false;
 
         /**
          * @private
@@ -296,97 +305,7 @@ package fl.core {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		private var _focusEnabled:Boolean = true;
-
-
-        /**
-         * @private
-         *
-         * @langversion 3.0
-         * @playerversion Flash 9.0.28.0
-         */
-		private var _mouseFocusEnabled:Boolean = true;
-
-
-        /**
-         * @private (protected)
-         *
-         * @langversion 3.0
-         * @playerversion Flash 9.0.28.0
-         */
-		protected var _width:Number;
-
-        /**
-         * @private (protected)
-         *
-         * @langversion 3.0
-         * @playerversion Flash 9.0.28.0
-         */
-		protected var _height:Number;
-
-        /**
-         * @private (protected)
-         *
-         * @langversion 3.0
-         * @playerversion Flash 9.0.28.0
-         */
-		protected var _x:Number;
-
-        /**
-         * @private (protected)
-         *
-         * @langversion 3.0
-         * @playerversion Flash 9.0.28.0
-         */
-		protected var _y:Number;
-
-        /**
-         * @private (protected)
-         *
-         * @langversion 3.0
-         * @playerversion Flash 9.0.28.0
-         */
-		protected var startWidth:Number;
-
-        /**
-         * @private (protected)
-         *
-         * @langversion 3.0
-         * @playerversion Flash 9.0.28.0
-         */
-		protected var startHeight:Number;
-
-
-        /**
-         * @private (protected)
-         *
-         * @langversion 3.0
-         * @playerversion Flash 9.0.28.0
-         */
-		protected var _imeMode:String = null;
-
-        /**
-         * @private (protected)
-         */
-		protected var _oldIMEMode:String = null;
-
-        /**
-         * @private (protected)
-         *
-         * @langversion 3.0
-         * @playerversion Flash 9.0.28.0
-         */
-		protected var errorCaught:Boolean = false;
-
-        /**
-         * @private (protected)
-         *
-         * @langversion 3.0
-         * @playerversion Flash 9.0.28.0
-         */
-		protected var _inspector:Boolean = false;
-
-
+        private var _focusEnabled:Boolean = true;
 
         /**
          * @private
@@ -394,15 +313,84 @@ package fl.core {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		private static var defaultStyles:Object = {
-											focusRectSkin:"focusRectSkin",
-											focusRectPadding:2,
-											textFormat: new TextFormat("_sans", 11, 0x000000, false, false, false, "", "", TextFormatAlign.LEFT, 0, 0, 0, 0),
-											disabledTextFormat: new TextFormat("_sans", 11, 0x999999, false, false, false, "", "", TextFormatAlign.LEFT, 0, 0, 0, 0),
-											defaultTextFormat: new TextFormat("_sans", 11, 0x000000, false, false, false, "", "", TextFormatAlign.LEFT, 0, 0, 0, 0),
-											defaultDisabledTextFormat: new TextFormat("_sans", 11, 0x999999, false, false, false, "", "", TextFormatAlign.LEFT, 0, 0, 0, 0)
-											}
+        private var _mouseFocusEnabled:Boolean = true;
 
+        /**
+         * @private (protected)
+         *
+         * @langversion 3.0
+         * @playerversion Flash 9.0.28.0
+         */
+        protected var _width:Number;
+
+        /**
+         * @private (protected)
+         *
+         * @langversion 3.0
+         * @playerversion Flash 9.0.28.0
+         */
+        protected var _height:Number;
+
+        /**
+         * @private (protected)
+         *
+         * @langversion 3.0
+         * @playerversion Flash 9.0.28.0
+         */
+        protected var _x:Number;
+
+        /**
+         * @private (protected)
+         *
+         * @langversion 3.0
+         * @playerversion Flash 9.0.28.0
+         */
+        protected var _y:Number;
+
+        /**
+         * @private (protected)
+         *
+         * @langversion 3.0
+         * @playerversion Flash 9.0.28.0
+         */
+        protected var startWidth:Number;
+
+        /**
+         * @private (protected)
+         *
+         * @langversion 3.0
+         * @playerversion Flash 9.0.28.0
+         */
+        protected var startHeight:Number;
+
+        /**
+         * @private (protected)
+         *
+         * @langversion 3.0
+         * @playerversion Flash 9.0.28.0
+         */
+        protected var _imeMode:String = null;
+
+        /**
+         * @private (protected)
+         */
+        protected var _oldIMEMode:String = null;
+
+        /**
+         * @private (protected)
+         *
+         * @langversion 3.0
+         * @playerversion Flash 9.0.28.0
+         */
+        protected var errorCaught:Boolean = false;
+
+        /**
+         * @private (protected)
+         *
+         * @langversion 3.0
+         * @playerversion Flash 9.0.28.0
+         */
+        protected var _inspector:Boolean = false;
 
         /**
          * @private
@@ -410,26 +398,41 @@ package fl.core {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		private static var focusManagers:Dictionary = new Dictionary(true);
+        private static var defaultStyles:Object = {
+                focusRectSkin: "focusRectSkin",
+                focusRectPadding: 2,
+                textFormat: new TextFormat("_sans", 11, 0x000000, false, false, false, "", "", TextFormatAlign.LEFT, 0, 0, 0, 0),
+                disabledTextFormat: new TextFormat("_sans", 11, 0x999999, false, false, false, "", "", TextFormatAlign.LEFT, 0, 0, 0, 0),
+                defaultTextFormat: new TextFormat("_sans", 11, 0x000000, false, false, false, "", "", TextFormatAlign.LEFT, 0, 0, 0, 0),
+                defaultDisabledTextFormat: new TextFormat("_sans", 11, 0x999999, false, false, false, "", "", TextFormatAlign.LEFT, 0, 0, 0, 0)
+            };
+
         /**
          * @private
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		private static var focusManagerUsers:Dictionary = new Dictionary(true);
+        private static var focusManagers:Dictionary = new Dictionary(true);
 
+        /**
+         * @private
+         *
+         * @langversion 3.0
+         * @playerversion Flash 9.0.28.0
+         */
+        private static var focusManagerUsers:Dictionary = new Dictionary(true);
 
         /**
          * Retrieves the default style map for the current component. The style map contains
          * the type that is appropriate for the component, depending on the style that
-         * the component uses. For example, the <code>disabledTextFormat</code> style 
-         * contains a value of <code>null</code> or a TextFormat object. 
-         * You can use these styles and call <code>setStyle()</code> on the current 
-         * component. The following code overrides the default <code>disabledTextFormat</code> 
-         * style on the specified component: 
+         * the component uses. For example, the <code>disabledTextFormat</code> style
+         * contains a value of <code>null</code> or a TextFormat object.
+         * You can use these styles and call <code>setStyle()</code> on the current
+         * component. The following code overrides the default <code>disabledTextFormat</code>
+         * style on the specified component:
          * <listing>componentInstance.setStyle("disabledTextFormat", new TextFormat());</listing>
-         * 
+         *
          * @return Default styles object.
          *
          * @includeExample examples/UIComponent.getStyleDefinition.1.as -noswf
@@ -442,18 +445,19 @@ package fl.core {
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-         *  
+         *
          *  @playerversion AIR 1.0
          *  @productversion Flash CS3
          */
-		public static function getStyleDefinition():Object {			
-			return defaultStyles;
-		}
+        public static function getStyleDefinition():Object
+        {
+            return defaultStyles;
+        }
 
         /**
-         * Merges the styles from multiple classes into one object. 
+         * Merges the styles from multiple classes into one object.
          * If a style is defined in multiple objects, the first occurrence
-         * that is found is used. 
+         * that is found is used.
          *
          * @param list A comma-delimited list of objects that contain the default styles to be merged.
          *
@@ -461,23 +465,28 @@ package fl.core {
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-         *  
+         *
          *  @playerversion AIR 1.0
          *  @productversion Flash CS3
          */
-		public static function mergeStyles(...list:Array):Object {
-			var styles:Object = {};
-			var l:uint = list.length;
-			for (var i:uint=0; i<l; i++) {
-				var styleList:Object = list[i];
-				for (var n:String in styleList) {
-					if (styles[n] != null) { continue; }
-					styles[n] = list[i][n];
-				}
-			}
-			return styles;
-		}
-
+        public static function mergeStyles(...list:Array):Object
+        {
+            var styles:Object = {};
+            var l:uint = list.length;
+            for (var i:uint = 0; i < l; i++)
+            {
+                var styleList:Object = list[i];
+                for (var n:String in styleList)
+                {
+                    if (styles[n] != null)
+                    {
+                        continue;
+                    }
+                    styles[n] = list[i][n];
+                }
+            }
+            return styles;
+        }
 
         /**
          *  @private
@@ -488,48 +497,48 @@ package fl.core {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		public static var createAccessibilityImplementation:Function;
-
+        public static var createAccessibilityImplementation:Function;
 
         /**
          * Creates a new UIComponent component instance.
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-         *  
+         *
          *  @playerversion AIR 1.0
          *  @productversion Flash CS3
          */
-		public function UIComponent() {
-			super();
-			
-			instanceStyles = {};
-			sharedStyles = {};
-			invalidHash = {};
+        public function UIComponent()
+        {
+            super();
 
-			callLaterMethods = new Dictionary();
+            instanceStyles = {};
+            sharedStyles = {};
+            invalidHash = {};
 
-			StyleManager.registerInstance(this);
+            callLaterMethods = new Dictionary();
 
-			configUI();
-			invalidate(InvalidationType.ALL);
-			// We are tab enabled by default if IFocusManagerComponent
-			tabEnabled = (this is IFocusManagerComponent);
-			// We do our own focus drawing.
-			focusRect = false;
+            StyleManager.registerInstance(this);
 
-			// Register for focus and keyboard events.
-			if (tabEnabled) {
-				addEventListener(FocusEvent.FOCUS_IN, focusInHandler);
-				addEventListener(FocusEvent.FOCUS_OUT, focusOutHandler);
-				addEventListener(KeyboardEvent.KEY_DOWN, keyDownHandler);
-				addEventListener(KeyboardEvent.KEY_UP, keyUpHandler);
-			}
+            configUI();
+            invalidate(InvalidationType.ALL);
+            // We are tab enabled by default if IFocusManagerComponent
+            tabEnabled = (this is IFocusManagerComponent);
+            // We do our own focus drawing.
+            focusRect = false;
 
-			initializeFocusManager()
-			addEventListener(Event.ENTER_FRAME, hookAccessibility, false, 0, true);
-		}
+            // Register for focus and keyboard events.
+            if (tabEnabled)
+            {
+                addEventListener(FocusEvent.FOCUS_IN, focusInHandler);
+                addEventListener(FocusEvent.FOCUS_OUT, focusOutHandler);
+                addEventListener(KeyboardEvent.KEY_DOWN, keyDownHandler);
+                addEventListener(KeyboardEvent.KEY_UP, keyUpHandler);
+            }
 
+            initializeFocusManager();
+            addEventListener(Event.ENTER_FRAME, hookAccessibility, false, 0, true);
+        }
 
         /**
          * @private (internal)
@@ -537,59 +546,74 @@ package fl.core {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		public function get componentInspectorSetting():Boolean {
-			return _inspector;
-		}
+        public function get componentInspectorSetting():Boolean
+        {
+            return _inspector;
+        }
+
         /**
          * @private (setter)
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		public function set componentInspectorSetting(value:Boolean):void {
-			_inspector = value;
-			if (_inspector) {
-				beforeComponentParameters();
-			} else {
-				afterComponentParameters();	
-			}
-		}
+        public function set componentInspectorSetting(value:Boolean):void
+        {
+            _inspector = value;
+            if (_inspector)
+            {
+                beforeComponentParameters();
+            }
+            else
+            {
+                afterComponentParameters();
+            }
+        }
 
         // For easy overriding...
+
         /**
          * @private (protected)
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		protected function beforeComponentParameters():void {}
+        protected function beforeComponentParameters():void
+        {
+        }
+
         /**
          * @private (protected)
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		protected function afterComponentParameters():void {}
-		
-	
-        [Inspectable(defaultValue=true, verbose=1)]
+        protected function afterComponentParameters():void
+        {
+        }
+
+        [Inspectable(defaultValue, verbose="1")]
+
         /**
          * Gets or sets a value that indicates whether the component can accept user interaction.
          * A value of <code>true</code> indicates that the component can accept user interaction; a
-         * value of <code>false</code> indicates that it cannot. 
+         * value of <code>false</code> indicates that it cannot.
          *
-         * <p>If you set the <code>enabled</code> property to <code>false</code>, the color of the 
+         * <p>If you set the <code>enabled</code> property to <code>false</code>, the color of the
          * container is dimmed and user input is blocked (with the exception of the Label and ProgressBar components).</p>
          *
          * @default true
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-         *  
+         *
          *  @playerversion AIR 1.0
          *  @productversion Flash CS3
          */
-        public function get enabled():Boolean { return _enabled; }
+        public function get enabled():Boolean
+        {
+            return _enabled;
+        }
 
         /**
          * @private (setter)
@@ -597,14 +621,15 @@ package fl.core {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		public function set enabled(value:Boolean):void {
-			if (value == _enabled) { return; }
-			_enabled = value;
-			invalidate(InvalidationType.STATE);
-		}
-
-
-
+        public function set enabled(value:Boolean):void
+        {
+            if (value == _enabled)
+            {
+                return;
+            }
+            _enabled = value;
+            invalidate(InvalidationType.STATE);
+        }
 
         /**
          * Sets the component to the specified width and height.
@@ -615,16 +640,17 @@ package fl.core {
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-         *  
+         *
          *  @playerversion AIR 1.0
          *  @productversion Flash CS3
          */
-		public function setSize(width:Number, height:Number):void {
-			_width = width;
-			_height = height;
-			invalidate(InvalidationType.SIZE);
-			dispatchEvent(new ComponentEvent(ComponentEvent.RESIZE, false));
-		}
+        public function setSize(width:Number, height:Number):void
+        {
+            _width = width;
+            _height = height;
+            invalidate(InvalidationType.SIZE);
+            dispatchEvent(new ComponentEvent(ComponentEvent.RESIZE, false));
+        }
 
         /**
          * Gets or sets the width of the component, in pixels.
@@ -633,11 +659,11 @@ package fl.core {
          * dispatched. See the <code>resize</code> event for detailed information
          * about when it is dispatched.</p>
          *
-         * <p>If the <code>scaleX</code> property of the component is not 1.0, 
+         * <p>If the <code>scaleX</code> property of the component is not 1.0,
          * the width of the component that is obtained from its internal coordinates
-         * will not match the width value from the parent coordinates. For example, 
-         * a component that is 100 pixels in width and has a <code>scaleX</code> of 2 
-         * has a value of 100 pixels in the parent, but internally stores a value 
+         * will not match the width value from the parent coordinates. For example,
+         * a component that is 100 pixels in width and has a <code>scaleX</code> of 2
+         * has a value of 100 pixels in the parent, but internally stores a value
          * indicating that it is 50 pixels wide.</p>
          *
          * @see #height
@@ -645,21 +671,29 @@ package fl.core {
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-         *  
+         *
          *  @playerversion AIR 1.0
          *  @productversion Flash CS3
          */
-		override public function get width():Number { return _width; }
+        override public function get width():Number
+        {
+            return _width;
+        }
+
         /**
          * @private (setter)
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		override public function set width(value:Number):void {
-			if (_width == value) { return; }
-			setSize(value, height);
-		}
+        override public function set width(value:Number):void
+        {
+            if (_width == value)
+            {
+                return;
+            }
+            setSize(value, height);
+        }
 
         /**
          * Gets or sets the height of the component, in pixels.
@@ -668,37 +702,44 @@ package fl.core {
          * dispatched. See the <code>resize</code> event for detailed information
          * about when it is dispatched.</p>
          *
-         * <p>If the <code>scaleY</code> property of the component is not 1.0, 
+         * <p>If the <code>scaleY</code> property of the component is not 1.0,
          * the height of the component that is obtained from its internal coordinates
-         * will not match the height value from the parent coordinates. For example, 
-         * a component that is 100 pixels in height and has a <code>scaleY</code> of 2 
-         * has a value of 100 pixels in the parent, but internally stores a value 
+         * will not match the height value from the parent coordinates. For example,
+         * a component that is 100 pixels in height and has a <code>scaleY</code> of 2
+         * has a value of 100 pixels in the parent, but internally stores a value
          * indicating that it is 50 pixels in height.</p>
-         * 
+         *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-         *  
+         *
          *  @playerversion AIR 1.0
          *  @productversion Flash CS3
          */
-		override public function get height():Number { return _height; }
+        override public function get height():Number
+        {
+            return _height;
+        }
+
         /**
          * @private (setter)
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		override public function set height(value:Number):void {
-			if (_height == value) { return; }
-			setSize(width, value);
-		}
+        override public function set height(value:Number):void
+        {
+            if (_height == value)
+            {
+                return;
+            }
+            setSize(width, value);
+        }
 
-		
         /**
-         * Sets a style property on this component instance. This style may 
+         * Sets a style property on this component instance. This style may
          * override a style that was set globally.
          *
-         * <p>Calling this method can result in decreased performance. 
+         * <p>Calling this method can result in decreased performance.
          * Use it only when necessary.</p>
          *
          * @param style The name of the style property.
@@ -713,17 +754,21 @@ package fl.core {
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-         *  
+         *
          *  @playerversion AIR 1.0
          *  @productversion Flash CS3
          */
-		public function setStyle(style:String, value:Object):void {
-			//Use strict equality so we can set a style to null ... so if the instanceStyles[style] == undefined, null is still set.
-			//We also need to work around the specific use case of TextFormats
-			if (instanceStyles[style] === value && !(value is TextFormat)) { return; }
-			instanceStyles[style] = value;
-			invalidate(InvalidationType.STYLES);
-		}
+        public function setStyle(style:String, value:Object):void
+        {
+            // Use strict equality so we can set a style to null ... so if the instanceStyles[style] == undefined, null is still set.
+            // We also need to work around the specific use case of TextFormats
+            if (instanceStyles[style] === value && !(value is TextFormat))
+            {
+                return;
+            }
+            instanceStyles[style] = value;
+            invalidate(InvalidationType.STYLES);
+        }
 
         /**
          * Deletes a style property from this component instance.
@@ -737,35 +782,36 @@ package fl.core {
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-         *  
+         *
          *  @playerversion AIR 1.0
          *  @productversion Flash CS3
          */
-		public function clearStyle(style:String):void {			
-			setStyle(style,null);
-		}
+        public function clearStyle(style:String):void
+        {
+            setStyle(style, null);
+        }
 
         /**
-         * Retrieves a style property that is set in the style lookup 
+         * Retrieves a style property that is set in the style lookup
          * chain of the component.
          *
          * <p>The type that this method returns varies depending on the style
          * property that the method retrieves. The range of possible types includes
-         * Boolean; String; Number; int; a uint for an RGB color; a Class for a skin; 
+         * Boolean; String; Number; int; a uint for an RGB color; a Class for a skin;
          * or any kind of object.</p>
          *
-         * <p>If you call this method to retrieve a particular style property, 
+         * <p>If you call this method to retrieve a particular style property,
          * it will be of a known type that you can store in a variable of the
-         * same type. Type casting is not necessary. Instead, a simple assignment 
+         * same type. Type casting is not necessary. Instead, a simple assignment
          * statement like the following will work:</p>
          *
          * <listing>var backgroundColor:uint = getStyle("backgroundColor");</listing>
          *
          * <p>If the style property is not set in the style lookup chain, this method
-         * returns a value of <code>undefined</code>. Note that <code>undefined</code> 
-         * is a special value that is not the same as <code>false</code>, "", <code>NaN</code>, 
-         * 0, or <code>null</code>. No valid style value is ever <code>undefined</code>. 
-         * You can use the static method <code>StyleManager.isValidStyleValue()</code> to 
+         * returns a value of <code>undefined</code>. Note that <code>undefined</code>
+         * is a special value that is not the same as <code>false</code>, "", <code>NaN</code>,
+         * 0, or <code>null</code>. No valid style value is ever <code>undefined</code>.
+         * You can use the static method <code>StyleManager.isValidStyleValue()</code> to
          * test whether a value was set.</p>
          *
          * @param style The name of the style property.
@@ -779,56 +825,58 @@ package fl.core {
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-         *  
+         *
          *  @playerversion AIR 1.0
          *  @productversion Flash CS3
          */
-		public function getStyle(style:String):Object {
-			return instanceStyles[style]
-		}
+        public function getStyle(style:String):Object
+        {
+            return instanceStyles[style];
+        }
 
         /**
          * Moves the component to the specified position within its parent. This has
-         * the same effect as changing the component location by setting its  
-         * <code>x</code> and <code>y</code> properties. Calling this method triggers 
-         * the <code>ComponentEvent.MOVE</code> event to be dispatched.      
+         * the same effect as changing the component location by setting its
+         * <code>x</code> and <code>y</code> properties. Calling this method triggers
+         * the <code>ComponentEvent.MOVE</code> event to be dispatched.
          *
          * <p>To override the <code>updateDisplayList()</code> method in a
-         * custom component, use the <code>move()</code> method instead 
-         * of setting the <code>x</code> and <code>y</code> properties. This is because 
+         * custom component, use the <code>move()</code> method instead
+         * of setting the <code>x</code> and <code>y</code> properties. This is because
          * a call to the <code>move()</code> method causes a <code>move</code> event object
-         * to be dispatched immediately after the move operation is complete. In contrast, 
-         * when you change the component location by setting the <code>x</code> and <code>y</code> 
+         * to be dispatched immediately after the move operation is complete. In contrast,
+         * when you change the component location by setting the <code>x</code> and <code>y</code>
          * properties, the event object is dispatched on the next screen refresh.</p>
          *
-         * @param x The x coordinate value that specifies the position of the component within its 
+         * @param x The x coordinate value that specifies the position of the component within its
          *          parent, in pixels. This value is calculated from the left.
          *
-         * @param y The y coordinate value that specifies the position of the component within its 
-         *          parent, in pixels. This value is calculated from the top. 
+         * @param y The y coordinate value that specifies the position of the component within its
+         *          parent, in pixels. This value is calculated from the top.
          *
          * @see #x
          * @see #y
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-         *  
+         *
          *  @playerversion AIR 1.0
          *  @productversion Flash CS3
          */
-		public function move(x:Number,y:Number):void {
-			_x = x;
-			_y = y;
-			super.x = Math.round(x);
-			super.y = Math.round(y);
-			dispatchEvent(new ComponentEvent(ComponentEvent.MOVE));
-		}
+        public function move(x:Number, y:Number):void
+        {
+            _x = x;
+            _y = y;
+            super.x = Math.round(x);
+            super.y = Math.round(y);
+            dispatchEvent(new ComponentEvent(ComponentEvent.MOVE));
+        }
 
         /**
          * Gets or sets the x coordinate that represents the position of the component along
-         * the x axis within its parent container. This value is described in pixels and is 
+         * the x axis within its parent container. This value is described in pixels and is
          * calculated from the left.
-         * 
+         *
          * <p>Setting this property causes the <code>ComponentEvent.MOVE</code> event to be dispatched.</p>
          *
          * @default 0
@@ -838,11 +886,14 @@ package fl.core {
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-         *  
+         *
          *  @playerversion AIR 1.0
          *  @productversion Flash CS3
          */
-        override public function get x():Number { return ( isNaN(_x) )?super.x:_x; }
+        override public function get x():Number
+        {
+            return (isNaN(_x)) ? super.x : _x;
+        }
 
         /**
          * @private (setter)
@@ -850,14 +901,16 @@ package fl.core {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-        override public function set x(value:Number):void {
-            move(value,_y);
+        override public function set x(value:Number):void
+        {
+            move(value, _y);
         }
+
         /**
-         * Gets or sets the y coordinate that represents the position of the component along 
-         * the y axis within its parent container. This value is described in pixels and is 
+         * Gets or sets the y coordinate that represents the position of the component along
+         * the y axis within its parent container. This value is described in pixels and is
          * calculated from the top.
-         * 
+         *
          * <p>Setting this property causes the <code>move</code> event to be dispatched.</p>
          *
          * @see #move()
@@ -866,13 +919,14 @@ package fl.core {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          * @internal [kenos] Should this have a default value of 0, like the x property?
-         *  
+         *
          *  @playerversion AIR 1.0
          *  @productversion Flash CS3
          */
-		override public function get y():Number {
-			return ( isNaN(_y) )?super.y:_y;
-		}
+        override public function get y():Number
+        {
+            return (isNaN(_y)) ? super.y : _y;
+        }
 
         /**
          * @private (setter)
@@ -880,9 +934,10 @@ package fl.core {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		override public function set y(value:Number):void {
-			move(_x, value);	
-		}
+        override public function set y(value:Number):void
+        {
+            move(_x, value);
+        }
 
         /**
          * Multiplies the current width of the component by a scale factor.
@@ -891,13 +946,14 @@ package fl.core {
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-         *  
+         *
          *  @playerversion AIR 1.0
          *  @productversion Flash CS3
          */
-		override public function get scaleX():Number {
-			return width / startWidth;
-		}
+        override public function get scaleX():Number
+        {
+            return width / startWidth;
+        }
 
         /**
          * @private (setter)
@@ -905,9 +961,10 @@ package fl.core {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		override public function set scaleX(value:Number):void {
-			setSize(startWidth*value, height);
-		}
+        override public function set scaleX(value:Number):void
+        {
+            setSize(startWidth * value, height);
+        }
 
         /**
          * Multiplies the current height of the component by a scale factor.
@@ -916,13 +973,14 @@ package fl.core {
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-         *  
+         *
          *  @playerversion AIR 1.0
          *  @productversion Flash CS3
          */
-		override public function get scaleY():Number {
-			return height / startHeight;
-		}
+        override public function get scaleY():Number
+        {
+            return height / startHeight;
+        }
 
         /**
          * @private (setter)
@@ -930,9 +988,10 @@ package fl.core {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		override public function set scaleY(value:Number):void {
-			setSize(width, startHeight*value);
-		}
+        override public function set scaleY(value:Number):void
+        {
+            setSize(width, startHeight * value);
+        }
 
         /**
          * @private (protected)
@@ -940,9 +999,10 @@ package fl.core {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		protected function getScaleY():Number {
-			return super.scaleY;
-		}
+        protected function getScaleY():Number
+        {
+            return super.scaleY;
+        }
 
         /**
          * @private (protected)
@@ -950,9 +1010,10 @@ package fl.core {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		protected function setScaleY(value:Number):void {
-			super.scaleY = value;
-		}
+        protected function setScaleY(value:Number):void
+        {
+            super.scaleY = value;
+        }
 
         /**
          * @private (protected)
@@ -960,9 +1021,10 @@ package fl.core {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		protected function getScaleX():Number {
-			return super.scaleX;
-		}
+        protected function getScaleX():Number
+        {
+            return super.scaleX;
+        }
 
         /**
          * @private (setter)
@@ -970,21 +1032,23 @@ package fl.core {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		protected function setScaleX(value:Number):void {
-			super.scaleX = value;
-		}
+        protected function setScaleX(value:Number):void
+        {
+            super.scaleX = value;
+        }
 
-        [Inspectable(defaultValue=true, verbose=1)]
+        [Inspectable(defaultValue, verbose="1")]
+
         /**
-         * Gets or sets a value that indicates whether the current component instance is visible. 
-         * A value of <code>true</code> indicates that the current component is visible; a value of 
+         * Gets or sets a value that indicates whether the current component instance is visible.
+         * A value of <code>true</code> indicates that the current component is visible; a value of
          * <code>false</code> indicates that it is not.
          *
          * <p>When this property is set to <code>true</code>, the object dispatches a
-         * <code>show</code> event. When this property is set to <code>false</code>, 
-         * the object dispatches a <code>hide</code> event. In either case, 
-         * the children of the object do not generate a <code>show</code> or 
-         * <code>hide</code> event unless the object specifically writes an 
+         * <code>show</code> event. When this property is set to <code>false</code>,
+         * the object dispatches a <code>hide</code> event. In either case,
+         * the children of the object do not generate a <code>show</code> or
+         * <code>hide</code> event unless the object specifically writes an
          * implementation to do so.</p>
          *
          * @default true
@@ -994,13 +1058,14 @@ package fl.core {
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-         *  
+         *
          *  @playerversion AIR 1.0
          *  @productversion Flash CS3
          */
-		override public function get visible():Boolean {
-			return super.visible;	
-		}
+        override public function get visible():Boolean
+        {
+            return super.visible;
+        }
 
         /**
          * @private (setter)
@@ -1008,35 +1073,40 @@ package fl.core {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		override public function set visible(value:Boolean):void {
-			if (super.visible == value) { return; }
-			super.visible = value;
-			var t:String = (value) ? ComponentEvent.SHOW : ComponentEvent.HIDE;
-			dispatchEvent(new ComponentEvent(t, true));
-		}
+        override public function set visible(value:Boolean):void
+        {
+            if (super.visible == value)
+            {
+                return;
+            }
+            super.visible = value;
+            var t:String = (value) ? ComponentEvent.SHOW : ComponentEvent.HIDE;
+            dispatchEvent(new ComponentEvent(t, true));
+        }
 
         /**
          * Validates and updates the properties and layout of this object, redrawing it
-         * if necessary. 
+         * if necessary.
          *
          * <p>Properties that require substantial computation are normally not processed
          * until the script finishes executing. This is because setting one property could
-         * require the processing of other properties. For example, setting the <code>width</code> 
-         * property may require that the widths of the children or parent of the object also 
-         * be recalculated. And if the script recalculates the width of the object more than 
+         * require the processing of other properties. For example, setting the <code>width</code>
+         * property may require that the widths of the children or parent of the object also
+         * be recalculated. And if the script recalculates the width of the object more than
          * once, these interdependent properties may also require recalculating. Use this
          * method to manually override this behavior.</p>
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-         *  
+         *
          *  @playerversion AIR 1.0
          *  @productversion Flash CS3
          */
-		public function validateNow():void {
-			invalidate(InvalidationType.ALL,false);
-			draw();
-		}
+        public function validateNow():void
+        {
+            invalidate(InvalidationType.ALL, false);
+            draw();
+        }
 
         /**
          * Marks a property as invalid and redraws the component on the
@@ -1050,40 +1120,48 @@ package fl.core {
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-         *  
+         *
          *  @playerversion AIR 1.0
          *  @productversion Flash CS3
          */
-		public function invalidate(property:String=InvalidationType.ALL,callLater:Boolean=true):void {
-			invalidHash[property] = true;
-			if (callLater) { this.callLater(draw); }
-		}
+        public function invalidate(property:String = InvalidationType.ALL, callLater:Boolean = true):void
+        {
+            invalidHash[property] = true;
+            if (callLater)
+            {
+                this.callLater(draw);
+            }
+        }
 
-		/**
-		 * @private (internal)
-		 * 
-		 * Sets the inherited style value to the specified style name and
-		 * invalidates the styles of the component.
-		 *
-		 * @param name Style name.
-		 *
+        /**
+         * @private (internal)
+         *
+         * Sets the inherited style value to the specified style name and
+         * invalidates the styles of the component.
+         *
+         * @param name Style name.
+         *
          * @param style Style value.
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		public function setSharedStyle(name:String,style:Object):void {
-			if (sharedStyles[name] === style  && !(style is TextFormat)) { return; }
-			sharedStyles[name] = style;
-			if (instanceStyles[name] == null) {
-				invalidate(InvalidationType.STYLES);
-			}
-		}
-
+        public function setSharedStyle(name:String, style:Object):void
+        {
+            if (sharedStyles[name] === style && !(style is TextFormat))
+            {
+                return;
+            }
+            sharedStyles[name] = style;
+            if (instanceStyles[name] == null)
+            {
+                invalidate(InvalidationType.STYLES);
+            }
+        }
 
         /**
-         * Gets or sets a Boolean value that indicates whether the component can receive focus 
-         * after the user clicks it. A value of <code>true</code> indicates that it can 
+         * Gets or sets a Boolean value that indicates whether the component can receive focus
+         * after the user clicks it. A value of <code>true</code> indicates that it can
          * receive focus; a value of <code>false</code> indicates that it cannot.
          *
          * <p>If this property is <code>false</code>, focus is transferred to the first
@@ -1097,29 +1175,32 @@ package fl.core {
          * @playerversion Flash 9.0.28.0
          * @internal [kenos] This is described as being the same thing as the property
          *                   below. Is this correct?
-         *  
+         *
          *  @playerversion AIR 1.0
          *  @productversion Flash CS3
          */
-		public function get focusEnabled():Boolean {
-			return _focusEnabled;
-		}
+        public function get focusEnabled():Boolean
+        {
+            return _focusEnabled;
+        }
+
         /**
          * @private (setter)
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		public function set focusEnabled(b:Boolean):void {
-			_focusEnabled = b;
-		}
+        public function set focusEnabled(b:Boolean):void
+        {
+            _focusEnabled = b;
+        }
 
         /**
-         * Gets or sets a value that indicates whether the component can receive focus after 
-         * the user clicks it. A value of <code>true</code> indicates that it can receive 
+         * Gets or sets a value that indicates whether the component can receive focus after
+         * the user clicks it. A value of <code>true</code> indicates that it can receive
          * focus; a value of <code>false</code> indicates that it cannot.
          *
-         * <p>If this property is <code>false</code>, focus is transferred to the first 
+         * <p>If this property is <code>false</code>, focus is transferred to the first
          * parent whose <code>mouseFocusEnabled</code> property is set to <code>true</code>.</p>
          *
          * @default true
@@ -1128,22 +1209,25 @@ package fl.core {
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-         *  
+         *
          *  @playerversion AIR 1.0
          *  @productversion Flash CS3
          */
-		public function get mouseFocusEnabled():Boolean {
-			return _mouseFocusEnabled;
-		}
+        public function get mouseFocusEnabled():Boolean
+        {
+            return _mouseFocusEnabled;
+        }
+
         /**
          * @private (setter)
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		public function set mouseFocusEnabled(b:Boolean):void {
-			_mouseFocusEnabled = b;
-		}
+        public function set mouseFocusEnabled(b:Boolean):void
+        {
+            _mouseFocusEnabled = b;
+        }
 
         /**
          * Gets or sets the FocusManager that controls focus for this component and its
@@ -1155,24 +1239,30 @@ package fl.core {
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-         *  
+         *
          *  @playerversion AIR 1.0
          *  @productversion Flash CS3
          */
-		public function get focusManager():IFocusManager {
-			var o:DisplayObject = this;
-			while (o) {
-				if (UIComponent.focusManagers[o] != null) {
-					return IFocusManager(UIComponent.focusManagers[o]);
-				}
-				try {
-					o = o.parent;
-				} catch (se:SecurityError) {
-					return null;
-				}
-			}
-			return null;
-		}
+        public function get focusManager():IFocusManager
+        {
+            var o:DisplayObject = this;
+            while (o)
+            {
+                if (UIComponent.focusManagers[o] != null)
+                {
+                    return IFocusManager(UIComponent.focusManagers[o]);
+                }
+                try
+                {
+                    o = o.parent;
+                }
+                catch (se:SecurityError)
+                {
+                    return null;
+                }
+            }
+            return null;
+        }
 
         /**
          * @private (setter)
@@ -1180,9 +1270,10 @@ package fl.core {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		public function set focusManager(f:IFocusManager):void {
-			UIComponent.focusManagers[this] = f;
-		}
+        public function set focusManager(f:IFocusManager):void
+        {
+            UIComponent.focusManagers[this] = f;
+        }
 
         /**
          * Shows or hides the focus indicator on this component.
@@ -1190,38 +1281,44 @@ package fl.core {
          * <p>The UIComponent class implements this method by creating and positioning
          * an instance of the class that is specified by the <code>focusSkin</code> style.</p>
          *
-         * @param focused Indicates whether to show or hide the focus indicator. 
+         * @param focused Indicates whether to show or hide the focus indicator.
          *                If this value is <code>true</code>, the focus indicator is shown; if this value
          *                is <code>false</code>, the focus indicator is hidden.
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-         *  
+         *
          *  @playerversion AIR 1.0
          *  @productversion Flash CS3
          */
-		public function drawFocus(focused:Boolean):void {
-			isFocused = focused; // We need to set isFocused here since there are drawFocus() calls from FM.
+        public function drawFocus(focused:Boolean):void
+        {
+            isFocused = focused; // We need to set isFocused here since there are drawFocus() calls from FM.
 
-			//Remove uiFocusRect if focus is turned off
-			if (uiFocusRect != null && contains(uiFocusRect)) {
-				removeChild(uiFocusRect);
-				uiFocusRect = null;
-			}
-			//Add focusRect to stage, and resize.  If component is focused.
-			if (focused) {
-				uiFocusRect = getDisplayObjectInstance(getStyleValue("focusRectSkin")) as Sprite;
-				if (uiFocusRect == null) { return; }
-				var focusPadding:Number = Number(getStyleValue("focusRectPadding"));
+            // Remove uiFocusRect if focus is turned off
+            if (uiFocusRect != null && contains(uiFocusRect))
+            {
+                removeChild(uiFocusRect);
+                uiFocusRect = null;
+            }
+            // Add focusRect to stage, and resize.  If component is focused.
+            if (focused)
+            {
+                uiFocusRect = getDisplayObjectInstance(getStyleValue("focusRectSkin")) as Sprite;
+                if (uiFocusRect == null)
+                {
+                    return;
+                }
+                var focusPadding:Number = Number(getStyleValue("focusRectPadding"));
 
-				uiFocusRect.x = -focusPadding;
-				uiFocusRect.y = -focusPadding;
-				uiFocusRect.width = width + (focusPadding*2);
-				uiFocusRect.height = height + (focusPadding*2);
+                uiFocusRect.x = -focusPadding;
+                uiFocusRect.y = -focusPadding;
+                uiFocusRect.width = width + (focusPadding * 2);
+                uiFocusRect.height = height + (focusPadding * 2);
 
-				addChildAt(uiFocusRect, 0);
-			}
-		}
+                addChildAt(uiFocusRect, 0);
+            }
+        }
 
         /**
          * Sets the focus to this component. The component may in turn give the focus
@@ -1233,18 +1330,20 @@ package fl.core {
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-         *  
+         *
          *  @playerversion AIR 1.0
          *  @productversion Flash CS3
          */
-		public function setFocus():void {
-			if (stage) {
-				stage.focus = this;
-			}
-		}
+        public function setFocus():void
+        {
+            if (stage)
+            {
+                stage.focus = this;
+            }
+        }
 
         /**
-         * Retrieves the object that currently has focus. 
+         * Retrieves the object that currently has focus.
          *
          * <p>Note that this method does not necessarily return the component that
          * has focus. It may return the internal subcomponent of the component
@@ -1255,16 +1354,18 @@ package fl.core {
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-         *  
+         *
          *  @playerversion AIR 1.0
          *  @productversion Flash CS3
          */
-		public function getFocus():InteractiveObject {
-			if (stage) {
-				return stage.focus;
-			}
-			return null;
-		}
+        public function getFocus():InteractiveObject
+        {
+            if (stage)
+            {
+                return stage.focus;
+            }
+            return null;
+        }
 
         /**
          * @private (protected)
@@ -1272,29 +1373,39 @@ package fl.core {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		protected function setIMEMode(enabled:Boolean) {
-			if(_imeMode != null) {
-				if(enabled) {
-					IME.enabled = true;
-					_oldIMEMode = IME.conversionMode;
-					try {
-						if (!errorCaught && IME.conversionMode != IMEConversionMode.UNKNOWN) {
-							IME.conversionMode = _imeMode;
-						}
-						errorCaught = false;
-					} catch(e:Error) {
-						errorCaught = true;				
-						throw new Error("IME mode not supported: " + _imeMode);
-					}
-				} else {
-					if (IME.conversionMode != IMEConversionMode.UNKNOWN && _oldIMEMode != IMEConversionMode.UNKNOWN) {
-						IME.conversionMode = _oldIMEMode;
-					}
-					IME.enabled = false;
-				}
-			}
-		}
-		
+        protected function setIMEMode(enabled:Boolean)
+        {
+            if (_imeMode != null)
+            {
+                if (enabled)
+                {
+                    IME.enabled = true;
+                    _oldIMEMode = IME.conversionMode;
+                    try
+                    {
+                        if (!errorCaught && IME.conversionMode != IMEConversionMode.UNKNOWN)
+                        {
+                            IME.conversionMode = _imeMode;
+                        }
+                        errorCaught = false;
+                    }
+                    catch (e:Error)
+                    {
+                        errorCaught = true;
+                        throw new Error("IME mode not supported: " + _imeMode);
+                    }
+                }
+                else
+                {
+                    if (IME.conversionMode != IMEConversionMode.UNKNOWN && _oldIMEMode != IMEConversionMode.UNKNOWN)
+                    {
+                        IME.conversionMode = _oldIMEMode;
+                    }
+                    IME.enabled = false;
+                }
+            }
+        }
+
         /**
          * Initiates an immediate draw operation, without invalidating everything as <code>invalidateNow</code> does.
          *
@@ -1304,38 +1415,14 @@ package fl.core {
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-         *  
+         *
          *  @playerversion AIR 1.0
          *  @productversion Flash CS3
          */
-		public function drawNow():void {
-			draw();
-		}
-
-
-
-        /**
-         * @private (protected)
-         *
-         * @langversion 3.0
-         * @playerversion Flash 9.0.28.0
-         */
-		protected function configUI():void {			
-			isLivePreview = checkLivePreview();
-			var r:Number = rotation;
-			rotation = 0;
-			var w:Number = super.width;
-			var h:Number = super.height;
-			super.scaleX = super.scaleY = 1;
-			setSize(w,h);
-			move(super.x,super.y);
-			rotation = r;
-			startWidth = w;
-			startHeight = h;
-			if (numChildren > 0) {
-				removeChildAt(0);
-			}
-		}
+        public function drawNow():void
+        {
+            draw();
+        }
 
         /**
          * @private (protected)
@@ -1343,375 +1430,505 @@ package fl.core {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		protected function checkLivePreview():Boolean {
-			if (parent == null) { return false; }
-			var className:String;
-			try {
-				className = getQualifiedClassName(parent);	
-			} catch (e:Error) {}
-			return (className == "fl.livepreview::LivePreviewParent");	
-		}
+        protected function configUI():void
+        {
+            isLivePreview = checkLivePreview();
+            var r:Number = rotation;
+            rotation = 0;
+            var w:Number = super.width;
+            var h:Number = super.height;
+            super.scaleX = super.scaleY = 1;
+            setSize(w, h);
+            move(super.x, super.y);
+            rotation = r;
+            startWidth = w;
+            startHeight = h;
+            if (numChildren > 0)
+            {
+                removeChildAt(0);
+            }
+        }
 
-        // Included the first property as a proper param to enable *some* type checking, and also because it is a required param.		
         /**
          * @private (protected)
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		protected function isInvalid(property:String,...properties:Array):Boolean {
-			if (invalidHash[property] || invalidHash[InvalidationType.ALL]) { return true; }
-			while (properties.length > 0) {
-				if (invalidHash[properties.pop()]) { return true; }
-			}
-			return false
-		}
-		/**
-         * @private (protected)
-         *
-         * @langversion 3.0
-         * @playerversion Flash 9.0.28.0
-		 */
-		protected function validate():void {
-			invalidHash = {};
-		}
-		/**
-         * @private (protected)
-         *
-         * @langversion 3.0
-         * @playerversion Flash 9.0.28.0
-		 */
-		protected function draw():void {
-			// classes that extend UIComponent should deal with each possible invalidated property
-			// common values include all, size, enabled, styles, state
-			// draw should call super or validate when finished updating
-			if (isInvalid(InvalidationType.SIZE,InvalidationType.STYLES)) {
-				if (isFocused && focusManager.showFocusIndicator) { drawFocus(true); }
-			}
-			validate();
-		}
+        protected function checkLivePreview():Boolean
+        {
+            if (parent == null)
+            {
+                return false;
+            }
+            var className:String;
+            try
+            {
+                className = getQualifiedClassName(parent);
+            }
+            catch (e:Error)
+            {
+            }
+            return (className == "fl.livepreview::LivePreviewParent");
+        }
 
-		/**
+        // Included the first property as a proper param to enable *some* type checking, and also because it is a required param.
+
+        /**
          * @private (protected)
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-		 */
-		protected function getDisplayObjectInstance(skin:Object):DisplayObject {
-			var classDef:Object = null;
-			if (skin is Class) { 
-				return (new skin()) as DisplayObject; 
-			} else if (skin is DisplayObject) {
-				(skin as DisplayObject).x = 0;
-				(skin as DisplayObject).y = 0;
-				return skin as DisplayObject;
-			}
-			
-			try {
-				classDef = getDefinitionByName(skin.toString());
-			} catch(e:Error) {
-				try {
-					classDef = loaderInfo.applicationDomain.getDefinition(skin.toString()) as Object;
-				} catch (e:Error) {
-					// Nothing
-				}
-			}
-			
-			if (classDef == null) {
-				return null;
-			}
-			return (new classDef()) as DisplayObject;
-		}
-		/**
-         * Returns the specified style for a component, considering all styles set on the global level, component level and instance level. 
+         */
+        protected function isInvalid(property:String, ...properties:Array):Boolean
+        {
+            if (invalidHash[property] || invalidHash[InvalidationType.ALL])
+            {
+                return true;
+            }
+            while (properties.length > 0)
+            {
+                if (invalidHash[properties.pop()])
+                {
+                    return true;
+                }
+            }
+            return false;
+
+        }
+
+        /**
+         * @private (protected)
          *
-         * <p>For example, if a component has a style set at the global level to <code>myStyle</code> and you call 
-         * <code>getStyle("myStyle")</code> on an instance that does not have an instance setting, it returns null.  If you call 
+         * @langversion 3.0
+         * @playerversion Flash 9.0.28.0
+         */
+        protected function validate():void
+        {
+            invalidHash = {};
+        }
+
+        /**
+         * @private (protected)
+         *
+         * @langversion 3.0
+         * @playerversion Flash 9.0.28.0
+         */
+        protected function draw():void
+        {
+            // classes that extend UIComponent should deal with each possible invalidated property
+            // common values include all, size, enabled, styles, state
+            // draw should call super or validate when finished updating
+            if (isInvalid(InvalidationType.SIZE, InvalidationType.STYLES))
+            {
+                if (isFocused && focusManager.showFocusIndicator)
+                {
+                    drawFocus(true);
+                }
+            }
+            validate();
+        }
+
+        /**
+         * @private (protected)
+         *
+         * @langversion 3.0
+         * @playerversion Flash 9.0.28.0
+         */
+        protected function getDisplayObjectInstance(skin:Object):DisplayObject
+        {
+            var classDef:Object = null;
+            if (skin is Class)
+            {
+                return (new skin()) as DisplayObject;
+            }
+            else if (skin is DisplayObject)
+            {
+                (skin as DisplayObject).x = 0;
+                (skin as DisplayObject).y = 0;
+                return skin as DisplayObject;
+            }
+
+            try
+            {
+                classDef = getDefinitionByName(skin.toString());
+            }
+            catch (e:Error)
+            {
+                try
+                {
+                    classDef = loaderInfo.applicationDomain.getDefinition(skin.toString()) as Object;
+                }
+                catch (e:Error)
+                {
+                    // Nothing
+                }
+            }
+
+            if (classDef == null)
+            {
+                return null;
+            }
+            return (new classDef()) as DisplayObject;
+        }
+
+        /**
+         * Returns the specified style for a component, considering all styles set on the global level, component level and instance level.
+         *
+         * <p>For example, if a component has a style set at the global level to <code>myStyle</code> and you call
+         * <code>getStyle("myStyle")</code> on an instance that does not have an instance setting, it returns null.  If you call
          * <code>getStyleValue("myStyle")</code>, it returns "myStyle", because it is active at the global level.</p>
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-		 *  
-		 *  @playerversion AIR 1.0
-		 *  @productversion Flash CS3
-		 */
-		protected function getStyleValue(name:String):Object {
-			return (instanceStyles[name] == null) ? sharedStyles[name] : instanceStyles[name];
-		}
-		/**
+         *
+         *  @playerversion AIR 1.0
+         *  @productversion Flash CS3
+         */
+        protected function getStyleValue(name:String):Object
+        {
+            return (instanceStyles[name] == null) ? sharedStyles[name] : instanceStyles[name];
+        }
+
+        /**
          * @private (protected)
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-		 */
-		protected function copyStylesToChild(child:UIComponent,styleMap:Object):void {
-			for (var n:String in styleMap) {
-				
-				child.setStyle(n,getStyleValue(styleMap[n]));
-			}
-		}
+         */
+        protected function copyStylesToChild(child:UIComponent, styleMap:Object):void
+        {
+            for (var n:String in styleMap)
+            {
 
-		
-		/**
+                child.setStyle(n, getStyleValue(styleMap[n]));
+            }
+        }
+
+        /**
          * @private (protected)
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-		 */
-		protected function callLater(fn:Function):void {
-			if (inCallLaterPhase) { return; }
-			
-			callLaterMethods[fn] = true;
-			if (stage != null) {
-				try {
-					stage.addEventListener(Event.RENDER,callLaterDispatcher,false,0,true);
-					stage.invalidate();
-				} catch (se:SecurityError) {
-					addEventListener(Event.ENTER_FRAME,callLaterDispatcher,false,0,true);
-				}
-			} else {
-				addEventListener(Event.ADDED_TO_STAGE,callLaterDispatcher,false,0,true);
-			}
-		}
+         */
+        protected function callLater(fn:Function):void
+        {
+            if (inCallLaterPhase)
+            {
+                return;
+            }
 
-		/**
+            callLaterMethods[fn] = true;
+            if (stage != null)
+            {
+                try
+                {
+                    stage.addEventListener(Event.RENDER, callLaterDispatcher, false, 0, true);
+                    stage.invalidate();
+                }
+                catch (se:SecurityError)
+                {
+                    addEventListener(Event.ENTER_FRAME, callLaterDispatcher, false, 0, true);
+                }
+            }
+            else
+            {
+                addEventListener(Event.ADDED_TO_STAGE, callLaterDispatcher, false, 0, true);
+            }
+        }
+
+        /**
          * @private
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-		 */
-		private function callLaterDispatcher(event:Event):void {
-			if (event.type == Event.ADDED_TO_STAGE) {
-				try {
-					removeEventListener(Event.ADDED_TO_STAGE,callLaterDispatcher);
-					// now we can listen for render event:
-					stage.addEventListener(Event.RENDER,callLaterDispatcher,false,0,true);
-					stage.invalidate();
-					return;
-				} catch (se1:SecurityError) {
-					addEventListener(Event.ENTER_FRAME,callLaterDispatcher,false,0,true);
-				}
-			} else {
-				event.target.removeEventListener(Event.RENDER,callLaterDispatcher);
-				event.target.removeEventListener(Event.ENTER_FRAME,callLaterDispatcher);
-				try {
-					if (stage == null) {
-						// received render, but the stage is not available, so we will listen for addedToStage again:
-						addEventListener(Event.ADDED_TO_STAGE,callLaterDispatcher,false,0,true);
-						return;
-					}
-				} catch (se2:SecurityError) {
-				}
-			}
+         */
+        private function callLaterDispatcher(event:Event):void
+        {
+            if (event.type == Event.ADDED_TO_STAGE)
+            {
+                try
+                {
+                    removeEventListener(Event.ADDED_TO_STAGE, callLaterDispatcher);
+                    // now we can listen for render event:
+                    stage.addEventListener(Event.RENDER, callLaterDispatcher, false, 0, true);
+                    stage.invalidate();
+                    return;
+                }
+                catch (se1:SecurityError)
+                {
+                    addEventListener(Event.ENTER_FRAME, callLaterDispatcher, false, 0, true);
+                }
+            }
+            else
+            {
+                event.target.removeEventListener(Event.RENDER, callLaterDispatcher);
+                event.target.removeEventListener(Event.ENTER_FRAME, callLaterDispatcher);
+                try
+                {
+                    if (stage == null)
+                    {
+                        // received render, but the stage is not available, so we will listen for addedToStage again:
+                        addEventListener(Event.ADDED_TO_STAGE, callLaterDispatcher, false, 0, true);
+                        return;
+                    }
+                }
+                catch (se2:SecurityError)
+                {
+                }
+            }
 
-			inCallLaterPhase = true;
-			
-			var methods:Dictionary = callLaterMethods;
-			for (var method:Object in methods) {
-				method();
-				delete(methods[method]);
-			}
-			inCallLaterPhase = false;
-		}
+            inCallLaterPhase = true;
 
+            var methods:Dictionary = callLaterMethods;
+            for (var method:Object in methods)
+            {
+                method();
+                delete (methods[method]);
+            }
+            inCallLaterPhase = false;
+        }
 
-
-		/**
+        /**
          * @private
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-		 */
-		private function initializeFocusManager():void {
-			// create root FocusManager
-			if(stage == null) {
-				// we don't have stage yet, wait for it
-				addEventListener(Event.ADDED_TO_STAGE, addedHandler, false, 0, true);
-			} else {
-				// we have stage: if not already created, create FocusManager
-				createFocusManager();
-				var fm:IFocusManager = focusManager;
-				if (fm != null) {
-					var fmUserDict:Dictionary = focusManagerUsers[fm];
-					if (fmUserDict == null) {
-						fmUserDict = new Dictionary(true);
-						focusManagerUsers[fm] = fmUserDict;
-					}
-					fmUserDict[this] = true;
-				}
-			}
-			addEventListener(Event.REMOVED_FROM_STAGE, removedHandler);
-		}
-		/**
+         */
+        private function initializeFocusManager():void
+        {
+            // create root FocusManager
+            if (stage == null)
+            {
+                // we don't have stage yet, wait for it
+                addEventListener(Event.ADDED_TO_STAGE, addedHandler, false, 0, true);
+            }
+            else
+            {
+                // we have stage: if not already created, create FocusManager
+                createFocusManager();
+                var fm:IFocusManager = focusManager;
+                if (fm != null)
+                {
+                    var fmUserDict:Dictionary = focusManagerUsers[fm];
+                    if (fmUserDict == null)
+                    {
+                        fmUserDict = new Dictionary(true);
+                        focusManagerUsers[fm] = fmUserDict;
+                    }
+                    fmUserDict[this] = true;
+                }
+            }
+            addEventListener(Event.REMOVED_FROM_STAGE, removedHandler);
+        }
+
+        /**
          * @private
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-		 */
-		private function addedHandler(evt:Event):void {
-			removeEventListener(Event.ADDED_TO_STAGE, addedHandler);
-			initializeFocusManager();
-		}
-		/**
+         */
+        private function addedHandler(evt:Event):void
+        {
+            removeEventListener(Event.ADDED_TO_STAGE, addedHandler);
+            initializeFocusManager();
+        }
+
+        /**
          * @private
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-		 */
-		private function removedHandler(evt:Event):void {
-			removeEventListener(Event.REMOVED_FROM_STAGE, removedHandler);
-			addEventListener(Event.ADDED_TO_STAGE, addedHandler);
-			var fm:IFocusManager = focusManager;
-			if (fm != null) {
-				// check to see if any components are registered as users of this IFocusManager
-				var fmUserDict:Dictionary = focusManagerUsers[fm];
-				if (fmUserDict != null) {
-					delete fmUserDict[this];
-					var dictEmpty:Boolean = true;
-					for (var key:* in fmUserDict) {
-						dictEmpty = false;
-						break;
-					}
-					if (dictEmpty) {
-						delete focusManagerUsers[fm];
-						fmUserDict = null;
-					}
-				}
-				// if there are no users registered, deactivate the IFocusManager and remove it from
-				// the focusManagers Dictionary to ensure it can be garbage collected.
-				if (fmUserDict == null) {
-					fm.deactivate();
-					for (var key2:* in focusManagers) {
-						var compFM:IFocusManager = focusManagers[key2];
-						if (fm == compFM) delete focusManagers[key2];
-					}
-				}
-			}
-		}
-		/**
-         * @private (protected)
-         *
-         * @langversion 3.0
-         * @playerversion Flash 9.0.28.0
-		 */
-		protected function createFocusManager():void {
-			// sort of hacky way to find out if we can access the stage
-			var stageAccessOK:Boolean = true;
-			try {
-				stage.getChildAt(0);
-			} catch (se:SecurityError) {
-				stageAccessOK = false;
-			}
+         */
+        private function removedHandler(evt:Event):void
+        {
+            removeEventListener(Event.REMOVED_FROM_STAGE, removedHandler);
+            addEventListener(Event.ADDED_TO_STAGE, addedHandler);
+            var fm:IFocusManager = focusManager;
+            if (fm != null)
+            {
+                // check to see if any components are registered as users of this IFocusManager
+                var fmUserDict:Dictionary = focusManagerUsers[fm];
+                if (fmUserDict != null)
+                {
+                    delete fmUserDict[this];
+                    var dictEmpty:Boolean = true;
+                    for (var key:* in fmUserDict)
+                    {
+                        dictEmpty = false;
+                        break;
+                    }
+                    if (dictEmpty)
+                    {
+                        delete focusManagerUsers[fm];
+                        fmUserDict = null;
+                    }
+                }
+                // if there are no users registered, deactivate the IFocusManager and remove it from
+                // the focusManagers Dictionary to ensure it can be garbage collected.
+                if (fmUserDict == null)
+                {
+                    fm.deactivate();
+                    for (var key2:* in focusManagers)
+                    {
+                        var compFM:IFocusManager = focusManagers[key2];
+                        if (fm == compFM)
+                            delete focusManagers[key2];
+                    }
+                }
+            }
+        }
 
-			// figure out what the top level that we can access is
-			var myTopLevel:DisplayObjectContainer = null;
-			if (stageAccessOK) {
-				myTopLevel = stage;
-			} else {
-				// walk to the highest level where we have security access
-				myTopLevel = this;
-				try {
-					while (myTopLevel.parent != null) {
-						myTopLevel = myTopLevel.parent;
-					}
-				} catch (se:SecurityError) {
-				}
-			}
-			if (focusManagers[myTopLevel] == null) {
-				focusManagers[myTopLevel] = new FocusManager(myTopLevel);
-			}
-		}
-		/**
+        /**
          * @private (protected)
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-		 */
-		protected function isOurFocus(target:DisplayObject):Boolean {
-			return (target == this);
-		}
-		/**
-         * @private (protected)
-         *
-         * @langversion 3.0
-         * @playerversion Flash 9.0.28.0
-		 */
-		protected function focusInHandler(event:FocusEvent):void {
-			if (isOurFocus(event.target as DisplayObject)) {
-				var fm:IFocusManager = focusManager;
-				if (fm && fm.showFocusIndicator) {
-					drawFocus(true);
-					isFocused = true;
-				}
-			}
-		}
-		/**
-         * @private (protected)
-         *
-         * @langversion 3.0
-         * @playerversion Flash 9.0.28.0
-		 */
-		protected function focusOutHandler(event:FocusEvent):void {
-			if (isOurFocus(event.target as DisplayObject)) {
-				drawFocus(false);
-				isFocused = false;
-			}
-		}
-		/**
-         * @private (protected)
-         *
-         * @langversion 3.0
-         * @playerversion Flash 9.0.28.0
-		 */
-		protected function keyDownHandler(event:KeyboardEvent):void {
-			// You must override this function if your component accepts focus
-		}
-		/**
-         * @private (protected)
-         *
-         * @langversion 3.0
-         * @playerversion Flash 9.0.28.0
-		 */
-		protected function keyUpHandler(event:KeyboardEvent):void {
-			// You must override this function if your component accepts focus
-		}
+         */
+        protected function createFocusManager():void
+        {
+            // sort of hacky way to find out if we can access the stage
+            var stageAccessOK:Boolean = true;
+            try
+            {
+                stage.getChildAt(0);
+            }
+            catch (se:SecurityError)
+            {
+                stageAccessOK = false;
+            }
 
-		
+            // figure out what the top level that we can access is
+            var myTopLevel:DisplayObjectContainer = null;
+            if (stageAccessOK)
+            {
+                myTopLevel = stage;
+            }
+            else
+            {
+                // walk to the highest level where we have security access
+                myTopLevel = this;
+                try
+                {
+                    while (myTopLevel.parent != null)
+                    {
+                        myTopLevel = myTopLevel.parent;
+                    }
+                }
+                catch (se:SecurityError)
+                {
+                }
+            }
+            if (focusManagers[myTopLevel] == null)
+            {
+                focusManagers[myTopLevel] = new FocusManager(myTopLevel);
+            }
+        }
 
-		/**
+        /**
+         * @private (protected)
+         *
+         * @langversion 3.0
+         * @playerversion Flash 9.0.28.0
+         */
+        protected function isOurFocus(target:DisplayObject):Boolean
+        {
+            return (target == this);
+        }
+
+        /**
+         * @private (protected)
+         *
+         * @langversion 3.0
+         * @playerversion Flash 9.0.28.0
+         */
+        protected function focusInHandler(event:FocusEvent):void
+        {
+            if (isOurFocus(event.target as DisplayObject))
+            {
+                var fm:IFocusManager = focusManager;
+                if (fm && fm.showFocusIndicator)
+                {
+                    drawFocus(true);
+                    isFocused = true;
+                }
+            }
+        }
+
+        /**
+         * @private (protected)
+         *
+         * @langversion 3.0
+         * @playerversion Flash 9.0.28.0
+         */
+        protected function focusOutHandler(event:FocusEvent):void
+        {
+            if (isOurFocus(event.target as DisplayObject))
+            {
+                drawFocus(false);
+                isFocused = false;
+            }
+        }
+
+        /**
+         * @private (protected)
+         *
+         * @langversion 3.0
+         * @playerversion Flash 9.0.28.0
+         */
+        protected function keyDownHandler(event:KeyboardEvent):void
+        {
+            // You must override this function if your component accepts focus
+        }
+
+        /**
+         * @private (protected)
+         *
+         * @langversion 3.0
+         * @playerversion Flash 9.0.28.0
+         */
+        protected function keyUpHandler(event:KeyboardEvent):void
+        {
+            // You must override this function if your component accepts focus
+        }
+
+        /**
          *  @private (protected)
-		 *  Triggers initialization of this component's accessibility code.
-		 *
-		 *  <p>This method is called from the constructor via ENTER_FRAME event
-		 *  to initialize accessibility support for this component</p>
-		 *
+         *  Triggers initialization of this component's accessibility code.
+         *
+         *  <p>This method is called from the constructor via ENTER_FRAME event
+         *  to initialize accessibility support for this component</p>
+         *
          * @langversion 3.0
-         * @playerversion Flash 9.0.28.0		 
-		 */
-		protected function hookAccessibility(event:Event):void {
-			removeEventListener(Event.ENTER_FRAME, hookAccessibility);
-			initializeAccessibility();
-		}
-		
-		/**
+         * @playerversion Flash 9.0.28.0
+         */
+        protected function hookAccessibility(event:Event):void
+        {
+            removeEventListener(Event.ENTER_FRAME, hookAccessibility);
+            initializeAccessibility();
+        }
+
+        /**
          *  @private (protected)
-		 *  Initializes this component's accessibility code.
-		 *
-		 *  <p>This method is called from the constructor to hook in the
-		 *  component's accessibility code, which resides in a separate class
-		 *  in the fl.accessibility package.
-		 *  Each subclass that supports accessibility must override this method
-		 *  because the hook-in process uses a different static variable
+         *  Initializes this component's accessibility code.
+         *
+         *  <p>This method is called from the constructor to hook in the
+         *  component's accessibility code, which resides in a separate class
+         *  in the fl.accessibility package.
+         *  Each subclass that supports accessibility must override this method
+         *  because the hook-in process uses a different static variable
          *  in each subclass.</p>
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-		 */
-		protected function initializeAccessibility():void {
-			if (UIComponent.createAccessibilityImplementation != null) {
-				UIComponent.createAccessibilityImplementation(this);
-			}
-		}
-	}
+         */
+        protected function initializeAccessibility():void
+        {
+            if (UIComponent.createAccessibilityImplementation != null)
+            {
+                UIComponent.createAccessibilityImplementation(this);
+            }
+        }
+    }
 
 }

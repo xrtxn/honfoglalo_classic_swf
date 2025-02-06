@@ -79,7 +79,7 @@ package
 			Log("BootLoader: OnCompleteHandler");
 			loadermc = param1.currentTarget.content;
 			loadermc.Start(mc, bootparams);
-			//this possibly creates a race condition
+			// this possibly creates a race condition
 			var syscode1:syscode = new syscode();
 			syscode1.Start(mc, loadermc as MovieClip, bootparams);
 		}

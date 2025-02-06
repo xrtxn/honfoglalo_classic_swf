@@ -1,32 +1,34 @@
 ﻿// Copyright 2007. Adobe Systems Incorporated. All Rights Reserved.
-package fl.containers {
+package fl.containers
+{
 
-	import fl.containers.BaseScrollPane;
-	import fl.controls.ScrollBar;
-	import fl.controls.ScrollPolicy;
-	import fl.core.InvalidationType;
-	import fl.core.UIComponent;
-	import fl.display.ProLoader;
-	import fl.events.ScrollEvent;
-	import fl.managers.IFocusManagerComponent;
-	import flash.display.DisplayObject;
-	import flash.display.Sprite;
-	import flash.events.Event;
-	import flash.events.KeyboardEvent;
-	import flash.events.MouseEvent;
-	import flash.events.ProgressEvent;
-	import flash.events.SecurityErrorEvent;
-	import flash.events.IOErrorEvent;
-	import flash.events.HTTPStatusEvent;
-	import flash.geom.Rectangle;
-	import flash.net.URLRequest;
-	import flash.system.ApplicationDomain;
-	import flash.system.LoaderContext;
-	import flash.ui.Keyboard;
+    import fl.containers.BaseScrollPane;
+    import fl.controls.ScrollBar;
+    import fl.controls.ScrollPolicy;
+    import fl.core.InvalidationType;
+    import fl.core.UIComponent;
+    import fl.display.ProLoader;
+    import fl.events.ScrollEvent;
+    import fl.managers.IFocusManagerComponent;
+    import flash.display.DisplayObject;
+    import flash.display.Sprite;
+    import flash.events.Event;
+    import flash.events.KeyboardEvent;
+    import flash.events.MouseEvent;
+    import flash.events.ProgressEvent;
+    import flash.events.SecurityErrorEvent;
+    import flash.events.IOErrorEvent;
+    import flash.events.HTTPStatusEvent;
+    import flash.geom.Rectangle;
+    import flash.net.URLRequest;
+    import flash.system.ApplicationDomain;
+    import flash.system.LoaderContext;
+    import flash.ui.Keyboard;
 
-	//--------------------------------------
-	//  Events
-	//--------------------------------------
+    // --------------------------------------
+    // Events
+    // --------------------------------------
+
     /**
      * @copy BaseScrollPane#event:scroll
      *
@@ -36,11 +38,11 @@ package fl.containers {
      *
      * @langversion 3.0
      * @playerversion Flash 9.0.28.0
-     *  
+     *
      *  @playerversion AIR 1.0
      *  @productversion Flash CS3
      */
-	[Event(name="scroll", type="fl.events.ScrollEvent")]
+    [Event(name="scroll", type="fl.events.ScrollEvent")]
 
     /**
      * Dispatched while content is loading.
@@ -56,11 +58,11 @@ package fl.containers {
      *
      * @langversion 3.0
      * @playerversion Flash 9.0.28.0
-     *  
+     *
      *  @playerversion AIR 1.0
      *  @productversion Flash CS3
      */
-	[Event(name="progress", type="flash.events.ProgressEvent")]
+    [Event(name="progress", type="flash.events.ProgressEvent")]
 
     /**
      * Dispatched when content has finished loading.
@@ -73,18 +75,18 @@ package fl.containers {
      *
      * @langversion 3.0
      * @playerversion Flash 9.0.28.0
-     *  
+     *
      *  @playerversion AIR 1.0
      *  @productversion Flash CS3
      */
-	[Event(name="complete", type="flash.events.Event")]
+    [Event(name="complete", type="flash.events.Event")]
 
-	/**
+    /**
      * Dispatched when the properties and methods of a loaded SWF file are accessible.
      * The following conditions must exist for this event to be dispatched:
      * <ul>
      *     <li>All the properties and methods that are associated with the loaded object,
-	 *         as well as those that are associated with the component, must be accessible.</li>
+     *         as well as those that are associated with the component, must be accessible.</li>
      *     <li>The constructors for all child objects must have completed.</li>
      * </ul>
      *
@@ -92,13 +94,13 @@ package fl.containers {
      *
      * @langversion 3.0
      * @playerversion Flash 9.0.28.0
-	 *  
-	 *  @playerversion AIR 1.0
-	 *  @productversion Flash CS3
-	 */
-	[Event("init", type="flash.events.Event")]
+     *
+     *  @playerversion AIR 1.0
+     *  @productversion Flash CS3
+     */
+    [Event("init", type="flash.events.Event")]
 
-	/**
+    /**
      * Dispatched after an input or output error occurs.
      *
      * @includeExample examples/UILoader.ioError.1.as -noswf
@@ -107,42 +109,41 @@ package fl.containers {
      *
      * @langversion 3.0
      * @playerversion Flash 9.0.28.0
-	 *  
-	 *  @playerversion AIR 1.0
-	 *  @productversion Flash CS3
-	 */
-	[Event("ioError", type="flash.events.IOErrorEvent")]
+     *
+     *  @playerversion AIR 1.0
+     *  @productversion Flash CS3
+     */
+    [Event("ioError", type="flash.events.IOErrorEvent")]
 
-	/**
+    /**
      * Dispatched after a network operation starts.
      *
      * @eventType flash.events.Event.OPEN
      *
      * @langversion 3.0
      * @playerversion Flash 9.0.28.0
-	 *  
-	 *  @playerversion AIR 1.0
-	 *  @productversion Flash CS3
-	 */
-	[Event("open", type="flash.events.Event")]
+     *
+     *  @playerversion AIR 1.0
+     *  @productversion Flash CS3
+     */
+    [Event("open", type="flash.events.Event")]
 
-	/**
+    /**
      * Dispatched after a security error occurs while content is loading.
      *
      * @eventType flash.events.SecurityErrorEvent.SECURITY_ERROR
      *
      * @langversion 3.0
      * @playerversion Flash 9.0.28.0
-	 *  
-	 *  @playerversion AIR 1.0
-	 *  @productversion Flash CS3
-	 */
-	[Event("securityError", type="flash.events.SecurityErrorEvent")]
+     *
+     *  @playerversion AIR 1.0
+     *  @productversion Flash CS3
+     */
+    [Event("securityError", type="flash.events.SecurityErrorEvent")]
 
-	
-	//--------------------------------------
-	//  Styles
-	//--------------------------------------
+    // --------------------------------------
+    // Styles
+    // --------------------------------------
 
     /**
      * The skin that shows when the scroll pane is disabled.
@@ -151,11 +152,11 @@ package fl.containers {
      *
      * @langversion 3.0
      * @playerversion Flash 9.0.28.0
-     *  
+     *
      *  @playerversion AIR 1.0
      *  @productversion Flash CS3
      */
-	[Style(name="disabledSkin", type="Class")]
+    [Style(name="disabledSkin", type="Class")]
 
     /**
      * The default skin shown on the scroll pane.
@@ -164,11 +165,11 @@ package fl.containers {
      *
      * @langversion 3.0
      * @playerversion Flash 9.0.28.0
-     *  
+     *
      *  @playerversion AIR 1.0
      *  @productversion Flash CS3
      */
-	[Style(name="upSkin", type="Class")]
+    [Style(name="upSkin", type="Class")]
 
     /**
      * The amount of padding to put around the content in the scroll pane, in pixels.
@@ -177,16 +178,15 @@ package fl.containers {
      *
      * @langversion 3.0
      * @playerversion Flash 9.0.28.0
-     *  
+     *
      *  @playerversion AIR 1.0
      *  @productversion Flash CS3
      */
-	[Style(name="contentPadding", type="Number", format="Length")]
+    [Style(name="contentPadding", type="Number", format="Length")]
 
-
-    //--------------------------------------
-    //  Class description
-    //--------------------------------------
+    // --------------------------------------
+    // Class description
+    // --------------------------------------
 
     /**
      * The ScrollPane component displays display objects and JPEG, GIF, and PNG files,
@@ -199,92 +199,100 @@ package fl.containers {
      * markers receive focus. After the last tab stop in the content,
      * focus moves to the next component. The vertical and horizontal
      * scroll bars in the scroll pane do not receive focus.
-	 *
-	 * <p><strong>Note:</strong> When content is being loaded from a different
-	 * domain or <em>sandbox</em>, the properties of the content may be inaccessible
-	 * for security reasons. For more information about how domain security
-	 * affects the load process, see the ProLoader class.</p>
-	 *
-	 * <p><strong>Note:</strong> When loading very large image files into a ScrollPane object,
-	 * it may be necessary to listen for the <code>complete</code> event and then resize the
-	 * ScrollPane using the <code>setSize()</code> method. See the <code>complete</code>
-	 * event example.</p>
-	 *
-	 * @see fl.display.ProLoader ProLoader
-	 *
+     *
+     * <p><strong>Note:</strong> When content is being loaded from a different
+     * domain or <em>sandbox</em>, the properties of the content may be inaccessible
+     * for security reasons. For more information about how domain security
+     * affects the load process, see the ProLoader class.</p>
+     *
+     * <p><strong>Note:</strong> When loading very large image files into a ScrollPane object,
+     * it may be necessary to listen for the <code>complete</code> event and then resize the
+     * ScrollPane using the <code>setSize()</code> method. See the <code>complete</code>
+     * event example.</p>
+     *
+     * @see fl.display.ProLoader ProLoader
+     *
      * @includeExample examples/ScrollPaneExample.as -noswf
      *
      * @langversion 3.0
      * @playerversion Flash 9.0.28.0
-     *  
+     *
      *  @playerversion AIR 1.0
      *  @productversion Flash CS3
      */
-	public class ScrollPane extends BaseScrollPane implements IFocusManagerComponent {
+    public class ScrollPane extends BaseScrollPane implements IFocusManagerComponent
+    {
         /**
          * @private (protected)
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		protected var _source:Object = "";
-        /**
-         * @private (protected)
-         *
-         * @langversion 3.0
-         * @playerversion Flash 9.0.28.0
-         */
-		protected var _scrollDrag:Boolean = false;
-        /**
-         * @private (protected)
-         *
-         * @langversion 3.0
-         * @playerversion Flash 9.0.28.0
-         */
-		protected var contentClip:Sprite;
-        /**
-         * @private (protected)
-         *
-         * @langversion 3.0
-         * @playerversion Flash 9.0.28.0
-         */
-		protected var loader:ProLoader;
-        /**
-         * @private (protected)
-         *
-         * @langversion 3.0
-         * @playerversion Flash 9.0.28.0
-         */
-		protected var xOffset:Number;
-        /**
-         * @private (protected)
-         *
-         * @langversion 3.0
-         * @playerversion Flash 9.0.28.0
-         */
-		protected var yOffset:Number;
-        /**
-         * @private (protected)
-         *
-         * @langversion 3.0
-         * @playerversion Flash 9.0.28.0
-         */
-		protected var scrollDragHPos:Number;
-        /**
-         * @private (protected)
-         *
-         * @langversion 3.0
-         * @playerversion Flash 9.0.28.0
-         */
-		protected var scrollDragVPos:Number;
-        /**
-         * @private (protected)
-         *
-         * @langversion 3.0
-         * @playerversion Flash 9.0.28.0
-         */
-		protected var currentContent:Object;
+        protected var _source:Object = "";
 
+        /**
+         * @private (protected)
+         *
+         * @langversion 3.0
+         * @playerversion Flash 9.0.28.0
+         */
+        protected var _scrollDrag:Boolean = false;
+
+        /**
+         * @private (protected)
+         *
+         * @langversion 3.0
+         * @playerversion Flash 9.0.28.0
+         */
+        protected var contentClip:Sprite;
+
+        /**
+         * @private (protected)
+         *
+         * @langversion 3.0
+         * @playerversion Flash 9.0.28.0
+         */
+        protected var loader:ProLoader;
+
+        /**
+         * @private (protected)
+         *
+         * @langversion 3.0
+         * @playerversion Flash 9.0.28.0
+         */
+        protected var xOffset:Number;
+
+        /**
+         * @private (protected)
+         *
+         * @langversion 3.0
+         * @playerversion Flash 9.0.28.0
+         */
+        protected var yOffset:Number;
+
+        /**
+         * @private (protected)
+         *
+         * @langversion 3.0
+         * @playerversion Flash 9.0.28.0
+         */
+        protected var scrollDragHPos:Number;
+
+        /**
+         * @private (protected)
+         *
+         * @langversion 3.0
+         * @playerversion Flash 9.0.28.0
+         */
+        protected var scrollDragVPos:Number;
+
+        /**
+         * @private (protected)
+         *
+         * @langversion 3.0
+         * @playerversion Flash 9.0.28.0
+         */
+        protected var currentContent:Object;
 
         /**
          * @private
@@ -292,13 +300,13 @@ package fl.containers {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		private static var defaultStyles:Object = {
-										upSkin:"ScrollPane_upSkin",
-										disabledSkin:"ScrollPane_disabledSkin",
-										focusRectSkin:null,
-										focusRectPadding:null,
-										contentPadding:0
-										}
+        private static var defaultStyles:Object = {
+                upSkin: "ScrollPane_upSkin",
+                disabledSkin: "ScrollPane_disabledSkin",
+                focusRectSkin: null,
+                focusRectPadding: null,
+                contentPadding: 0
+            };
 
         /**
          * @copy fl.core.UIComponent#getStyleDefinition()
@@ -311,28 +319,31 @@ package fl.containers {
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-         *  
+         *
          *  @playerversion AIR 1.0
          *  @productversion Flash CS3
          */
-		public static function getStyleDefinition():Object {
-			return mergeStyles(defaultStyles, BaseScrollPane.getStyleDefinition());
-		}
+        public static function getStyleDefinition():Object
+        {
+            return mergeStyles(defaultStyles, BaseScrollPane.getStyleDefinition());
+        }
 
         /**
          * Creates a new ScrollPane component instance.
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-         *  
+         *
          *  @playerversion AIR 1.0
          *  @productversion Flash CS3
          */
-		public function ScrollPane() {
-			super();
-		}
+        public function ScrollPane()
+        {
+            super();
+        }
 
         [Inspectable(type="Boolean", defaultValue="false")]
+
         /**
          * Gets or sets a value that indicates whether scrolling occurs when a
          * user drags on content within the scroll pane. A value of <code>true</code>
@@ -347,13 +358,14 @@ package fl.containers {
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-         *  
+         *
          *  @playerversion AIR 1.0
          *  @productversion Flash CS3
          */
-		public function get scrollDrag():Boolean {
-			return _scrollDrag;
-		}
+        public function get scrollDrag():Boolean
+        {
+            return _scrollDrag;
+        }
 
         /**
          * @private (setter)
@@ -361,10 +373,11 @@ package fl.containers {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		public function set scrollDrag(value:Boolean):void {
-			_scrollDrag = value;
-			invalidate(InvalidationType.STATE);
-		}
+        public function set scrollDrag(value:Boolean):void
+        {
+            _scrollDrag = value;
+            invalidate(InvalidationType.STATE);
+        }
 
         /**
          * Gets a number between 0 and 100 indicating what percentage of the content is loaded.
@@ -380,17 +393,21 @@ package fl.containers {
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-         *  
+         *
          *  @playerversion AIR 1.0
          *  @productversion Flash CS3
          */
-		public function get percentLoaded():Number {
-			if (loader != null) {
-				return Math.round((bytesLoaded / bytesTotal) * 100);
-			} else {
-				return 0;
-			}
-		}
+        public function get percentLoaded():Number
+        {
+            if (loader != null)
+            {
+                return Math.round((bytesLoaded / bytesTotal) * 100);
+            }
+            else
+            {
+                return 0;
+            }
+        }
 
         /**
          * Gets the count of bytes of content that have been loaded.
@@ -406,13 +423,14 @@ package fl.containers {
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-         *  
+         *
          *  @playerversion AIR 1.0
          *  @productversion Flash CS3
          */
-		public function get bytesLoaded():Number {
-			return (loader == null || loader.contentLoaderInfo == null) ? 0 : loader.contentLoaderInfo.bytesLoaded;
-		}
+        public function get bytesLoaded():Number
+        {
+            return (loader == null || loader.contentLoaderInfo == null) ? 0 : loader.contentLoaderInfo.bytesLoaded;
+        }
 
         /**
          * Gets the count of bytes of content to be loaded.
@@ -426,13 +444,14 @@ package fl.containers {
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-         *  
+         *
          *  @playerversion AIR 1.0
          *  @productversion Flash CS3
          */
-		public function get bytesTotal():Number {
-			return (loader == null || loader.contentLoaderInfo == null) ? 0 : loader.contentLoaderInfo.bytesTotal;
-		}
+        public function get bytesTotal():Number
+        {
+            return (loader == null || loader.contentLoaderInfo == null) ? 0 : loader.contentLoaderInfo.bytesTotal;
+        }
 
         /**
          * Reloads the contents of the scroll pane.
@@ -446,16 +465,18 @@ package fl.containers {
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-         *  
+         *
          *  @playerversion AIR 1.0
          *  @productversion Flash CS3
          */
-		public function refreshPane():void {
-			if (_source is URLRequest) {
-				_source = _source.url;
-			}
-			source = _source;
-		}
+        public function refreshPane():void
+        {
+            if (_source is URLRequest)
+            {
+                _source = _source.url;
+            }
+            source = _source;
+        }
 
         /**
          * Refreshes the scroll bar properties based on the width
@@ -468,14 +489,15 @@ package fl.containers {
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-         *  
+         *
          *  @playerversion AIR 1.0
          *  @productversion Flash CS3
          */
-		public function update():void {
-			var child:DisplayObject = contentClip.getChildAt(0);
-			setContentSize(child.width, child.height);
-		}
+        public function update():void
+        {
+            var child:DisplayObject = contentClip.getChildAt(0);
+            setContentSize(child.width, child.height);
+        }
 
         /**
          * Gets a reference to the content loaded into the scroll pane.
@@ -487,30 +509,33 @@ package fl.containers {
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-         *  
+         *
          *  @playerversion AIR 1.0
          *  @productversion Flash CS3
          */
-		public function get content():DisplayObject {
-			var c:Object = currentContent;
+        public function get content():DisplayObject
+        {
+            var c:Object = currentContent;
 
-			if (c is URLRequest)  {
-				c = loader.content;
-			}
+            if (c is URLRequest)
+            {
+                c = loader.content;
+            }
 
-			return c as DisplayObject;
-		}
+            return c as DisplayObject;
+        }
 
         [Inspectable(type="String", defaultValue="")]
+
         /**
          * Gets or sets an absolute or relative URL that identifies the
-		 * location of the SWF or image file to load, the class name
-		 * of a movie clip in the library, a reference to a display object,
-		 * or a instance name of a movie clip on the same level as the component.
-		 *
-		 * <p>Valid image file formats include GIF, PNG, and JPEG. To load an
-		 * asset by using a URLRequest object, use the <code>load()</code>
-		 * method.</p>
+         * location of the SWF or image file to load, the class name
+         * of a movie clip in the library, a reference to a display object,
+         * or a instance name of a movie clip on the same level as the component.
+         *
+         * <p>Valid image file formats include GIF, PNG, and JPEG. To load an
+         * asset by using a URLRequest object, use the <code>load()</code>
+         * method.</p>
          *
          * @default null
          *
@@ -521,13 +546,14 @@ package fl.containers {
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-         *  
+         *
          *  @playerversion AIR 1.0
          *  @productversion Flash CS3
          */
-		public function get source():Object {
-			return _source;
-		}
+        public function get source():Object
+        {
+            return _source;
+        }
 
         /**
          * @private (setter)
@@ -535,37 +561,45 @@ package fl.containers {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		public function set source(value:Object):void {
-			clearContent();
-			if (isLivePreview) { return; }
-			_source = value;
-			if (_source == "" || _source == null) {
-				return;
-			}
-			
-			currentContent = getDisplayObjectInstance(value);
-			if (currentContent != null) {
-				var child = contentClip.addChild(currentContent as DisplayObject);
-				dispatchEvent(new Event(Event.INIT));
-				update();
-			} else {
-				load(new URLRequest(_source.toString()));
-			}
-		}
+        public function set source(value:Object):void
+        {
+            clearContent();
+            if (isLivePreview)
+            {
+                return;
+            }
+            _source = value;
+            if (_source == "" || _source == null)
+            {
+                return;
+            }
 
-		/**
-		 * The request parameter of this method accepts only a URLRequest object
-		 * whose <code>source</code> property contains a string, a class, or a
-		 * URLRequest object.
-		 *
-		 * By default, the LoaderContext object uses the current domain as the
-		 * application domain. To specify a different application domain value,
-		 * to check a policy file, or to change the security domain, initialize
-		 * a new LoaderContext object and pass it to this method.
-		 *
-		 * @param request The URLRequest object to use to load an image into the scroll pane.
-		 * @param context The LoaderContext object that sets the context of the load operation.
-		 *
+            currentContent = getDisplayObjectInstance(value);
+            if (currentContent != null)
+            {
+                var child = contentClip.addChild(currentContent as DisplayObject);
+                dispatchEvent(new Event(Event.INIT));
+                update();
+            }
+            else
+            {
+                load(new URLRequest(_source.toString()));
+            }
+        }
+
+        /**
+         * The request parameter of this method accepts only a URLRequest object
+         * whose <code>source</code> property contains a string, a class, or a
+         * URLRequest object.
+         *
+         * By default, the LoaderContext object uses the current domain as the
+         * application domain. To specify a different application domain value,
+         * to check a policy file, or to change the security domain, initialize
+         * a new LoaderContext object and pass it to this method.
+         *
+         * @param request The URLRequest object to use to load an image into the scroll pane.
+         * @param context The LoaderContext object that sets the context of the load operation.
+         *
          * @see #source
          * @see fl.containers.UILoader#load() UILoader.load()
          * @see flash.net.URLRequest
@@ -576,19 +610,21 @@ package fl.containers {
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-         *  
+         *
          *  @playerversion AIR 1.0
          *  @productversion Flash CS3
          */
-		public function load(request:URLRequest, context:LoaderContext=null):void {
-			if (context == null) {
-				context = new LoaderContext(false, ApplicationDomain.currentDomain);
-			}
-			clearContent();
-			initLoader();
-			currentContent = _source = request;
-			loader.load(request, context);
-		}
+        public function load(request:URLRequest, context:LoaderContext = null):void
+        {
+            if (context == null)
+            {
+                context = new LoaderContext(false, ApplicationDomain.currentDomain);
+            }
+            clearContent();
+            initLoader();
+            currentContent = _source = request;
+            loader.load(request, context);
+        }
 
         /**
          * @private (protected)
@@ -596,11 +632,12 @@ package fl.containers {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		override protected function setVerticalScrollPosition(scrollPos:Number, fireEvent:Boolean=false):void {
-			var contentScrollRect = contentClip.scrollRect;
-			contentScrollRect.y = scrollPos;
-			contentClip.scrollRect = contentScrollRect;
-		}
+        override protected function setVerticalScrollPosition(scrollPos:Number, fireEvent:Boolean = false):void
+        {
+            var contentScrollRect = contentClip.scrollRect;
+            contentScrollRect.y = scrollPos;
+            contentClip.scrollRect = contentScrollRect;
+        }
 
         /**
          * @private (protected)
@@ -608,44 +645,27 @@ package fl.containers {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		override protected function setHorizontalScrollPosition(scrollPos:Number, fireEvent:Boolean=false):void {
-			var contentScrollRect = contentClip.scrollRect;
-			contentScrollRect.x = scrollPos;
-			contentClip.scrollRect = contentScrollRect;
-		}
+        override protected function setHorizontalScrollPosition(scrollPos:Number, fireEvent:Boolean = false):void
+        {
+            var contentScrollRect = contentClip.scrollRect;
+            contentScrollRect.x = scrollPos;
+            contentClip.scrollRect = contentScrollRect;
+        }
 
         /**
          * @private (protected)
          */
-		override protected function drawLayout():void {
-			super.drawLayout();
-			contentScrollRect = contentClip.scrollRect;
-			contentScrollRect.width = availableWidth;
-			contentScrollRect.height = availableHeight;
-			
-			contentClip.cacheAsBitmap = useBitmapScrolling;
-			contentClip.scrollRect = contentScrollRect;
-			contentClip.x = contentClip.y = contentPadding;
-		}
+        override protected function drawLayout():void
+        {
+            super.drawLayout();
+            contentScrollRect = contentClip.scrollRect;
+            contentScrollRect.width = availableWidth;
+            contentScrollRect.height = availableHeight;
 
-        /**
-         * @private (protected)
-         *
-         * @langversion 3.0
-         * @playerversion Flash 9.0.28.0
-         */
-		protected function onContentLoad(event:Event):void {
-			update();
-			
-			//Need to reset the sizes, for scrolling purposes.
-			//Just reset the scrollbars, don't redraw the entire pane.
-			var availableHeight = calculateAvailableHeight();
-			calculateAvailableSize();
-			horizontalScrollBar.setScrollProperties(availableWidth, 0, (useFixedHorizontalScrolling) ? _maxHorizontalScrollPosition : contentWidth - availableWidth, availableWidth);
-			verticalScrollBar.setScrollProperties(availableHeight, 0, contentHeight - availableHeight, availableHeight);
-			
-			passEvent(event);
-		}
+            contentClip.cacheAsBitmap = useBitmapScrolling;
+            contentClip.scrollRect = contentScrollRect;
+            contentClip.x = contentClip.y = contentPadding;
+        }
 
         /**
          * @private (protected)
@@ -653,9 +673,19 @@ package fl.containers {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		protected function passEvent(event:Event):void {
-			dispatchEvent(event);
-		}
+        protected function onContentLoad(event:Event):void
+        {
+            update();
+
+            // Need to reset the sizes, for scrolling purposes.
+            // Just reset the scrollbars, don't redraw the entire pane.
+            var availableHeight = calculateAvailableHeight();
+            calculateAvailableSize();
+            horizontalScrollBar.setScrollProperties(availableWidth, 0, (useFixedHorizontalScrolling) ? _maxHorizontalScrollPosition : contentWidth - availableWidth, availableWidth);
+            verticalScrollBar.setScrollProperties(availableHeight, 0, contentHeight - availableHeight, availableHeight);
+
+            passEvent(event);
+        }
 
         /**
          * @private (protected)
@@ -663,19 +693,10 @@ package fl.containers {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		protected function initLoader():void {
-			loader = new ProLoader();
-
-			loader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR,handleError,false,0,true);
-			loader.contentLoaderInfo.addEventListener(SecurityErrorEvent.SECURITY_ERROR,handleError,false,0,true);
-			loader.contentLoaderInfo.addEventListener(Event.OPEN,passEvent,false,0,true);
-			loader.contentLoaderInfo.addEventListener(ProgressEvent.PROGRESS,passEvent,false,0,true);
-			loader.contentLoaderInfo.addEventListener(Event.COMPLETE,onContentLoad,false,0,true);
-			loader.contentLoaderInfo.addEventListener(Event.INIT,passEvent,false,0,true);
-			loader.contentLoaderInfo.addEventListener(HTTPStatusEvent.HTTP_STATUS,passEvent,false,0,true);
-
-			contentClip.addChild(loader);
-		}
+        protected function passEvent(event:Event):void
+        {
+            dispatchEvent(event);
+        }
 
         /**
          * @private (protected)
@@ -683,65 +704,20 @@ package fl.containers {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		override protected function handleScroll(event:ScrollEvent):void {
-			passEvent(event);
-			super.handleScroll(event);
-		}
-		
-		/**
-         * @private (protected)
-         *
-         * @langversion 3.0
-         * @playerversion Flash 9.0.28.0
-		 */
-		protected function handleError(event:Event):void {
-			passEvent(event);
-			clearLoadEvents();
-			loader.contentLoaderInfo.removeEventListener(Event.INIT,handleInit);
-		}
-		
-		/**
-         * @private (protected)
-         *
-         * @langversion 3.0
-         * @playerversion Flash 9.0.28.0
-		 */
-		protected function handleInit(event:Event):void {
-			loader.contentLoaderInfo.removeEventListener(Event.INIT,handleInit);
-			passEvent(event);
-			invalidate(InvalidationType.SIZE);
-		}
+        protected function initLoader():void
+        {
+            loader = new ProLoader();
 
- 		/**
-         * @private (protected)
-         *
-         * @langversion 3.0
-         * @playerversion Flash 9.0.28.0
-		 */
-        protected function clearLoadEvents():void {
-			loader.contentLoaderInfo.removeEventListener(IOErrorEvent.IO_ERROR,handleError);
-			loader.contentLoaderInfo.removeEventListener(SecurityErrorEvent.SECURITY_ERROR,handleError);
-			loader.contentLoaderInfo.removeEventListener(Event.OPEN,passEvent);
-			loader.contentLoaderInfo.removeEventListener(ProgressEvent.PROGRESS,passEvent);
-			loader.contentLoaderInfo.removeEventListener(HTTPStatusEvent.HTTP_STATUS,passEvent);
-			loader.contentLoaderInfo.removeEventListener(Event.COMPLETE,onContentLoad);
-		}
+            loader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR, handleError, false, 0, true);
+            loader.contentLoaderInfo.addEventListener(SecurityErrorEvent.SECURITY_ERROR, handleError, false, 0, true);
+            loader.contentLoaderInfo.addEventListener(Event.OPEN, passEvent, false, 0, true);
+            loader.contentLoaderInfo.addEventListener(ProgressEvent.PROGRESS, passEvent, false, 0, true);
+            loader.contentLoaderInfo.addEventListener(Event.COMPLETE, onContentLoad, false, 0, true);
+            loader.contentLoaderInfo.addEventListener(Event.INIT, passEvent, false, 0, true);
+            loader.contentLoaderInfo.addEventListener(HTTPStatusEvent.HTTP_STATUS, passEvent, false, 0, true);
 
-       /**
-         * @private (protected)
-         *
-         * @langversion 3.0
-         * @playerversion Flash 9.0.28.0
-         */
-		protected function doDrag(event:MouseEvent):void {
-			var yPos = scrollDragVPos-(mouseY-yOffset);
-			_verticalScrollBar.setScrollPosition(yPos);
-			setVerticalScrollPosition(_verticalScrollBar.scrollPosition,true);
-			
-			var xPos = scrollDragHPos-(mouseX-xOffset);
-			_horizontalScrollBar.setScrollPosition(xPos);
-			setHorizontalScrollPosition(_horizontalScrollBar.scrollPosition,true);
-		}
+            contentClip.addChild(loader);
+        }
 
         /**
          * @private (protected)
@@ -749,14 +725,11 @@ package fl.containers {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		protected function doStartDrag(event:MouseEvent):void {
-			if (!enabled) { return; }
-			xOffset = mouseX;
-			yOffset = mouseY;
-			scrollDragHPos = horizontalScrollPosition;
-			scrollDragVPos = verticalScrollPosition;
-			focusManager.form.addEventListener(MouseEvent.MOUSE_MOVE, doDrag, false, 0, true);
-		}
+        override protected function handleScroll(event:ScrollEvent):void
+        {
+            passEvent(event);
+            super.handleScroll(event);
+        }
 
         /**
          * @private (protected)
@@ -764,9 +737,12 @@ package fl.containers {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		protected function endDrag(event:MouseEvent):void {
-			focusManager.form.removeEventListener(MouseEvent.MOUSE_MOVE, doDrag);
-		}
+        protected function handleError(event:Event):void
+        {
+            passEvent(event);
+            clearLoadEvents();
+            loader.contentLoaderInfo.removeEventListener(Event.INIT, handleInit);
+        }
 
         /**
          * @private (protected)
@@ -774,17 +750,12 @@ package fl.containers {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		protected function setScrollDrag():void {
-			if (_scrollDrag) {
-				contentClip.addEventListener(MouseEvent.MOUSE_DOWN, doStartDrag, false, 0, true);
-				focusManager.form.addEventListener(MouseEvent.MOUSE_UP, endDrag, false, 0, true);
-			} else {
-				contentClip.removeEventListener(MouseEvent.MOUSE_DOWN, doStartDrag);
-				focusManager.form.removeEventListener(MouseEvent.MOUSE_UP, endDrag);
-				removeEventListener(MouseEvent.MOUSE_MOVE, doDrag);
-			}
-			contentClip.buttonMode = _scrollDrag;
-		}
+        protected function handleInit(event:Event):void
+        {
+            loader.contentLoaderInfo.removeEventListener(Event.INIT, handleInit);
+            passEvent(event);
+            invalidate(InvalidationType.SIZE);
+        }
 
         /**
          * @private (protected)
@@ -792,16 +763,15 @@ package fl.containers {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		override protected function draw():void {
-			if (isInvalid(InvalidationType.STYLES)) {
-				drawBackground();
-			}
-			
-			if (isInvalid(InvalidationType.STATE)) {
-				setScrollDrag();
-			}
-			super.draw();
-		}
+        protected function clearLoadEvents():void
+        {
+            loader.contentLoaderInfo.removeEventListener(IOErrorEvent.IO_ERROR, handleError);
+            loader.contentLoaderInfo.removeEventListener(SecurityErrorEvent.SECURITY_ERROR, handleError);
+            loader.contentLoaderInfo.removeEventListener(Event.OPEN, passEvent);
+            loader.contentLoaderInfo.removeEventListener(ProgressEvent.PROGRESS, passEvent);
+            loader.contentLoaderInfo.removeEventListener(HTTPStatusEvent.HTTP_STATUS, passEvent);
+            loader.contentLoaderInfo.removeEventListener(Event.COMPLETE, onContentLoad);
+        }
 
         /**
          * @private (protected)
@@ -809,16 +779,16 @@ package fl.containers {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		override protected function drawBackground():void {
-			var bg:DisplayObject = background;
-			
-			background = getDisplayObjectInstance(getStyleValue(enabled ? "upSkin" : "disabledSkin"));
-			background.width = width;
-			background.height = height;
-			addChildAt(background,0);
-			
-			if (bg != null && bg != background) { removeChild(bg); }
-		}
+        protected function doDrag(event:MouseEvent):void
+        {
+            var yPos = scrollDragVPos - (mouseY - yOffset);
+            _verticalScrollBar.setScrollPosition(yPos);
+            setVerticalScrollPosition(_verticalScrollBar.scrollPosition, true);
+
+            var xPos = scrollDragHPos - (mouseX - xOffset);
+            _horizontalScrollBar.setScrollPosition(xPos);
+            setHorizontalScrollPosition(_horizontalScrollBar.scrollPosition, true);
+        }
 
         /**
          * @private (protected)
@@ -826,22 +796,128 @@ package fl.containers {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		protected function clearContent():void {
-			if (contentClip.numChildren == 0) { return; }
-			contentClip.removeChildAt(0);
-			currentContent = null;
-			if (loader != null) {
-				try {
-					loader.close();
-				} catch (e:*) {}
+        protected function doStartDrag(event:MouseEvent):void
+        {
+            if (!enabled)
+            {
+                return;
+            }
+            xOffset = mouseX;
+            yOffset = mouseY;
+            scrollDragHPos = horizontalScrollPosition;
+            scrollDragVPos = verticalScrollPosition;
+            focusManager.form.addEventListener(MouseEvent.MOUSE_MOVE, doDrag, false, 0, true);
+        }
 
-				try {
-					loader.unload();
-				} catch (e:*) {}
+        /**
+         * @private (protected)
+         *
+         * @langversion 3.0
+         * @playerversion Flash 9.0.28.0
+         */
+        protected function endDrag(event:MouseEvent):void
+        {
+            focusManager.form.removeEventListener(MouseEvent.MOUSE_MOVE, doDrag);
+        }
 
-				loader = null;
-			}
-		}
+        /**
+         * @private (protected)
+         *
+         * @langversion 3.0
+         * @playerversion Flash 9.0.28.0
+         */
+        protected function setScrollDrag():void
+        {
+            if (_scrollDrag)
+            {
+                contentClip.addEventListener(MouseEvent.MOUSE_DOWN, doStartDrag, false, 0, true);
+                focusManager.form.addEventListener(MouseEvent.MOUSE_UP, endDrag, false, 0, true);
+            }
+            else
+            {
+                contentClip.removeEventListener(MouseEvent.MOUSE_DOWN, doStartDrag);
+                focusManager.form.removeEventListener(MouseEvent.MOUSE_UP, endDrag);
+                removeEventListener(MouseEvent.MOUSE_MOVE, doDrag);
+            }
+            contentClip.buttonMode = _scrollDrag;
+        }
+
+        /**
+         * @private (protected)
+         *
+         * @langversion 3.0
+         * @playerversion Flash 9.0.28.0
+         */
+        override protected function draw():void
+        {
+            if (isInvalid(InvalidationType.STYLES))
+            {
+                drawBackground();
+            }
+
+            if (isInvalid(InvalidationType.STATE))
+            {
+                setScrollDrag();
+            }
+            super.draw();
+        }
+
+        /**
+         * @private (protected)
+         *
+         * @langversion 3.0
+         * @playerversion Flash 9.0.28.0
+         */
+        override protected function drawBackground():void
+        {
+            var bg:DisplayObject = background;
+
+            background = getDisplayObjectInstance(getStyleValue(enabled ? "upSkin" : "disabledSkin"));
+            background.width = width;
+            background.height = height;
+            addChildAt(background, 0);
+
+            if (bg != null && bg != background)
+            {
+                removeChild(bg);
+            }
+        }
+
+        /**
+         * @private (protected)
+         *
+         * @langversion 3.0
+         * @playerversion Flash 9.0.28.0
+         */
+        protected function clearContent():void
+        {
+            if (contentClip.numChildren == 0)
+            {
+                return;
+            }
+            contentClip.removeChildAt(0);
+            currentContent = null;
+            if (loader != null)
+            {
+                try
+                {
+                    loader.close();
+                }
+                catch (e:*)
+                {
+                }
+
+                try
+                {
+                    loader.unload();
+                }
+                catch (e:*)
+                {
+                }
+
+                loader = null;
+            }
+        }
 
         /**
          * @private
@@ -849,43 +925,46 @@ package fl.containers {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		override protected function keyDownHandler(event:KeyboardEvent):void {
-			var pageSize:int = calculateAvailableHeight();
-			switch (event.keyCode) {
-				case Keyboard.DOWN:
-					verticalScrollPosition++;
-					break;
-				case Keyboard.UP:
-					verticalScrollPosition--;
-					break;
-				case Keyboard.RIGHT:
-					horizontalScrollPosition++;
-					break;
-				case Keyboard.LEFT:
-					horizontalScrollPosition--;
-					break;
-				case Keyboard.END:
-					verticalScrollPosition = maxVerticalScrollPosition;
-					break;
-				case Keyboard.HOME:
-					verticalScrollPosition = 0;
-					break;
-				case Keyboard.PAGE_UP:
-					verticalScrollPosition -= pageSize;
-					break;
-				case Keyboard.PAGE_DOWN:
-					verticalScrollPosition += pageSize;
-					break;
-			}
-		}
+        override protected function keyDownHandler(event:KeyboardEvent):void
+        {
+            var pageSize:int = calculateAvailableHeight();
+            switch (event.keyCode)
+            {
+                case Keyboard.DOWN:
+                    verticalScrollPosition++;
+                    break;
+                case Keyboard.UP:
+                    verticalScrollPosition--;
+                    break;
+                case Keyboard.RIGHT:
+                    horizontalScrollPosition++;
+                    break;
+                case Keyboard.LEFT:
+                    horizontalScrollPosition--;
+                    break;
+                case Keyboard.END:
+                    verticalScrollPosition = maxVerticalScrollPosition;
+                    break;
+                case Keyboard.HOME:
+                    verticalScrollPosition = 0;
+                    break;
+                case Keyboard.PAGE_UP:
+                    verticalScrollPosition -= pageSize;
+                    break;
+                case Keyboard.PAGE_DOWN:
+                    verticalScrollPosition += pageSize;
+                    break;
+            }
+        }
 
         /**
          * @private
          */
-		protected function calculateAvailableHeight():Number {
-			var pad:Number = Number(getStyleValue("contentPadding"));
-			return height-pad*2-((_horizontalScrollPolicy == ScrollPolicy.ON || (_horizontalScrollPolicy == ScrollPolicy.AUTO && _maxHorizontalScrollPosition > 0)) ? 15 : 0);
-		}
+        protected function calculateAvailableHeight():Number
+        {
+            var pad:Number = Number(getStyleValue("contentPadding"));
+            return height - pad * 2 - ((_horizontalScrollPolicy == ScrollPolicy.ON || (_horizontalScrollPolicy == ScrollPolicy.AUTO && _maxHorizontalScrollPosition > 0)) ? 15 : 0);
+        }
 
         /**
          * @private (protected)
@@ -893,13 +972,14 @@ package fl.containers {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		override protected function configUI():void {
-			super.configUI();
-			contentClip = new Sprite();
-			addChild(contentClip);
-			contentClip.scrollRect = contentScrollRect;
-			_horizontalScrollPolicy = ScrollPolicy.AUTO;
-			_verticalScrollPolicy = ScrollPolicy.AUTO;
-		}
-	}
+        override protected function configUI():void
+        {
+            super.configUI();
+            contentClip = new Sprite();
+            addChild(contentClip);
+            contentClip.scrollRect = contentScrollRect;
+            _horizontalScrollPolicy = ScrollPolicy.AUTO;
+            _verticalScrollPolicy = ScrollPolicy.AUTO;
+        }
+    }
 }

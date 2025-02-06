@@ -9,7 +9,7 @@ package
     public class syscode extends MovieClip
     {
         protected var _dummy:Class = Includer;
-        
+
         public function syscode()
         {
             super();

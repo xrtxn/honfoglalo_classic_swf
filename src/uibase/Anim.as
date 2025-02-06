@@ -84,9 +84,9 @@ package uibase
 					};
 				if (Sys.mydata.energy <= Sys.mydata.energymax)
 				{
-					-- Sys.mydata.energy;
+					--Sys.mydata.energy;
 				}
-				-- Sys.mydata.energymax;
+				--Sys.mydata.energymax;
 			}
 			else if ("GOLDS" == rewardname || "GOLD" == rewardname)
 			{

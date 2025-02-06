@@ -1,7 +1,7 @@
 package uibase.gfx
 {
 	import adobe.utils.*;
-	import uibase.components.CharacterComponent;
+	import uibase.components.BaseCharacterComponent;
 	import flash.accessibility.*;
 	import flash.desktop.*;
 	import flash.display.*;
@@ -29,7 +29,7 @@ package uibase.gfx
 	[Embed(source="/modules/uibase_assets.swf", symbol="symbol740")]
 	public dynamic class conn_error_graphics extends MovieClip
 	{
-		public var PROF:CharacterComponent;
+		public var PROF:BaseCharacterComponent;
 
 		public function conn_error_graphics()
 		{

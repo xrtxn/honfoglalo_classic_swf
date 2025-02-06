@@ -2,12 +2,12 @@ package triviador.gfx
 {
 	import flash.display.*;
 
-	import uibase.components.UibaseButtonComponent;
+	import uibase.components.UIBaseButtonComponent;
 
 	[Embed(source="/modules/triviador_assets.swf", symbol="symbol1172")]
 	public dynamic class GameOver_531 extends MovieClip
 	{
-		public var BTNCLOSEGAME:UibaseButtonComponent;
+		public var BTNCLOSEGAME:UIBaseButtonComponent;
 
 		public function GameOver_531()
 		{

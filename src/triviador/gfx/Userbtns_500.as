@@ -3,18 +3,18 @@ package triviador.gfx
 	import flash.display.*;
 	import flash.utils.*;
 
-	import uibase.components.UibaseButtonComponent;
+	import uibase.components.UIBaseButtonComponent;
 
 	[Embed(source="/modules/triviador_assets.swf", symbol="symbol785")]
 	public dynamic class Userbtns_500 extends MovieClip
 	{
-		public var BTNBLOCK:UibaseButtonComponent;
+		public var BTNBLOCK:UIBaseButtonComponent;
 
-		public var BTNCANCELB:UibaseButtonComponent;
+		public var BTNCANCELB:UIBaseButtonComponent;
 
-		public var BTNCANCELF:UibaseButtonComponent;
+		public var BTNCANCELF:UIBaseButtonComponent;
 
-		public var BTNFRIEND:UibaseButtonComponent;
+		public var BTNFRIEND:UIBaseButtonComponent;
 
 		public var __setPropDict:Dictionary;
 

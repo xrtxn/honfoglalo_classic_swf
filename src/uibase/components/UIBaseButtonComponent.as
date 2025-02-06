@@ -1,9 +1,9 @@
 package uibase.components
 {
     [Embed(source="/modules/uibase_assets.swf", symbol="symbol77")]
-    public class UibaseButtonComponent extends ParentButtonComponent
+    public class UIBaseButtonComponent extends ParentButtonComponent
     {
-        public function UibaseButtonComponent()
+        public function UIBaseButtonComponent()
         {
             super();
         }

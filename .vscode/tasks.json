@@ -5,12 +5,29 @@
             "type": "actionscript",
             "debug": true,
             "asconfig": "asconfig.json",
+            "problemMatcher": [],
+            "label": "ActionScript: compile debug - asconfig.json"
+        },
+        {
+            "label": "Send notification",
+            "type": "shell",
+            "command": "notify-send -t 4000 --icon=/usr/share/icons/breeze-dark/status/16/dialog-information.svg 'Build finished!' '${workspaceFolderBasename}'",
+            "dependsOn": [
+                "ActionScript: compile debug - asconfig.json"
+            ],
+            "presentation": {
+                "reveal": "silent"
+            }
+        },
+        {
+            "label": "Build with Notification",
+            "dependsOn": [
+                "Send notification"
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": true
-            },
-            "problemMatcher": [],
-            "label": "ActionScript: compile debug - asconfig.json"
+            }
         }
     ]
 }

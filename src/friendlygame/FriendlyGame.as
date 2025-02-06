@@ -18,7 +18,7 @@ package friendlygame
 	import uibase.gfx.lego_button_2x1_ok;
 	import uibase.gfx.lego_button_3x1_normal;
 	import uibase.gfx.lego_button_1x1_normal_header;
-	import uibase.components.CharacterComponent;
+	import uibase.components.BaseCharacterComponent;
 	import fl.controls.CheckBox;
 	import uibase.gfx.HeaderTabs;
 	import friendlygame.gfx.Friends1c;
@@ -88,7 +88,7 @@ package friendlygame
 		// todo might be different type
 		public var CBALL:CheckBox;
 
-		public var CHAR:CharacterComponent;
+		public var CHAR:BaseCharacterComponent;
 
 		public var CHAT_AVATAR:AvatarMov;
 
