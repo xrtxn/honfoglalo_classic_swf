@@ -2,13 +2,13 @@ package tournament.gfx
 {
 	import flash.display.MovieClip;
 	import flash.text.TextField;
-	import syscode.AvatarAnimMov;
+	import syscode.LegoAvatarAnimMov;
 	import uibase.CountryFlagMov;
 
 	[Embed(source="/modules/tournament_assets.swf", symbol="symbol76")]
 	public dynamic class ranklist_item_weekly_other extends MovieClip
 	{
-		public var AVATAR:AvatarAnimMov;
+		public var AVATAR:LegoAvatarAnimMov;
 
 		public var BG:MovieClip;
 

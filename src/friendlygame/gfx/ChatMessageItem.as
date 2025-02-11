@@ -1,12 +1,12 @@
 package friendlygame.gfx
 {
 	import flash.display.MovieClip;
-	import syscode.AvatarMov;
+	import syscode.LegoAvatarMov;
 
 	[Embed(source="/modules/friendlygame_assets.swf", symbol="symbol393")]
 	public dynamic class ChatMessageItem extends MovieClip
 	{
-		public var AVATAR:AvatarMov;
+		public var AVATAR:LegoAvatarMov;
 
 		public var AVATARFRAME:MovieClip;
 

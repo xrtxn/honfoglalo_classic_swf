@@ -181,7 +181,6 @@ package syscode
 
         public static function GetClass(modulename:String, classname:String):Class
         {
-            trace("GetClass: " + modulename + " " + classname);
             var m:* = modulelist[modulename];
             if (!m)
             {
@@ -190,10 +189,8 @@ package syscode
             // this is necessary to load non modules loaded classes like WaveAnim
             if (IsClassAvailable(classname))
             {
-                trace("Loading class from current domain");
                 return getDefinitionByName(classname) as Class;
             }
-            trace("Loading class from module");
             return m.mc.loaderInfo.applicationDomain.getDefinition(classname) as Class;
         }
 

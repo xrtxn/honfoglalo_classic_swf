@@ -90,7 +90,7 @@ package syscode
         public function ShowInternal(uid:String, def:String, readyCallback:Function = null):void
         {
             var sex:* = undefined;
-            var amov:AvatarMov = null;
+            var amov:LegoAvatarMov = null;
             this.Clear();
             this.uid = uid;
             if (Boolean(def) && def.length > 0)
@@ -101,7 +101,7 @@ package syscode
                 {
                     this.body.HEAD.removeChildAt(0);
                 }
-                amov = new AvatarMov();
+                amov = new LegoAvatarMov();
                 amov.anim = true;
                 amov.ShowInternalShape(uid, def);
                 this.head = amov.avatar as MovieClip;

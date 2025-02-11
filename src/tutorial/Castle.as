@@ -4,8 +4,8 @@ package tutorial
 
 	import uibase.Building;
 	import uibase.gfx.lego_button_1x1_ok;
-	import syscode.AvatarMov;
-	import uibase.gfx.LegoIconset;
+	import syscode.LegoAvatarMov;
+	import uibase.gfx.UIIconset;
 	import uibase.gfx.LegoCharacters;
 	import syscode.WinMgr;
 	import syscode.Lang;
@@ -18,7 +18,7 @@ package tutorial
 	{
 		public static var mc:Castle = null;
 
-		public var AVATAR:AvatarMov;
+		public var AVATAR:LegoAvatarMov;
 
 		public var AVATARTEXT:MovieClip;
 
@@ -28,7 +28,7 @@ package tutorial
 
 		public var BTN_PREV:lego_button_1x1_ok;
 
-		public var ICON:LegoIconset;
+		public var ICON:UIIconset;
 
 		public var NPC:LegoCharacters;
 

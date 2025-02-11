@@ -6,6 +6,9 @@ package triviador
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 	import syscode.*;
+	import triviador.gfx.GuessQuestionMov;
+	import triviador.gfx.MCQuestionMov;
+	import triviador.gfx.AreaMarkerMov;
 
 	public class PhaseDisplay
 	{

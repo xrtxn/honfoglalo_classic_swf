@@ -9,20 +9,20 @@ package friendlygame
 	import flash.text.TextField;
 	import flash.utils.Dictionary;
 	import syscode.*;
-	import uibase.ScrollBarMov7;
-	import uibase.ScrollBarMov8;
-	import uibase.ScrollBarMov9;
-	import uibase.gfx.lego_button_1x1_cancel_header;
-	import uibase.gfx.lego_button_3x1_ok;
-	import uibase.gfx.lego_button_3x1_cancel;
-	import uibase.gfx.lego_button_2x1_ok;
-	import uibase.gfx.lego_button_3x1_normal;
-	import uibase.gfx.lego_button_1x1_normal_header;
-	import fl.controls.CheckBox;
-	import uibase.gfx.HeaderTabs;
 	import friendlygame.gfx.Friends1c;
 	import friendlygame.gfx.friendlygamelist;
-	import uibase.components.CommonCharacterComponent;
+	import uibase.components.UICharacterComponent;
+	import friendlygame.gfx.HeaderTabs;
+	import friendlygame.compat.lego_button_3x1_ok;
+	import friendlygame.compat.lego_button_1x1_cancel_header;
+	import friendlygame.compat.lego_button_3x1_cancel;
+	import friendlygame.compat.lego_button_2x1_ok;
+	import friendlygame.compat.lego_button_3x1_normal;
+	import friendlygame.compat.lego_button_1x1_normal_header;
+	import friendlygame.compat.CheckBox;
+	import friendlygame.compat.ScrollBarMov8;
+	import friendlygame.compat.ScrollBarMov9;
+	import friendlygame.compat.ScrollBarMov7;
 
 	[Embed(source="/modules/friendlygame_assets.swf", symbol="symbol453")]
 	public class FriendlyGame extends MovieClip
@@ -85,12 +85,11 @@ package friendlygame
 
 		public var BUBBLE:MovieClip;
 
-		// todo might be different type
 		public var CBALL:CheckBox;
 
-		public var CHAR:CommonCharacterComponent;
+		public var CHAR:UICharacterComponent;
 
-		public var CHAT_AVATAR:AvatarMov;
+		public var CHAT_AVATAR:LegoAvatarMov;
 
 		public var CODE:TextField;
 
@@ -325,7 +324,7 @@ package friendlygame
 				mc.TABS.Notify(mc.TABS.TTAB2, false);
 			}
 			var VillageMap:* = Modules.GetClass("villagemap", "villagemap.VillageMap");
-			var StartWindowMov:* = Modules.GetClass("triviador", "triviador.StartWindowMov");
+			var StartWindowMov:* = Modules.GetClass("triviador", "triviador.gfx.StartWindowMov");
 			var notifs:Object = Modules.GetClass("uibase", "uibase.Notifications");
 			if (Boolean(notifs) && Boolean(notifs.mc))
 			{
@@ -1834,7 +1833,8 @@ package friendlygame
 
 		public function OnCloseClick(e:* = null):void
 		{
-			if (mc && WinMgr.WindowOpened("friendlygame.FriendlyGame") && mc.currentFrame > 1 && this.TABS.current == 1)
+			// I changed mc.currentFrame to >= 1
+			if (mc && WinMgr.WindowOpened("friendlygame.FriendlyGame") && mc.currentFrame >= 1 && this.TABS.current == 1)
 			{
 				Comm.SendCommand("EXITROOM", "");
 				HideNotification();

@@ -1,12 +1,12 @@
 package gameover
 {
 	import flash.display.MovieClip;
-	import syscode.AvatarMov;
+	import syscode.LegoAvatarMov;
 
 	[Embed(source="/modules/gameover_assets.swf", symbol="symbol795")]
 	public dynamic class divisionline extends MovieClip
 	{
-		public var AVATAR:AvatarMov;
+		public var AVATAR:LegoAvatarMov;
 
 		public var COUNT:MovieClip;
 

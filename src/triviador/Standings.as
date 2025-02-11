@@ -7,6 +7,9 @@ package triviador
 	import flash.filters.*;
 	import flash.text.*;
 	import syscode.*;
+	import triviador.gfx.IngameChat;
+	import triviador.gfx.GuessQuestionMov;
+	import triviador.gfx.MCQuestionMov;
 
 	public class Standings
 	{
@@ -313,7 +316,7 @@ package triviador
 		public static function ShowEmotion(pnum:int, anim_id:int):Boolean
 		{
 			var box:MovieClip = mc["BOX" + pnum];
-			var a:AvatarMov = box.AVATAR.AVATAR;
+			var a:LegoAvatarMov = box.AVATAR.AVATAR;
 			a.Clear();
 			a.ShowUID(Game.players[pnum].id, null, null, anim_id);
 			return a.isinternal;

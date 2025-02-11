@@ -1,13 +1,13 @@
 package villagemap.compat
 {
-    import syscode.AvatarAnimMov;
+    import syscode.LegoAvatarAnimMov;
 
     [Embed(source="/modules/villagemap_assets.swf", symbol="symbol121")]
-    public class VillageAvatarAnimMov extends AvatarAnimMov
+    public class VillageAvatarAnimMov extends LegoAvatarAnimMov
     {
         public function VillageAvatarAnimMov()
         {
-            super(VillageAvatarMov);
+            super();
         }
     }
 }

@@ -9,7 +9,7 @@ package uibase
 	import syscode.*;
 	import uibase.gfx.lego_button_2x1_ok;
 	import uibase.gfx.lego_button_2x1_cancel;
-	import uibase.gfx.LegoIconset;
+	import uibase.gfx.UIIconset;
 
 	[Embed(source="/modules/uibase_assets.swf", symbol="symbol395")]
 	public class LoginMessageWin extends MovieClip
@@ -20,7 +20,7 @@ package uibase
 
 		public var BTN2:lego_button_2x1_cancel;
 
-		public var ICON:uibase.gfx.LegoIconset;
+		public var ICON:uibase.gfx.UIIconset;
 
 		public var MESSAGE:MovieClip;
 

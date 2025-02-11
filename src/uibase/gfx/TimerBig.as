@@ -1,4 +1,4 @@
-package
+package uibase.gfx
 {
 	import uibase.LegoWeeklyTimer;
 

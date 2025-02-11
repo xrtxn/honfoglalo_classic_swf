@@ -1,9 +1,7 @@
 package uibase.components
 {
-	import flash.display.MovieClip;
-
 	[Embed(source="/modules/uibase_assets.swf", symbol="symbol397")]
-	public dynamic class WindowFrameGraphics extends MovieClip
+	public dynamic class WindowFrameGraphics extends LegoWindowFrameGraphics
 	{
 		public function WindowFrameGraphics()
 		{

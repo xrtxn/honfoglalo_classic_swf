@@ -1,13 +1,13 @@
 package tournament.gfx
 {
 	import flash.display.MovieClip;
-	import syscode.AvatarMov;
+	import syscode.LegoAvatarMov;
 	import uibase.CountryFlagMov;
 
 	[Embed(source="/modules/tournament_assets.swf", symbol="symbol94")]
 	public dynamic class Ranklist_item_league_line_4x1 extends MovieClip
 	{
-		public var AVATAR:AvatarMov;
+		public var AVATAR:LegoAvatarMov;
 
 		public var FLAG:CountryFlagMov;
 

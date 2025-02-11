@@ -4,9 +4,9 @@ package tutorial
 
 	import uibase.Building;
 	import uibase.gfx.LegoCharacters;
-	import uibase.gfx.LegoIconset;
+	import uibase.gfx.UIIconset;
 	import uibase.gfx.lego_button_1x1_ok;
-	import syscode.AvatarMov;
+	import syscode.LegoAvatarMov;
 	import syscode.WinMgr;
 	import syscode.Modules;
 	import syscode.Lang;
@@ -19,7 +19,7 @@ package tutorial
 	{
 		public static var mc:Airborne = null;
 
-		public var AVATAR:AvatarMov;
+		public var AVATAR:LegoAvatarMov;
 
 		public var AVATARTEXT:MovieClip;
 
@@ -29,7 +29,7 @@ package tutorial
 
 		public var BTN_PREV:lego_button_1x1_ok;
 
-		public var ICON:LegoIconset;
+		public var ICON:UIIconset;
 
 		public var NPC:LegoCharacters;
 

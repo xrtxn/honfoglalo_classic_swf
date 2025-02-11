@@ -35,13 +35,6 @@ package villagemap
 	import syscode.Platform;
 	import syscode.Lang;
 	import villagemap.gfx.VillageMapHeader;
-	import syscode.AvatarMov;
-	import syscode.AvatarBodyMov;
-	import syscode.AvatarAnimMov;
-	import uibase.LegoIconset;
-	import uibase.gfx.LegoIconset;
-	import flash.utils.getQualifiedClassName;
-	import syscode.AvatarFactory;
 	import villagemap.compat.VillageAvatarAnimMov;
 
 	[Embed(source="/modules/villagemap_assets.swf", symbol="symbol160")]

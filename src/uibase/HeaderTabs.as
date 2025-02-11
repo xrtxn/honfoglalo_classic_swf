@@ -4,6 +4,10 @@ package uibase
 	import com.greensock.easing.Linear;
 	import flash.display.MovieClip;
 	import syscode.*;
+	import flash.utils.getQualifiedClassName;
+	import uibase.gfx.UIIconset;
+	import triviador.compat.TriviadorLegoIconset;
+	import friendlygame.compat.FriendlyIconset;
 
 	public class HeaderTabs extends MovieClip
 	{
@@ -44,6 +48,7 @@ package uibase
 			var i:* = 1;
 			while (tab = this.getChildByName("TTAB" + i) as MovieClip, tab)
 			{
+				trace("tab: ", tab);
 				tab.origx = tab.x;
 				this.origpositions[i] = tab.x;
 				tab.callbackid = i;
@@ -56,7 +61,11 @@ package uibase
 				if (this.icons[i - 1])
 				{
 					tab.visible = true;
+					trace("before iconset");
+					trace("tab: ", tab.ICONSET);
+					trace(getQualifiedClassName(tab.ICONSET));
 					tab.ICONSET.Set(this.icons[i - 1]);
+					trace("after iconset");
 					Imitation.AddEventClick(tab, this.TabClicked);
 					Imitation.AddEventMouseOver(tab, this.TabOver);
 					Imitation.AddEventMouseOut(tab, this.TabOut);
@@ -72,7 +81,10 @@ package uibase
 				}
 				i++;
 			}
+			trace("ok");
+			trace(this.getChildByName("TTAB" + this.current));
 			this.SetActiveTab(this.getChildByName("TTAB" + this.current) as MovieClip);
+			trace("ok2");
 		}
 
 		public function Reorder(newOrder:Array = null, visibilities:Array = null):void

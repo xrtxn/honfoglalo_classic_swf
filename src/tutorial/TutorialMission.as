@@ -11,8 +11,8 @@ package tutorial
 	import syscode.Sys;
 	import syscode.Modules;
 	import syscode.Util;
-	import syscode.AvatarMov;
-	import uibase.gfx.LegoIconset;
+	import syscode.LegoAvatarMov;
+	import uibase.gfx.UIIconset;
 	import uibase.gfx.LegoCharacters;
 	import syscode.Comm;
 
@@ -21,7 +21,7 @@ package tutorial
 	{
 		public static var mc:TutorialMission = null;
 
-		public var AVATAR:AvatarMov;
+		public var AVATAR:LegoAvatarMov;
 
 		public var AVATARTEXT:MovieClip;
 
@@ -31,7 +31,7 @@ package tutorial
 
 		public var CNT:MovieClip;
 
-		public var ICON:LegoIconset;
+		public var ICON:UIIconset;
 
 		public var NPC:LegoCharacters;
 
@@ -169,7 +169,7 @@ package tutorial
 			for (var i:uint = 0; i < this.booster_number; i++)
 			{
 				animdelay += 0.3;
-				flybooster = new LegoIconset();
+				flybooster = new UIIconset();
 				flybooster.scaleX = flybooster.scaleY = this.ICON.scaleX;
 				addChild(flybooster);
 				flybooster.Set(this.booster);

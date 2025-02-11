@@ -9,8 +9,8 @@ package tutorial
 	import syscode.Sys;
 	import syscode.Modules;
 	import syscode.Util;
-	import syscode.AvatarMov;
-	import uibase.gfx.LegoIconset;
+	import syscode.LegoAvatarMov;
+	import uibase.gfx.UIIconset;
 	import uibase.gfx.LegoCharacters;
 	import syscode.Config;
 
@@ -19,7 +19,7 @@ package tutorial
 	{
 		public static var mc:SelhalfGiftUp = null;
 
-		public var AVATAR:AvatarMov;
+		public var AVATAR:LegoAvatarMov;
 
 		public var AVATARTEXT:MovieClip;
 
@@ -29,7 +29,7 @@ package tutorial
 
 		public var BTN_PREV:lego_button_1x1_ok;
 
-		public var ICON:LegoIconset;
+		public var ICON:UIIconset;
 
 		public var NPC:LegoCharacters;
 

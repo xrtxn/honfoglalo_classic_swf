@@ -1,7 +1,7 @@
 package uibase
 {
 	import com.greensock.TweenMax;
-	import uibase.components.UIBaseButtonComponent;
+	import uibase.components.UIButtonComponent;
 	import flash.display.*;
 	import flash.events.*;
 	import flash.system.System;
@@ -44,7 +44,7 @@ package uibase
 
 		public var FPS:TextField;
 
-		public var IBTN:UIBaseButtonComponent;
+		public var IBTN:UIButtonComponent;
 
 		public var IMIT:TextField;
 

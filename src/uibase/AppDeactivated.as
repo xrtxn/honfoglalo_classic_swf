@@ -1,11 +1,11 @@
 package uibase
 {
-	import components.ButtonComponent;
-	import components.CharacterComponent;
 	import flash.display.*;
 	import flash.events.*;
 	import flash.text.*;
 	import syscode.*;
+	import uibase.components.UIButtonComponent;
+	import uibase.components.UICharacterComponent;
 
 	[Embed(source="/modules/uibase_assets.swf", symbol="symbol1248")]
 	public class AppDeactivated extends MovieClip
@@ -14,11 +14,11 @@ package uibase
 
 		public var BORDER:MovieClip;
 
-		public var BTNCLOSE:ButtonComponent;
+		public var BTNCLOSE:UIButtonComponent;
 
 		public var MESSAGE:TextField;
 
-		public var __id0_:CharacterComponent;
+		public var __id0_:UICharacterComponent;
 
 		public var params:Object;
 

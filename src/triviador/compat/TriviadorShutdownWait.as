@@ -4,6 +4,7 @@ package triviador.compat
 	import flash.text.TextField;
 	import syscode.*;
 
+	// FIXME this is not really needed
 	[Embed(source="/modules/triviador_assets.swf", symbol="symbol1299")]
 	public class TriviadorShutdownWait extends MovieClip
 	{

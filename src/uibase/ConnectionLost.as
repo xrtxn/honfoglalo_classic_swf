@@ -1,17 +1,17 @@
 package uibase
 {
-	import components.ButtonComponent;
 	import flash.display.*;
 	import flash.events.*;
 	import flash.text.*;
 	import syscode.*;
+	import uibase.components.UIButtonComponent;
 
 	[Embed(source="/modules/uibase_assets.swf", symbol="symbol1276")]
 	public class ConnectionLost extends MovieClip
 	{
 		public var BORDER:MovieClip;
 
-		public var BTNCLOSE:ButtonComponent;
+		public var BTNCLOSE:UIButtonComponent;
 
 		public var MESSAGE:TextField;
 

@@ -1,12 +1,12 @@
 package friendlygame.gfx
 {
 	import flash.display.MovieClip;
-	import syscode.AvatarMov;
+	import friendlygame.compat.FriendlyAvatarMov;
 
 	[Embed(source="/modules/friendlygame_assets.swf", symbol="symbol299")]
 	public dynamic class UserAddClass extends MovieClip
 	{
-		public var AVATAR:AvatarMov;
+		public var AVATAR:FriendlyAvatarMov;
 
 		public var NAME:MovieClip;
 

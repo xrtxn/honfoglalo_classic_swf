@@ -4,7 +4,7 @@ package tutorial
 
 	import uibase.Building;
 	import uibase.gfx.lego_button_1x1_ok;
-	import syscode.AvatarMov;
+	import syscode.LegoAvatarMov;
 	import uibase.gfx.LegoCharacters;
 	import syscode.WinMgr;
 	import syscode.Lang;
@@ -17,7 +17,7 @@ package tutorial
 	{
 		public static var mc:Badges = null;
 
-		public var AVATAR:AvatarMov;
+		public var AVATAR:LegoAvatarMov;
 
 		public var AVATARTEXT:MovieClip;
 

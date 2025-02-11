@@ -1,7 +1,7 @@
 package uibase
 {
 	import flash.display.MovieClip;
-	import gfx.draft_cogs;
+	import uibase.gfx.draft_cogs;
 
 	[Embed(source="/modules/uibase_assets.swf", symbol="symbol28")]
 	public dynamic class ModuleWait extends MovieClip

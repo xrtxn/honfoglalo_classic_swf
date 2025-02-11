@@ -3,14 +3,14 @@ package villagemap.gfx
 	import flash.display.*;
 	import flash.utils.*;
 
-	import uibase.components.SerialCharComponent;
+	import uibase.components.UISerialCharComponent;
 
 	[Embed(source="/modules/villagemap_assets.swf", symbol="symbol64")]
 	public dynamic class Notification extends MovieClip
 	{
 		public var BUBBLE:MovieClip;
 
-		public var __id1_:SerialCharComponent;
+		public var __id1_:UISerialCharComponent;
 
 		public var __setPropDict:Dictionary;
 

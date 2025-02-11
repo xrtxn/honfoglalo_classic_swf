@@ -7,6 +7,12 @@ package triviador
 	import flash.geom.Point;
 	import flash.utils.getTimer;
 	import syscode.*;
+	import triviador.gfx.GuessQuestionMov;
+	import triviador.gfx.IngameChat;
+	import triviador.gfx.MCQuestionMov;
+	import triviador.gfx.WaitingGameMov;
+	import triviador.gfx.StartWindowMov;
+	import triviador.gfx.AreaMarkerMov;
 
 	public class Game
 	{

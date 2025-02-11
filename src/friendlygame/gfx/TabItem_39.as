@@ -1,14 +1,14 @@
 package friendlygame.gfx
 {
 	import flash.display.MovieClip;
-	import uibase.gfx.LegoIconset;
+	import friendlygame.compat.FriendlyIconset;
 
 	[Embed(source="/modules/friendlygame_assets.swf", symbol="symbol321")]
 	public dynamic class TabItem_39 extends MovieClip
 	{
 		public var FIELDMC:MovieClip;
 
-		public var ICONSET:LegoIconset;
+		public var ICONSET:FriendlyIconset;
 
 		public var NOTIFY:MovieClip;
 

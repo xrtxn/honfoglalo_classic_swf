@@ -1,32 +1,32 @@
 package uibase
 {
-	import components.ButtonComponent;
-	import components.CharacterComponent;
-	import components.WindowFrame;
 	import flash.display.MovieClip;
 	import flash.text.TextField;
 	import syscode.*;
+	import uibase.components.UICharacterComponent;
+	import uibase.components.UIButtonComponent;
+	import uibase.components.UIWindowFrame;
 
 	[Embed(source="/modules/uibase_assets.swf", symbol="symbol401")]
 	public class LogoutWindow extends MovieClip
 	{
 		public static var mc:LogoutWindow = null;
 
-		public var BTNX:ButtonComponent;
+		public var BTNX:UIButtonComponent;
 
-		public var BTN_LOGOUT:ButtonComponent;
+		public var BTN_LOGOUT:UIButtonComponent;
 
-		public var BTN_QUIT:ButtonComponent;
+		public var BTN_QUIT:UIButtonComponent;
 
-		public var FRAME:WindowFrame;
+		public var FRAME:UIWindowFrame;
 
 		public var TXT_LOGOUT:TextField;
 
 		public var TXT_QUIT:TextField;
 
-		public var __id1_:CharacterComponent;
+		public var __id1_:UICharacterComponent;
 
-		public var __id2_:CharacterComponent;
+		public var __id2_:UICharacterComponent;
 
 		private var logout:Boolean = false;
 

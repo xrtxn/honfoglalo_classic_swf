@@ -146,9 +146,9 @@ package syscode
             f = DBG;
             f = Extdata;
             f = AvatarFactory;
-            f = AvatarMov;
+            f = LegoAvatarMov;
             f = AvatarBodyMov;
-            f = AvatarAnimMov;
+            f = LegoAvatarAnimMov;
             f = WinMgr;
             f = Romanization;
             f = ChatMessageBuffer;

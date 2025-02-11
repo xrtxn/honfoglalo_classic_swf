@@ -1,7 +1,6 @@
 package uibase
 {
 	import adobe.utils.*;
-	import components.ButtonComponent;
 	import flash.accessibility.*;
 	import flash.desktop.*;
 	import flash.display.*;
@@ -25,17 +24,18 @@ package uibase
 	import flash.ui.*;
 	import flash.utils.*;
 	import flash.xml.*;
+	import uibase.components.UIButtonComponent;
 
 	[Embed(source="/modules/uibase_assets.swf", symbol="symbol80")]
 	public dynamic class StatInfo extends MovieClip
 	{
-		public var LEFT:ButtonComponent;
+		public var LEFT:UIButtonComponent;
 
 		public var NUM:TextField;
 
-		public var RESET:ButtonComponent;
+		public var RESET:UIButtonComponent;
 
-		public var RIGHT:ButtonComponent;
+		public var RIGHT:UIButtonComponent;
 
 		public var TEXT:TextField;
 

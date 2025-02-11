@@ -6,7 +6,10 @@
             "debug": true,
             "asconfig": "asconfig.json",
             "problemMatcher": [],
-            "label": "ActionScript: compile debug - asconfig.json"
+            "label": "ActionScript: compile debug - asconfig.json",
+            "presentation": {
+                "reveal": "silent"
+            }
         },
         {
             "label": "Send notification",
@@ -27,6 +30,9 @@
             "group": {
                 "kind": "build",
                 "isDefault": true
+            },
+            "presentation": {
+                "reveal": "silent"
             }
         }
     ]

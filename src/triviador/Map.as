@@ -14,7 +14,16 @@ package triviador
 	import flash.text.*;
 	import flash.utils.*;
 	import syscode.*;
-	import triviador.gfx.libmc_AreaEffects;
+	import triviador.compat.libmc_AreaEffects;
+	import triviador.gfx.AreaMarkerMov;
+	import triviador.gfx.MapHelpMarkerMov;
+	import triviador.gfx.IngameChat;
+	import triviador.gfx.MCQuestionMov;
+	import triviador.gfx.GuessQuestionMov;
+	import triviador.gfx.ShieldMissionGfx;
+	import triviador.gfx.SMCheck;
+	import triviador.gfx.AttackArrow;
+	import triviador.gfx.DefaultShield;
 
 	public class Map
 	{
@@ -326,7 +335,6 @@ package triviador
 			}
 			trace("Map " + mapid + " area number: " + areanum);
 			Semu.SetMap(mapid, areanum, neighbours);
-			trace("map anims:off");
 			bg_anim = null;
 			FreeMapGfx();
 			// FIXME for some reason this shows an error in the IDE, but compiles
@@ -335,7 +343,6 @@ package triviador
 			var intbordersmc:MovieClip = new areasmc.constructor();
 			var disabledareasmc:MovieClip = new areasmc.constructor();
 			var changemasksmc:MovieClip = new areasmc.constructor();
-			trace("constructor ok");
 			n = 1;
 			while (n <= areanum)
 			{
@@ -349,17 +356,13 @@ package triviador
 				{
 					areamarkers[n] = new AreaMarkerMov();
 					areamarkers[n].id = n;
-					trace("marker " + n + " created");
 					areamarkers[n].Setup(0, 0, 0);
-					trace("marker " + n + " setup");
 					areamarkers[n].visible = false;
 					markerlayer.addChild(areamarkers[n]);
 
 				}
 				mm = new effectsmc["NEWMASK"].constructor();
-				trace("-1");
 				mm.gotoAndStop(1);
-				trace("-0");
 				om = currentmapswf["MARKER" + n];
 				if (om)
 				{
@@ -388,7 +391,6 @@ package triviador
 				disabledareas[n].addChild(amc);
 				n++;
 			}
-			trace(0);
 			i = 1;
 			while (i <= areanum)
 			{
@@ -400,7 +402,6 @@ package triviador
 			{
 				roadsbackmc = MovieClip(new currentmapswf["ROADS"].constructor());
 			}
-			trace("before arrows");
 			arrowsmc = MovieClip(currentmapswf["ARROWS"]);
 			shieldsmc = MovieClip(currentmapswf["SHIELDS"]);
 			captionsmc = MovieClip(currentmapswf["CAPTIONS"]);
@@ -466,7 +467,6 @@ package triviador
 					i++;
 				}
 			}
-			trace(1);
 			if (shieldsmc)
 			{
 				Util.StopAllChildrenMov(shieldsmc);
@@ -524,7 +524,6 @@ package triviador
 					i++;
 				}
 			}
-			trace(2);
 			if (Boolean(arrowsmc) && Boolean(roadsmc))
 			{
 				InitWays();
@@ -552,7 +551,6 @@ package triviador
 					ways = null;
 				}
 			}
-			trace(3);
 			Imitation.AddEventMouseDown(mc, OnMapMouseDown);
 			selection_enabled = false;
 			AlignMap();
@@ -616,7 +614,6 @@ package triviador
 			var distance:* = undefined;
 			var amc:MovieClip = null;
 			var ashape:MovieClip = null;
-			trace("ShowWays");
 			anim = false;
 			if (!arrowsmc)
 			{

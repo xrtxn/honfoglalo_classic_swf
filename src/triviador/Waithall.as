@@ -3,6 +3,8 @@ package triviador
 	import flash.display.*;
 	import flash.events.*;
 	import syscode.*;
+	import triviador.gfx.StartWindowMov;
+	import triviador.gfx.WaitingGameMov;
 
 	public class Waithall
 	{

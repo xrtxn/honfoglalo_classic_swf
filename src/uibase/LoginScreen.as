@@ -472,7 +472,6 @@ package uibase
 				{
 					Draw("PANEL_INPUT");
 				});
-			conn_error_graphics(w.NPC);
 			this.SetInputsEnable(true);
 			w.visible = true;
 		}

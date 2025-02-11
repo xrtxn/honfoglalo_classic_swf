@@ -1,12 +1,12 @@
 package friendlygame
 {
 	import flash.display.MovieClip;
-	import uibase.gfx.LegoIconset;
+	import uibase.gfx.UIIconset;
 
 	[Embed(source="/modules/friendlygame_assets.swf", symbol="symbol407")]
 	public dynamic class FriendlyGameItem extends MovieClip
 	{
-		public var ICON:LegoIconset;
+		public var ICON:UIIconset;
 
 		public var PLAYER1:MovieClip;
 

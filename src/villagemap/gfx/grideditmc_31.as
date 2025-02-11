@@ -2,12 +2,12 @@ package villagemap.gfx
 {
 	import flash.display.*;
 
-	import uibase.components.UIBaseButtonComponent;
+	import uibase.components.UIButtonComponent;
 
 	[Embed(source="/modules/villagemap_assets.swf", symbol="symbol159")]
 	public dynamic class grideditmc_31 extends MovieClip
 	{
-		public var GRIDEDITBUTTON:UIBaseButtonComponent;
+		public var GRIDEDITBUTTON:UIButtonComponent;
 
 		public function grideditmc_31()
 		{

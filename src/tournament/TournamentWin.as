@@ -73,7 +73,7 @@ package tournament
 
 		public var BUBBLE:MovieClip;
 
-		public var CHAT_AVATAR:AvatarMov;
+		public var CHAT_AVATAR:LegoAvatarMov;
 
 		public var CHESTS:MovieClip;
 

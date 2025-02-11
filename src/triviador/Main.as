@@ -3,8 +3,12 @@ package triviador
 	import com.greensock.TweenMax;
 	import flash.display.MovieClip;
 	import syscode.*;
-	import uibase.components.UIBaseButtonComponent;
+	import uibase.components.UIButtonComponent;
 	import triviador.compat.TriviadorButtonComponent;
+	import triviador.gfx.AreaMarkerMov;
+	import triviador.gfx.GuessQuestionMov;
+	import triviador.gfx.MCQuestionMov;
+	import triviador.gfx.WaitingGameMov;
 
 	[Embed(source="/modules/triviador_assets.swf", symbol="symbol1182")]
 	public class Main extends MovieClip

@@ -2,12 +2,12 @@ package villagemap.gfx
 {
 	import flash.display.*;
 
-	import uibase.components.CommonGfx;
+	import villagemap.compat.VillagemapCommonGfx;
 
 	[Embed(source="/modules/villagemap_assets.swf", symbol="symbol131")]
 	public dynamic class GoldsSymbol_11 extends MovieClip
 	{
-		public var __id0_:CommonGfx;
+		public var __id0_:VillagemapCommonGfx;
 
 		public function GoldsSymbol_11()
 		{

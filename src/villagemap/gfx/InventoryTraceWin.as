@@ -3,12 +3,12 @@ package villagemap.gfx
 	import flash.display.*;
 	import flash.text.*;
 
-	import uibase.components.UIBaseButtonComponent;
+	import uibase.components.UIButtonComponent;
 
 	[Embed(source="/modules/villagemap_assets.swf", symbol="symbol90")]
 	public dynamic class InventoryTraceWin extends MovieClip
 	{
-		public var BTN:UIBaseButtonComponent;
+		public var BTN:UIButtonComponent;
 
 		public var FIELD:TextField;
 
