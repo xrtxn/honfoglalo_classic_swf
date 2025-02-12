@@ -24,6 +24,7 @@ package triviador
 	import triviador.gfx.SMCheck;
 	import triviador.gfx.AttackArrow;
 	import triviador.gfx.DefaultShield;
+	import uibase.gfx.themeicon_1;
 
 	public class Map
 	{
@@ -236,13 +237,16 @@ package triviador
 		{
 			if (originaleffects[id])
 			{
+				trace("InitEffectScales: " + id + " already initialized");
 				return;
 			}
+			trace("InitEffectScales: " + id);
 			originaleffects[id] = m.filters;
 		}
 
 		public static function ScaleEffects(id:String, m:DisplayObject, scale:Number):void
 		{
+			trace("ScaleEffects: " + id + " " + scale);
 			var f:* = undefined;
 			var e:* = undefined;
 			var o:* = undefined;
@@ -347,6 +351,7 @@ package triviador
 			while (n <= areanum)
 			{
 				fills[n] = fillsmc["A" + n];
+				trace("fillsmc: " + fillsmc);
 				borders[n] = bordersmc["A" + n];
 				intborders[n] = intbordersmc["A" + n];
 				areacolors[n].addChild(fills[n]);
@@ -362,6 +367,7 @@ package triviador
 
 				}
 				mm = new effectsmc["NEWMASK"].constructor();
+				trace("NEWMASK: " + mm);
 				mm.gotoAndStop(1);
 				om = currentmapswf["MARKER" + n];
 				if (om)
@@ -387,7 +393,9 @@ package triviador
 				}
 				amc = disabledareasmc["A" + n];
 				amc.transform.colorTransform = effectsmc["DISABLED"].transform.colorTransform;
+				trace("DISABLED.transform.colorTransform: " + amc);
 				amc.filters = effectsmc["DISABLED"].filters;
+				trace("DISABLED.filters: " + amc.filters);
 				disabledareas[n].addChild(amc);
 				n++;
 			}
@@ -1048,6 +1056,7 @@ package triviador
 								{
 									cmc.c = c;
 									cmc.filters = effectsmc["CAPTIONS" + c].filters;
+									trace("CAPTIONS" + c + ".filters: " + cmc.filters);
 									ScaleEffects("CAPTIONS", cmc, mapscale * fills[n].scaleX);
 									Imitation.FreeBitmapAll(cmc);
 									Imitation.UpdateAll(cmc);
@@ -1848,6 +1857,7 @@ package triviador
 							if (way.b)
 							{
 								way.b.filters = effectsmc["ROADS"].filters;
+								trace("way.b.filters" + effectsmc["ROADS"].filters);
 								ScaleEffects("ROADS", way.b, mapscale * fills[n].scaleX);
 							}
 						}
@@ -1976,8 +1986,11 @@ package triviador
 			{
 				a = Game.areas[i];
 				fills[i].filters = effectsmc["FILL0"].filters;
+				trace("fills[" + i + "].filters" + effectsmc["FILL0"].filters);
 				borders[i].filters = effectsmc["BORDER0"].filters;
+				trace("borders[" + i + "].filters" + effectsmc["BORDER0"].filters);
 				intborders[i].filters = effectsmc["INTBORDER0"].filters;
+				trace("intborders[" + i + "].filters" + effectsmc["INTBORDER0"].filters);
 				areacolors[i].scaleX = 1;
 				areacolors[i].scaleY = 1;
 				ScaleEffects("FILLS", fills[i], mapscale * fills[i].scaleX);
@@ -1989,30 +2002,6 @@ package triviador
 					if (prevcolors[i] != a.owner)
 					{
 						waschange = true;
-						var test:ColorTransform = effectsmc["INTBORDER" + a.owner].transform.colorTransform;
-						trace("color: ", test.color);
-						trace("colorTransform:", effectsmc["INTBORDER" + a.owner].transform.colorTransform);
-						trace("FIXME: overwriting color for area:", i);
-						var ovcolor:* = new ColorTransform();
-						if (a.owner == 1)
-						{
-							ovcolor.color = 14224139;
-						}
-						else if (a.owner == 2)
-						{
-							ovcolor.color = 3122696;
-						}
-						else if (a.owner == 3)
-						{
-							ovcolor.color = 1802433;
-						}
-						if (ovcolor.color != 0)
-						{
-							trace("over");
-							effectsmc["INTBORDER" + a.owner].transform.colorTransform = ovcolor;
-						}
-						trace("area id:", i);
-						trace("owner: ", a.owner);
 						Imitation.SetColorMultiplier(areacolors[i], effectsmc["INTBORDER" + a.owner].transform.colorTransform);
 					}
 				}

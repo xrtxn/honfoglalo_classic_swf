@@ -2,14 +2,14 @@ package gameover
 {
 	import flash.display.MovieClip;
 	import uibase.gfx.UIIconset;
+	import gameover.compat.GameOverIconset;
 
 	[Embed(source="/modules/gameover_assets.swf", symbol="symbol425")]
 	public dynamic class TabItem extends MovieClip
 	{
 		public var FIELDMC:MovieClip;
 
-		// likely custom class
-		public var ICONSET:UIIconset;
+		public var ICONSET:GameOverIconset;
 
 		public var NOTIFY:MovieClip;
 

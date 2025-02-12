@@ -14,12 +14,15 @@ package com.xrt
     import friendlygame.compat.ScrollBarMov8;
     import friendlygame.FriendlyInclude;
     import triviador.TriviadorInclude;
+    import triviador.gfx.IngameChat;
+    import gameover.GameOverInclude;
 
     public class Includer
     {
         private var _ui:UIInclude;
         private var _fr:FriendlyInclude;
         private var _tr:TriviadorInclude;
+        private var _gi:GameOverInclude;
 
         private var _dummy1:ConnectWait;
         private var _dummy2:LoginScreen;
@@ -43,10 +46,9 @@ package com.xrt
         private var _dummy37:gold;
         private var _dummy38:invalidgfx;
 
-        private var _dummy39:friendlygame.compat.ScrollBarMov7;
-        private var _dummy40:friendlygame.compat.ScrollBarMov8;
-        private var _dummy41:friendlygame.compat.ScrollBarMov9;
         private var _dummy42:TabMov;
+
+        private var _dummy43:IngameChat;
 
         public static function Include():void
         {

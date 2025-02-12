@@ -10,6 +10,7 @@ package triviador
 	import triviador.gfx.IngameChat;
 	import triviador.gfx.GuessQuestionMov;
 	import triviador.gfx.MCQuestionMov;
+	import avmplus.getQualifiedClassName;
 
 	public class Standings
 	{
@@ -159,17 +160,25 @@ package triviador
 			{
 				name = Romanization.ToLatin(aname);
 			}
+			trace(1);
 			var b:* = mc["BOX" + pnum];
 			b.BOUNDS.visible = false;
 			b.BASE.NAME_HOLDER.gotoAndStop(pnum);
+			trace(2);
 			Util.SetText(b.BASE.NAME_HOLDER.NAME, name);
 			b.BASE.AFRAME.gotoAndStop(pnum);
+			trace(2.1);
 			Imitation.FreeBitmapAll(b.BASE);
+			trace(b.SCOREANIM);
+			trace(getQualifiedClassName(b.SCOREANIM));
 			b.SCOREANIM.gotoAndStop(1);
+			trace(2.2);
 			b.SCOREANIM.SCOREMOV.gotoAndStop(pnum);
+			trace(3);
 			Imitation.SetMaskedMov(b.SCOREANIM.SCOREMASK, b.SCOREANIM.SCOREMOV, false);
 			b.AVATAR.AVATAR.mt = Game.roomtype == "M" || Game.roomtype == "T";
 			b.AVATAR.ShowUID(aid, Imitation.FreeBitmapAll, [b.AVATAR]);
+			trace(4);
 			if (aid)
 			{
 				b.AVATAR.ShowFrame(xplevel, actleague);
@@ -191,6 +200,7 @@ package triviador
 					Imitation.AddEventClick(b.AVATAR, OnButtons);
 				}
 			}
+			trace(5);
 			var f:Object = null;
 			for (var i:int = 0; i < Friends.all.length; i++)
 			{
@@ -204,6 +214,7 @@ package triviador
 			b.FRIEND.visible = f && (f.flag == 0 || f.flag == 1);
 			b.BLOCKED.visible = f && f.flag == 3;
 			b.visible = true;
+			trace(6);
 		}
 
 		private static function OnButtons(e:*):void
@@ -394,10 +405,9 @@ package triviador
 				}
 				TweenMax.delayedCall(0.98, function():*
 					{
-						// FIXME - this is a guess
-						ScoreAnimFinished;
-						// [mc["BOX" + pnum].SCOREANIM, anewscore];
-						mc["BOX" + pnum].SCOREANIM = anewscore;
+						// this was wrongly decompiled
+						// TODO send an bug report to ffdec
+						ScoreAnimFinished(mc["BOX" + pnum].SCOREANIM, anewscore);
 					});
 				this.Next();
 			};

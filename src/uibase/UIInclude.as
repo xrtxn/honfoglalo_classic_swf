@@ -11,7 +11,7 @@ package uibase
         // Core UI elements
         private var _dummy1:Anim;
         private var _dummy2:LegoCharacters;
-        private var _dummy3:MissionList;
+        private var _dummy3:LegoMissionList;
         private var _dummy4:ScrollBarMov6;
         private var _dummy5:TabMov;
         private var _dummy6:AppDeactivated;

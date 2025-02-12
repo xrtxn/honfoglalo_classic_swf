@@ -40,17 +40,14 @@ package syscode
             SetModuleData("invite", "assets/modules/invite.swf", "");
             SetModuleData("ranklist", "assets/modules/ranklist.swf", "");
             SetModuleData("castle", "assets/modules/castle.swf", "");
-            SetModuleData("gameover", "assets/modules/gameover.swf", "");
+            SetModuleData("gameover", "assets/modules/gameover_assets.swf", "");
             SetModuleData("testmodule", "assets/modules/testmodule.swf", "");
             SetModuleData("profile", "assets/modules/profile.swf", "");
             SetModuleData("profile2", "assets/modules/profile2.swf", "");
             SetModuleData("postoffice", "assets/modules/postoffice.swf", "");
             SetModuleData("friendlygame", "assets/modules/friendlygame_assets.swf", "villagemap");
-            // todo no code yet
             SetModuleData("minitournament", "assets/modules/minitournament_assets.swf", "triviador");
-            // todo no code yet
             SetModuleData("tournament", "assets/modules/tournament_assets.swf", "triviador");
-            // todo no code yet
             SetModuleData("wrongquestion", "assets/modules/wrongquestion_assets.swf", "triviador");
             SetModuleData("clan", "assets/modules/clan.swf", "");
             SetModuleData("library", "assets/modules/library.swf", "");

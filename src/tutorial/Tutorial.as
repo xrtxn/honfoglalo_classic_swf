@@ -17,6 +17,8 @@ package tutorial
 
 		public static var lastclass:Object = "";
 
+		public var oy:Number;
+
 		public function Tutorial()
 		{
 			super();

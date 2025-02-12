@@ -9,8 +9,8 @@ package gameover
 	import syscode.*;
 	import uibase.gfx.lego_button_3x1_ok;
 	import uibase.gfx.lego_button_3x1_normal;
-	import uibase.gfx.LegoCharacters;
-	import uibase.gfx.HeaderTabs;
+	import gameover.compat.GameOverCharacters;
+	import gameover.compat.HeaderTabs;
 
 	[Embed(source="/modules/gameover_assets.swf", symbol="symbol827")]
 	public class GameOver extends MovieClip
@@ -89,7 +89,7 @@ package gameover
 
 		public var MT_TITLE:MovieClip;
 
-		public var NPC:LegoCharacters;
+		public var NPC:GameOverCharacters;
 
 		public var PAGE:MovieClip;
 
@@ -97,7 +97,7 @@ package gameover
 
 		public var PIRATE_TXT:MovieClip;
 
-		public var SERIAL:LegoCharacters;
+		public var SERIAL:GameOverCharacters;
 
 		public var TABS:HeaderTabs;
 
@@ -521,7 +521,7 @@ package gameover
 			GameOver.istutorialplaying = Util.NumberVal(p.tag.TUTORIAL) == 1;
 			GameOver.issaving = p.save;
 			GameOver.serialframeid = String(Math.min(Util.NumberVal(Sys.mydata.shlevel) + 1, 5));
-			this.IngameChat = Modules.GetClass("triviador", "triviador.IngameChat");
+			this.IngameChat = Modules.GetClass("triviador", "triviador.gfx.IngameChat");
 			var Game:* = Modules.GetClass("triviador", "triviador.Game");
 			if (Game)
 			{

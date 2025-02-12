@@ -1,11 +1,13 @@
-package uibase
+package gameover.compat
 {
 	import flash.display.MovieClip;
 	import flash.utils.*;
 	import syscode.*;
-	import uibase.gfx.MissionListItem_5_5x8_5;
 
-	public class MissionList extends MovieClip
+	// TODO this is a duplicate class of LegoMissionList but it differs with the SBAR type
+	// it complained using the same uibase's ScrollBarMov7 class
+
+	public class DupLegoMissionList extends MovieClip
 	{
 		public var LISTITEMS:MovieClip;
 
@@ -19,7 +21,7 @@ package uibase
 
 		public var started:Boolean = false;
 
-		public function MissionList()
+		public function DupLegoMissionList()
 		{
 			super();
 		}

@@ -6,10 +6,10 @@ package triviador.gfx
 	import flash.system.*;
 	import flash.utils.*;
 	import syscode.*;
-	import uibase.gfx.lego_button_1x1_cancel_header;
-	import uibase.gfx.Missionlist5_5x8_5;
-	import uibase.gfx.LegoCharacters;
 	import triviador.Waithall;
+	import triviador.compat.lego_button_1x1_cancel_header;
+	import triviador.compat.Missionlist5_5x8_5;
+	import triviador.compat.TriviadorCharacters;
 
 	[Embed(source="/modules/triviador_assets.swf", symbol="symbol444")]
 	public class WaitingGameMov extends MovieClip
@@ -28,7 +28,7 @@ package triviador.gfx
 
 		public var MISSION_LIST:Missionlist5_5x8_5;
 
-		public var NPC:LegoCharacters;
+		public var NPC:TriviadorCharacters;
 
 		public var opened:Boolean = false;
 

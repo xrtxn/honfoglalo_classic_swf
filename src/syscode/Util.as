@@ -1656,6 +1656,7 @@ package syscode
 
         public static function SwapSkin(_src:*, _targetSwf:String, _targetClass:String):*
         {
+            trace("SwapSkin: " + _src + " " + _targetSwf + " " + _targetClass);
             var sclass:* = undefined;
             var smc:* = undefined;
             if (Config.skin == "none")

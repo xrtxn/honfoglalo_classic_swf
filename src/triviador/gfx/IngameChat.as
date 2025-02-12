@@ -6,11 +6,11 @@ package triviador.gfx
 	import flash.events.TextEvent;
 	import flash.text.TextField;
 	import syscode.*;
-	import uibase.ScrollBarMov2;
 	import triviador.Main;
 	import triviador.Game;
 	import triviador.Map;
 	import triviador.Standings;
+	import triviador.compat.TriviadorScrollBarMov2;
 
 	[Embed(source="/modules/triviador_assets.swf", symbol="symbol1345")]
 	public class IngameChat extends MovieClip
@@ -41,7 +41,7 @@ package triviador.gfx
 
 		public var MESSAGES:MovieClip;
 
-		public var SCROLLBAR:ScrollBarMov2;
+		public var SCROLLBAR:TriviadorScrollBarMov2;
 
 		public var chatbuf:ChatMessageBuffer;
 

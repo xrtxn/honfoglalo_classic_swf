@@ -156,9 +156,7 @@ package syscode
         {
             trace("SendHTTP data: " + data);
             var mlp:String = this.id == "H" && Comm.ModuleLoadingPhase ? "&MLP=1" : "";
-            trace("FIXME: replaced this uri with a temporary localhost");
-            var uri:String = "http://localhost:8080/game" + "?CID=" + Comm.connid + "&CH=" + this.id + "&MN=" + this.msgnum + "&TRY=" + this.trynum + mlp;
-            trace("uri: " + uri);
+            var uri:String = Config.extdatauribase + "game" + "?CID=" + Comm.connid + "&CH=" + this.id + "&MN=" + this.msgnum + "&TRY=" + this.trynum + mlp;
             if (Comm.commlog >= 1)
             {
                 DBG.Trace("SendXML(" + this.id + "/HTTP) at " + Util.FormatTimeStamp(true, true) + ":", uri + "\n" + this.rqtext.replace(/[\r\n]+/g, "\n"));

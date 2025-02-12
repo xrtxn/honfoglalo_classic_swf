@@ -6,7 +6,7 @@ package gameover
 	import flash.events.TextEvent;
 	import flash.text.TextField;
 	import syscode.*;
-	import uibase.ScrollBarMov6;
+	import gameover.compat.ScrollBarMov6;
 
 	[Embed(source="/modules/gameover_assets.swf", symbol="symbol607")]
 	public class GameOverChat extends MovieClip

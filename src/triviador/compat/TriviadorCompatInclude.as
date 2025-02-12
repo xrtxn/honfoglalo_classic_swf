@@ -8,7 +8,7 @@ package triviador.compat
         private var _dummy4:GameOver_531;
         private var _dummy5:TriviadorScrollBarMov;
         private var _dummy6:lego_button_1x1_normal_header;
-        private var _dummy7:LegoCharacters;
+        private var _dummy7:TriviadorCharacters;
         private var _dummy8:TriviadorScrollBarMov2;
         private var _dummy9:lego_button_2x1_ok;
         private var _dummy10:MissionListItem_5_5x8_5;
